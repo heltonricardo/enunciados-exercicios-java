@@ -1,4 +1,4 @@
-# Projeto Java: sistema de gerenciamento de times de futebol
+# Projeto Java: Sistema de gerenciamento de times de futebol
 
 ## 1. Classes
 
@@ -14,12 +14,12 @@
 
 ### Time
 
-- **Atributos**: nome (`String`), cidade (`String`), anoFundacao (`int`), listaJogadores (ArrayList<Jogador>), tecnicoResponsavel (Tecnico).
+- **Atributos**: nome (`String`), cidade (`String`), anoFundacao (`int`), listaJogadores (`ArrayList<Jogador>`), tecnicoResponsavel (`Tecnico`).
 - **Métodos**: construtores (com e sem parâmetros), métodos `get` e `set` para todos os atributos com validações apropriadas. Método para adicionar jogador à lista de jogadores do time.
 
 ## 2. Requisitos
 
-Usando **validações**, garanta que:
+Faça **validações**, garantindo que:
 
 - a idade dos jogadores e do técnico seja maior que zero;
 - o salário não seja negativo para jogadores e técnicos;
@@ -27,8 +27,8 @@ Usando **validações**, garanta que:
 
 ## 3. Funcionalidades
 
-Crie um método na classe **Time** para calcular a média de idade dos jogadores do time.
-Implemente um método na classe **Time** para exibir todas as informações do time, incluindo o nome, cidade, ano de fundação, informações do técnico e a lista de jogadores.
+- Crie um método na classe **Time** para calcular a média de idade dos jogadores do time.
+- Implemente um método na classe **Time** para exibir todas as informações do time, incluindo o nome, cidade, ano de fundação, informações do técnico e a lista de jogadores.
 
 ## 4. Exemplo de uso
 
