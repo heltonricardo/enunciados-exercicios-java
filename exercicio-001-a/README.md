@@ -4,18 +4,32 @@
 
 ### Jogador
 
-- **Atributos**: nome (`String`), idade (`int`), posicao (`String`), salario (`float`), contratado (`boolean`).
-- **Métodos**: construtores (com e sem parâmetros), métodos `get` e `set` para todos os atributos com validações apropriadas (por exemplo, idade não pode ser negativa, salário não pode ser negativo etc.).
+- **Atributos**:
+  - `nome`: String
+  - `idade`: int
+  - `posicao`: String
+  - `salario`: float
+  - `contratado`: boolean
+- **Métodos**: construtores (com e sem parâmetros), métodos `get` e `set` para todos os atributos.
 
 ### Tecnico
 
-- **Atributos**: nome (`String`), idade (`int`), salario (`float`), anosExperiencia (`int`).
-- **Métodos**: construtores (com e sem parâmetros), métodos `get` e `set` para todos os atributos com validações apropriadas.
+- **Atributos**:
+  - `nome`: String
+  - `idade`: int
+  - `salario`: float
+  - `anosExperiencia`: int
+- **Métodos**: construtores (com e sem parâmetros), métodos `get` e `set` para todos os atributos.
 
 ### Time
 
-- **Atributos**: nome (`String`), cidade (`String`), anoFundacao (`int`), listaJogadores (`ArrayList<Jogador>`), tecnicoResponsavel (`Tecnico`).
-- **Métodos**: construtores (com e sem parâmetros), métodos `get` e `set` para todos os atributos com validações apropriadas. Método para adicionar jogador à lista de jogadores do time.
+- **Atributos**:
+  - `nome`: String
+  - `cidade`: String
+  - `anoFundacao`: int
+  - `listaJogadores`: List<Jogador>
+  - `tecnicoResponsavel`: Tecnico
+- **Métodos**: construtores (com e sem parâmetros), métodos `get` e `set` para todos os atributos.
 
 ## 2. Requisitos
 
@@ -24,6 +38,8 @@ Faça **validações**, garantindo que:
 - a idade dos jogadores e do técnico seja maior que zero;
 - o salário não seja negativo para jogadores e técnicos;
 - o ano de fundação do time seja um valor válido (por exemplo, não pode ser um ano futuro).
+
+> Dica: faça as validações **antes** de atribuir os valores nos atributos!
 
 ## 3. Funcionalidades
 
