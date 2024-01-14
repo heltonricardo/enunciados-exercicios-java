@@ -1,6 +1,12 @@
 # Projeto Java: Sistema de gerenciamento de bandas de K-pop
 
-## 1. Classes
+## 1. Descrição
+
+Este projeto tem como objetivo criar um sistema de gerenciamento de bandas de K-pop em Java, abrangendo as principais entidades presentes no cenário musical. As classes principais incluem representações para Membros, Managers e Bandas, proporcionando uma estrutura coesa para a organização e manipulação de informações relacionadas ao universo do K-pop.
+
+A implementação não se limita apenas à modelagem das classes, mas também prioriza a entrega de um conjunto de funcionalidades que enriquecem e aprimoram o sistema como um todo.
+
+## 2. Classes
 
 ### Membro
 
@@ -31,7 +37,7 @@
   - `managerResponsavel`: Manager
 - **Métodos**: construtores (com e sem parâmetros), métodos `get` e `set` para todos os atributos.
 
-## 2. Requisitos
+## 3. Requisitos
 
 Faça **validações**, garantindo que:
 
@@ -41,12 +47,12 @@ Faça **validações**, garantindo que:
 
 > Dica: faça as validações **antes** de atribuir os valores nos atributos!
 
-## 3. Funcionalidades
+## 4. Funcionalidades
 
 - Crie um método na classe **Banda** para calcular a média de idade dos membros da banda.
 - Implemente um método na classe **Banda** para exibir todas as informações da banda, incluindo o nome, agência, ano de estreia, informações do manager e a lista de membros.
 
-## 4. Exemplo de uso
+## 5. Exemplo de uso
 
 ![](./assets/code.png)
 
