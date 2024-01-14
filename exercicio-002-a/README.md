@@ -1,6 +1,12 @@
 # Projeto Java: Sistema de gerenciamento escolar
 
-## 1. Classes
+## 1. Descrição
+
+Este projeto tem como objetivo a criação de um sistema de gerenciamento escolar em Java, abrangendo as principais entidades presentes em um ambiente educacional. Suas classes fundamentais englobam representações para Alunos, Professores, Disciplinas e Turmas, proporcionando uma estrutura coesa para a organização e manipulação de informações acadêmicas.
+
+A implementação não se limita apenas à modelagem das classes, mas também prioriza a entrega de um conjunto de funcionalidades que enriquecem e aprimoram o sistema como um todo.
+
+## 2. Classes
 
 ### Pessoa
 
@@ -40,13 +46,13 @@
   - `disciplinasOfertadas`: List\<Disciplina\>
 - **Métodos**: construtores (com e sem parâmetros), métodos `get` e `set` para todos os atributos.
 
-## 2. Enums
+## 3. Enums
 
 ### DisciplinaEnum
 
 **Valores**: `MATEMATICA`, `PORTUGUES`, `CIENCIAS`, `HISTORIA`, `GEOGRAFIA`, `INGLES`, `FISICA`, `QUIMICA`, `ARTES`, `EDUCACAO_FISICA`.
 
-## 3. Requisitos
+## 4. Requisitos
 
 Faça **validações**, garantindo que:
 
@@ -62,7 +68,7 @@ Faça **validações**, garantindo que:
 > - Faça as validações **antes** de atribuir os valores nos atributos!
 > - Adapte os métodos existentes ou crie novos métodos para atender a esses requisitos adicionais.
 
-## 4. Funcionalidades
+## 5. Funcionalidades
 
 - Crie um método na classe **Professor** para aumentar o salário, considerando o salário atual e uma bonificação (porcentagem representada por um inteiro) passada por parâmetro para o método (1~60%).
 - Crie um método na classe **Turma** para calcular a média de notas dos alunos da turma.
@@ -72,7 +78,7 @@ Faça **validações**, garantindo que:
 - Implemente um método na classe **Turma** para listar os alunos aprovados, considerando uma média mínima para aprovação. Essa média mínima deve ser um parâmetro configurável.
 - Desenvolva um método na classe **Turma** para calcular a carga horária total das disciplinas oferecidas.
 
-## 5. Exemplo de uso
+## 6. Exemplo de uso
 
 ![](./assets/code.png)
 
