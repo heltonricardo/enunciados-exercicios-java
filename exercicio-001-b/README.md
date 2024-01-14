@@ -27,7 +27,7 @@
   - `nome`: String
   - `agencia`: String
   - `anoDeEstreia`: int
-  - `listaMembros`: List<Membro>
+  - `listaMembros`: List\<Membro\>
   - `managerResponsavel`: Manager
 - **Métodos**: construtores (com e sem parâmetros), métodos `get` e `set` para todos os atributos.
 

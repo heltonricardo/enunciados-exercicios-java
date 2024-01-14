@@ -27,7 +27,7 @@
   - `nome`: String
   - `cidade`: String
   - `anoFundacao`: int
-  - `listaJogadores`: List<Jogador>
+  - `listaJogadores`: List\<Jogador\>
   - `tecnicoResponsavel`: Tecnico
 - **Métodos**: construtores (com e sem parâmetros), métodos `get` e `set` para todos os atributos.
 
