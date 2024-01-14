@@ -1,6 +1,12 @@
 # Projeto Java: Sistema de gerenciamento de times de futebol
 
-## 1. Classes
+## 1. Descrição
+
+Este projeto visa criar um sistema de gerenciamento de times de futebol em Java, contemplando as principais entidades presentes em um ambiente esportivo. As classes principais incluem representações para Jogadores, Técnicos e Times, proporcionando uma estrutura coesa para a organização e manipulação de informações relacionadas ao mundo do futebol.
+
+A implementação não se limita à modelagem das classes, mas também prioriza a entrega de um conjunto de funcionalidades que enriquecem e aprimoram o sistema como um todo.
+
+## 2. Classes
 
 ### Jogador
 
@@ -31,7 +37,7 @@
   - `tecnicoResponsavel`: Tecnico
 - **Métodos**: construtores (com e sem parâmetros), métodos `get` e `set` para todos os atributos.
 
-## 2. Requisitos
+## 3. Requisitos
 
 Faça **validações**, garantindo que:
 
@@ -41,12 +47,12 @@ Faça **validações**, garantindo que:
 
 > Dica: faça as validações **antes** de atribuir os valores nos atributos!
 
-## 3. Funcionalidades
+## 4. Funcionalidades
 
 - Crie um método na classe **Time** para calcular a média de idade dos jogadores do time.
 - Implemente um método na classe **Time** para exibir todas as informações do time, incluindo o nome, cidade, ano de fundação, informações do técnico e a lista de jogadores.
 
-## 4. Exemplo de uso
+## 5. Exemplo de uso
 
 ![](./assets/code.png)
 
