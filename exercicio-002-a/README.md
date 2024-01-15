@@ -60,11 +60,11 @@ class DisciplinaEnum {
   EDUCACAO_FISICA
 }
 
-flowchart TB
-
 Pessoa <|-- Aluno
 Pessoa <|-- Professor
 ```
+
+> Os construtores e métodos assessores foram omitidos no diagrama
 
 ## 3. Requisitos
 
