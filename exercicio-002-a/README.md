@@ -18,7 +18,6 @@ class Pessoa {
 
 class Aluno {
   -Integer matricula
-  -Integer serie
   -Float media
 }
 
@@ -36,8 +35,8 @@ class Disciplina {
 
 class Turma {
   -LocalDate dataInicio
-  -List< Aluno > alunos
-  -List< Disciplina > disciplinasOfertadas
+  -List < Aluno > alunos
+  -List < Disciplina > disciplinasOfertadas
   +void adicionarAluno(Aluno aluno)
   +void adicionarDisciplina(Disciplina disciplina)
   +void exibirInformacoes()
