@@ -41,19 +41,35 @@ A implementação não se limita à modelagem das classes, mas também prioriza 
 
 Faça **validações**, garantindo que:
 
-- a idade dos jogadores e do técnico seja maior que zero;
-- o salário não seja negativo para jogadores e técnicos;
-- o ano de fundação do time seja um valor válido (por exemplo, não pode ser um ano futuro).
+1. A idade dos jogadores e do técnico seja maior que zero;
+1. O salário não seja negativo para jogadores e técnicos;
+1. O ano de fundação do time seja um valor válido (por exemplo, não pode ser um ano futuro).
 
 > Dica: faça as validações **antes** de atribuir os valores nos atributos!
 
 ## 4. Funcionalidades
 
-- Crie um método na classe **Time** para calcular a média de idade dos jogadores do time.
-- Implemente um método na classe **Time** para exibir todas as informações do time, incluindo o nome, cidade, ano de fundação, informações do técnico e a lista de jogadores.
+1. Crie um método na classe **Time** para calcular a média de idade dos jogadores do time.
+1. Implemente um método na classe **Time** para exibir todas as informações do time, incluindo o nome, cidade, ano de fundação, informações do técnico e a lista de jogadores.
 
 ## 5. Exemplo de uso
 
-![](./assets/code.png)
+```java
+public class Main {
+    public static void main(String[] args) {
+        Jogador jogador1 = new Jogador("Neymar", 29, "Atacante", 500000.0, true);
+        Jogador jogador2 = new Jogador("Casemiro", 29, "Meio-campista", 300000.0, true);
+
+        Tecnico tecnico = new Tecnico("Tite", 60, 1000000.0, 20);
+
+        Time time = new Time("Seleção Brasileira", "Rio de Janeiro", 1914, tecnico);
+        time.adicionarJogador(jogador1);
+        time.adicionarJogador(jogador2);
+
+        System.out.println("Média de idade dos jogadores: " + time.calcularMediaIdade());
+        time.exibirInformacoes();
+    }
+}
+```
 
 [Voltar](../README.md)
