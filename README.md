@@ -12,3 +12,4 @@ Tags: `atributo` `classe` `construtor` `encapsulamento` `lista` `método` `objet
 Tags: `atributo` `classe` `construtor` `localdate` `encapsulamento` `enum` `herança` `lista` `método` `objeto` `uml` `wrapper`
 
 - [Sistema de gerenciamento escolar](./exercicio-002-a/README.md)
+- [Sistema de gerenciamento de corrida automobilística](./exercicio-002-b/README.md)
