@@ -41,7 +41,7 @@ A implementação não se limita apenas à modelagem das classes, mas também pr
 ### Turma
 
 - **Atributos**:
-  - `anoLetivo`: Integer
+  - `dataInicio`: LocalDate
   - `alunos`: List\<Aluno\>
   - `disciplinasOfertadas`: List\<Disciplina\>
 - **Métodos**: construtores (com e sem parâmetros), métodos `get` e `set` para todos os atributos.
@@ -59,7 +59,6 @@ Faça **validações**, garantindo que:
 - A idade de alunos e professores seja maior que zero.
 - O salário não seja negativo para professores.
 - A carga horária das disciplinas seja positiva.
-- O ano letivo da turma seja um valor válido (por exemplo, não pode ser um ano futuro).
 - A matrícula dos alunos seja única dentro de uma turma.
 - A porcentagem aceita para aumento salarial do professor deve ser de 1 a 60%.
 
@@ -80,6 +79,55 @@ Faça **validações**, garantindo que:
 
 ## 6. Exemplo de uso
 
-![](./assets/code.png)
+```java
+public class Main {
+    public static void main(String[] args) {
+        Professor professor1 = new Professor("Carlos", 40, 123, 5000.0);
+        Professor professor2 = new Professor("Ana", 35, 124, 4800.0);
+
+        Disciplina disciplina1 = new Disciplina(DisciplinaEnum.MATEMATICA, 60, professor1);
+        Disciplina disciplina2 = new Disciplina(DisciplinaEnum.PORTUGUES, 45, professor2);
+
+        Aluno aluno1 = new Aluno("Maria", 16, 1001, 5.8);
+        Aluno aluno2 = new Aluno("Pedro", 17, 1002, 8.4);
+        Aluno aluno3 = new Aluno("João", 16, 1003, 5.7);
+        Aluno aluno4 = new Aluno("Isabela", 17, 1004, 6.7);
+        Aluno aluno5 = new Aluno("Ana", 15, 1005, 8.9);
+        Aluno aluno6 = new Aluno("Mariana", 16, 1006, 8.2);
+        Aluno aluno7 = new Aluno("Rafael", 17, 1007, 9.8);
+        Aluno aluno8 = new Aluno("Julia", 15, 1008, 6.0);
+        Aluno aluno9 = new Aluno("Guilherme", 18, 1009, 7.5);
+
+        Turma turma = new Turma(LocalDate.now());
+
+        turma.adicionarAluno(aluno1);
+        turma.adicionarAluno(aluno2);
+        turma.adicionarAluno(aluno3);
+        turma.adicionarAluno(aluno4);
+        turma.adicionarAluno(aluno5);
+        turma.adicionarAluno(aluno6);
+        turma.adicionarAluno(aluno7);
+        turma.adicionarAluno(aluno8);
+        turma.adicionarAluno(aluno9);
+        turma.adicionarDisciplina(disciplina1);
+        turma.adicionarDisciplina(disciplina2);
+
+        professor1.aumentarSalario(12);
+        professor2.aumentarSalario(15);
+
+        System.out.println("Salário do professor de Matemática: " + professor1.getSalario());
+        System.out.println("Salário do professor de Português: " + professor2.getSalario());
+
+        System.out.println("Média de notas dos alunos da turma: " + turma.calcularMediaNotas());
+
+        turma.exibirInformacoes();
+
+        System.out.println("Alunos aprovados:");
+        turma.listarAlunosAprovados(6.0);
+
+        System.out.println("Carga horária total das disciplinas: " + turma.calcularCargaHorariaTotal());
+    }
+}
+```
 
 [Voltar](../README.md)
