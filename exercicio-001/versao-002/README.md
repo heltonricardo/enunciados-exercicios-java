@@ -1,5 +1,7 @@
 # Projeto Java: Sistema de gerenciamento de bandas de K-pop
 
+[Voltar](../../README.md)
+
 ## 1. Descrição
 
 Este projeto tem como objetivo criar um sistema de gerenciamento de bandas de K-pop em Java, abrangendo as principais entidades presentes no cenário musical. As classes principais incluem representações para Membros, Managers e Bandas, proporcionando uma estrutura coesa para a organização e manipulação de informações relacionadas ao universo do K-pop.
@@ -72,4 +74,4 @@ public class Main {
 }
 ```
 
-[Voltar](../README.md)
+[Voltar](../../README.md)
