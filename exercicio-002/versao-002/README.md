@@ -21,7 +21,7 @@ class Pessoa {
 class Piloto {
   -Integer numero
   -Double pontuacao
-  -void atualizarPontuacao()
+  -void atualizarPontuacao(Double valor)
 }
 
 class Tecnico {
@@ -76,7 +76,7 @@ Pessoa <|-- Tecnico
 
 Faça **validações**, garantindo que:
 
-1. A idade dos pilotos e técnicos seja maior que 18.
+1. A idade dos pilotos e técnicos seja maior ou igual a 18.
 1. A pontuação dos pilotos não seja negativa.
 1. O salário dos técnicos da equipe seja positivo.
 1. O modelo e o fabricante dos carros não sejam nulos.
@@ -115,8 +115,8 @@ public class Main {
         Tecnico tecnico1 = new Tecnico("James Allison", 45, 1, 8000.0);
         Tecnico tecnico2 = new Tecnico("Andrew Shovlin", 40, 2, 7500.0);
 
-        tecnico1.aumentarSalario(10);
-        tecnico2.aumentarSalario(15);
+        tecnico1.aumentarSalario(10.87);
+        tecnico2.aumentarSalario(15.13);
 
         Carro carro1 = new Carro("W12", "Mercedes");
         Carro carro2 = new Carro("RB16B", "Red Bull");
