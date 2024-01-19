@@ -16,39 +16,63 @@ classDiagram
 class Pessoa {
   -String nome
   -Integer idade
+  +String getNome()
+  +void setNome(String nome)
+  +Integer getIdade()
+  +void setIdade(Integer idade)
 }
 
 class Piloto {
   -Integer numero
   -Double pontuacao
-  -void atualizarPontuacao(Double valor)
+  +Integer getNumero()
+  +void setNumero(Integer numero)
+  +Double getPontuacao()
+  -void setPontuacao(Double pontuacao)
+  +void atualizarPontuacao(Double valor)
 }
 
 class Tecnico {
   -Integer codigo
   -Double salario
+  +Integer getCodigo()
+  +void setCodigo(Integer codigo)
+  +Double getSalario()
+  +void setSalario(Double salario)
   +void aumentarSalario(Integer bonificacaoPercentual)
 }
 
 class Carro {
   -String modelo
   -String fabricante
+  +String getModelo()
+  +void setModelo(String modelo)
+  +String getFabricante()
+  +void setFabricante(String fabricante)
 }
 
 class Equipe {
   -EquipeEnum nome
-  -List < Piloto > pilotos
-  -List < Tecnico > tecnicos
-  -List < Carro > carros
-  +void adicionarPiloto(Piloto piloto)
-  +void adicionarTecnico(Tecnico tecnico)
-  +void adicionarCarro(Carro carro)
+  -List < Piloto > listaDePilotos
+  -List < Tecnico > listaDeTecnicos
+  -List < Carro > listaDeCarros
+  +EquipeEnum getNome()
+  +void setNome(EquipeEnum nome)
+  +List<Piloto> getListaDePilotos()
+  +List<Tecnico> getListaDeTecnicos()
+  +List<Carro> getListaDeCarros()
+  +void adicionarPiloto(Piloto pilotoParaAdicionar)
+  +void adicionarTecnico(Tecnico tecnicoParaAdicionar)
+  +void adicionarCarro(Carro carroParaAdicionar)
 }
 
 class Corrida {
   -LocalDate dataRealizacao
-  -List < Equipe > equipesParticipantes
-  +void adicionarEquipe(Equipe equipe)
+  -List < Equipe > listaDeEquipesParticipantes
+  +LocalDate getDataRealizacao()
+  +void setDataRealizacao(LocalDate dataRealizacao)
+  +List<Equipe> getEquipesParticipantes()
+  +void adicionarEquipe(Equipe equipeParaAdicionar)
   +void exibirInformacoes()
   +Double calcularPontuacaoTotal()
 }
@@ -70,7 +94,7 @@ Pessoa <|-- Piloto
 Pessoa <|-- Tecnico
 ```
 
-> Os construtores e métodos assessores foram omitidos no diagrama
+> Os construtores foram omitidos no diagrama
 
 ## 3. Requisitos
 
@@ -80,7 +104,6 @@ Faça **validações**, garantindo que:
 1. A pontuação dos pilotos não seja negativa.
 1. O salário dos técnicos da equipe seja positivo.
 1. O modelo e o fabricante dos carros não sejam nulos.
-1. O número do piloto seja único dentro de uma equipe.
 
 > **Dicas**
 >
@@ -90,10 +113,10 @@ Faça **validações**, garantindo que:
 ## 4. Funcionalidades
 
 1. Implemente um método na classe **Piloto** para atualizar a pontuação do piloto, considerando a pontuação atual e uma pontuação (positiva ou negativa) passada por parâmetro para o método.
-1. Implemente um método na classe **Tecnico** para aumentar o salário, considerando o salário atual e um aumento percentual passado por parâmetro para o método (1~30%).
-1. Implemente um método na classe **Equipe** para adicionar um piloto à equipe.
-1. Implemente um método na classe **Equipe** para adicionar um mecânico à equipe.
+1. Implemente um método na classe **Tecnico** para aumentar o salário, considerando o salário atual e um aumento percentual passado por parâmetro para o método (1~30%). Por exemplo: 15 para 15%.
+1. Implemente um método na classe **Equipe** para adicionar um técnico à equipe.
 1. Implemente um método na classe **Equipe** para adicionar um carro à equipe.
+1. Implemente um método na classe **Equipe** para adicionar um piloto à equipe. Atenção: o número do piloto deve ser único dentro de uma equipe.
 1. Implemente um método na classe **Corrida** para adicionar uma equipe à corrida.
 1. Implemente um método na classe **Corrida** para exibir todas as informações da corrida, incluindo a data de realização, as equipes participantes e a pontuação total.
 1. Implemente um método na classe **Corrida** para calcular a pontuação total de todas as equipes participantes.
