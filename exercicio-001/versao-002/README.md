@@ -17,7 +17,7 @@ A implementação não se limita apenas à modelagem das classes, mas também pr
   - `idade`: int
   - `cargo`: String
   - `salario`: float
-  - `statusContrato`: boolean
+  - `contratado`: boolean
 - **Métodos**: construtores (com e sem parâmetros), métodos `get` e `set` para todos os atributos.
 
 ### Manager
