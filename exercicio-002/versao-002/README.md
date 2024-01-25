@@ -58,9 +58,9 @@ class Equipe {
   -List < Carro > listaDeCarros
   +EquipeEnum getNome()
   +void setNome(EquipeEnum nome)
-  +List<Piloto> getListaDePilotos()
-  +List<Tecnico> getListaDeTecnicos()
-  +List<Carro> getListaDeCarros()
+  +List < Piloto > getListaDePilotos()
+  +List < Tecnico > getListaDeTecnicos()
+  +List < Carro > getListaDeCarros()
   +void adicionarPiloto(Piloto pilotoParaAdicionar)
   +void adicionarTecnico(Tecnico tecnicoParaAdicionar)
   +void adicionarCarro(Carro carroParaAdicionar)
@@ -71,7 +71,7 @@ class Corrida {
   -List < Equipe > listaDeEquipesParticipantes
   +LocalDate getDataRealizacao()
   +void setDataRealizacao(LocalDate dataRealizacao)
-  +List<Equipe> getEquipesParticipantes()
+  +List < Equipe > getEquipesParticipantes()
   +void adicionarEquipe(Equipe equipeParaAdicionar)
   +void exibirInformacoes()
   +Double calcularPontuacaoTotal()
