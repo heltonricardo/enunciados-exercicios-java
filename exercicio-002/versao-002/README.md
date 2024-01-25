@@ -103,7 +103,8 @@ Faça **validações**, garantindo que:
 1. A idade dos pilotos e técnicos seja maior ou igual a 18.
 1. A pontuação dos pilotos não seja negativa.
 1. O salário dos técnicos da equipe seja positivo.
-1. O modelo e o fabricante dos carros não sejam nulos.
+1. O modelo e o fabricante dos carros não sejam nulos ou vazios.
+1. O modelo do carro seja gravado com todas as letras em maiúsculo.
 
 > **Dicas**
 >
@@ -112,7 +113,7 @@ Faça **validações**, garantindo que:
 
 ## 4. Funcionalidades
 
-1. Implemente um método na classe **Piloto** para atualizar a pontuação do piloto, considerando a pontuação atual e uma pontuação (positiva ou negativa) passada por parâmetro para o método.
+1. Implemente um método na classe **Piloto** para atualizar a pontuação, considerando a pontuação atual e uma pontuação (positiva ou negativa) passada por parâmetro para o método.
 1. Implemente um método na classe **Tecnico** para aumentar o salário, considerando o salário atual e um aumento percentual passado por parâmetro para o método (1~30%). Por exemplo: 15 para 15%.
 1. Implemente um método na classe **Equipe** para adicionar um técnico à equipe.
 1. Implemente um método na classe **Equipe** para adicionar um carro à equipe.
