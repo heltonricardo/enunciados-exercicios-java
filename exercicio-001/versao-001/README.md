@@ -119,20 +119,20 @@ A implementação não se limita à modelagem das classes, mas também prioriza 
 
 #### 2.3.3. Métodos públicos
 
-| Rótulo                           | Parâmetros                    | Retorno         |
-| :------------------------------- | :---------------------------- | :-------------- |
-| getNome                          |                               | `String`        |
-| setNome                          | nome: `String`                |                 |
-| getCidade                        |                               | `String`        |
-| setCidade                        | cidade: `String`              |                 |
-| getAnoDeFundacao                 |                               | `int`           |
-| setAnoDeFundacao                 | anoDeFundacao: `int`          |                 |
-| getListaDeJogadores              |                               | `List<Jogador>` |
-| getTecnicoResponsavel            |                               | `Tecnico`       |
-| setTecnicoResponsavel            | tecnicoResponsavel: `Tecnico` |                 |
-| adicionarJogador                 | jogador: `Jogador`            |                 |
-| calcularMediaDeIdadeDosJogadores |                               | `float`         |
-| exibirTodasAsInformacoes         |                               |                 |
+| Rótulo                           | Parâmetros                      | Retorno         |
+| :------------------------------- | :------------------------------ | :-------------- |
+| getNome                          |                                 | `String`        |
+| setNome                          | nome: `String`                  |                 |
+| getCidade                        |                                 | `String`        |
+| setCidade                        | cidade: `String`                |                 |
+| getAnoDeFundacao                 |                                 | `int`           |
+| setAnoDeFundacao                 | anoDeFundacao: `int`            |                 |
+| getListaDeJogadores              |                                 | `List<Jogador>` |
+| getTecnicoResponsavel            |                                 | `Tecnico`       |
+| setTecnicoResponsavel            | tecnicoResponsavel: `Tecnico`   |                 |
+| adicionarJogador                 | jogadorParaAdicionar: `Jogador` |                 |
+| calcularMediaDeIdadeDosJogadores |                                 | `float`         |
+| exibirTodasAsInformacoes         |                                 |                 |
 
 ## 3. Requisitos
 
