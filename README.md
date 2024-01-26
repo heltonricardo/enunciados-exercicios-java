@@ -11,7 +11,7 @@ Tags: `atributo` `classe` `construtor` `encapsulamento` `get/set` `lista` `méto
 
 ## Exercício 002
 
-Tags: `atributo` `classe` `construtor` `localdate` `encapsulamento` `enum` `get/set` `herança` `lista` `método` `objeto` `string` `uml` `wrapper`
+Tags: `atributo` `classe` `construtor` `localdate` `encapsulamento` `enum` `get/set` `herança` `lista` `método` `objeto` `operador lógico` `string` `uml` `wrapper`
 
 - [Sistema de gerenciamento escolar](./exercicio-002/versao-001/README.md)
 - [Sistema de gerenciamento de corrida automobilística](./exercicio-002/versao-002/README.md)
