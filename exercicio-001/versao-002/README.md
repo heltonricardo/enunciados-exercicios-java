@@ -130,7 +130,7 @@ A implementação não se limita apenas à modelagem das classes, mas também pr
 | getListaDeMembros              |                               | `List<Membro>` |
 | getManagerResponsavel          |                               | `Manager`      |
 | setManagerResponsavel          | managerResponsavel: `Manager` |                |
-| adicionarMembro                | membro: `Membro`              |                |
+| adicionarMembro                | membroParaAdicionar: `Membro` |                |
 | calcularMediaDeIdadeDosMembros |                               | `float`        |
 | exibirTodasAsInformacoes       |                               |                |
 
