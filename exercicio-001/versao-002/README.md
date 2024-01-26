@@ -108,8 +108,8 @@ A implementação não se limita apenas à modelagem das classes, mas também pr
 | nome               | `String`       |
 | agencia            | `String`       |
 | anoDeEstreia       | `int`          |
-| listaDeMembros     | `List<Membro>` |
 | managerResponsavel | `Manager`      |
+| listaDeMembros     | `List<Membro>` |
 
 #### 2.3.2. Construtores públicos
 
@@ -127,9 +127,9 @@ A implementação não se limita apenas à modelagem das classes, mas também pr
 | setAgencia                     | agencia: `String`             |                |
 | getAnoDeEstreia                |                               | `int`          |
 | setAnoDeEstreia                | anoDeEstreia: `int`           |                |
-| getListaDeMembros              |                               | `List<Membro>` |
 | getManagerResponsavel          |                               | `Manager`      |
 | setManagerResponsavel          | managerResponsavel: `Manager` |                |
+| getListaDeMembros              |                               | `List<Membro>` |
 | adicionarMembro                | membroParaAdicionar: `Membro` |                |
 | calcularMediaDeIdadeDosMembros |                               | `float`        |
 | exibirTodasAsInformacoes       |                               |                |
