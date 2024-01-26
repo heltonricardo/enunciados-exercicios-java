@@ -132,7 +132,7 @@ public class Main {
         Piloto piloto2 = new Piloto("Max Verstappen", 24, 33);
         Piloto piloto3 = new Piloto("Charles Leclerc", 23, 16);
 
-        piloto1.atualizarPontuacao(25);
+        piloto1.atualizarPontuacao(-8);
         piloto2.atualizarPontuacao(18);
         piloto3.atualizarPontuacao(15);
 
