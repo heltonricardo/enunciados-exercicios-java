@@ -108,8 +108,8 @@ A implementação não se limita à modelagem das classes, mas também prioriza 
 | nome               | `String`        |
 | cidade             | `String`        |
 | anoDeFundacao      | `int`           |
-| listaDeJogadores   | `List<Jogador>` |
 | tecnicoResponsavel | `Tecnico`       |
+| listaDeJogadores   | `List<Jogador>` |
 
 #### 2.3.2. Construtores públicos
 
@@ -127,9 +127,9 @@ A implementação não se limita à modelagem das classes, mas também prioriza 
 | setCidade                        | cidade: `String`                |                 |
 | getAnoDeFundacao                 |                                 | `int`           |
 | setAnoDeFundacao                 | anoDeFundacao: `int`            |                 |
-| getListaDeJogadores              |                                 | `List<Jogador>` |
 | getTecnicoResponsavel            |                                 | `Tecnico`       |
 | setTecnicoResponsavel            | tecnicoResponsavel: `Tecnico`   |                 |
+| getListaDeJogadores              |                                 | `List<Jogador>` |
 | adicionarJogador                 | jogadorParaAdicionar: `Jogador` |                 |
 | calcularMediaDeIdadeDosJogadores |                                 | `float`         |
 | exibirTodasAsInformacoes         |                                 |                 |
