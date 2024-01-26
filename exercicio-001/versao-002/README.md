@@ -156,10 +156,10 @@ Faça **validações**, garantindo que:
 ```java
 public class Main {
     public static void main(String[] args) {
-        Membro membro1 = new Membro("Jimin", 25, "Vocalista", 300000.0, true);
-        Membro membro2 = new Membro("Jungkook", 24, "Maknae", 350000.0, true);
+        Membro membro1 = new Membro("Jimin", 25, "Vocalista", 300000.0F, true);
+        Membro membro2 = new Membro("Jungkook", 24, "Maknae", 350000.0F, true);
 
-        Manager manager = new Manager("Bang Si-hyuk", 45, 1500000.0, 15);
+        Manager manager = new Manager("Bang Si-hyuk", 45, 1500000.0F, 15);
 
         Banda banda = new Banda("BTS", "Big Hit Entertainment", 2013, manager);
         banda.adicionarMembro(membro1);
