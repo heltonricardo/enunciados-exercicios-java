@@ -20,6 +20,7 @@ class Pessoa {
   +void setNome(String nome)
   +Integer getIdade()
   +void setIdade(Integer idade)
+  +String toString()
 }
 
 class Aluno {
@@ -30,6 +31,7 @@ class Aluno {
   +Float getMedia()
   -void setMedia(Float media)
   +void atualizarMedia(Float nota)
+  +String toString()
 }
 
 class Professor {
@@ -40,6 +42,7 @@ class Professor {
   +Double getSalario()
   +void setSalario(Double salario)
   +void aumentarSalario(Integer bonificacaoPercentual)
+  +String toString()
 }
 
 class Disciplina {
@@ -53,6 +56,7 @@ class Disciplina {
   +void setCargaHoraria(Integer cargaHoraria)
   +Professor getProfessorResponsavel()
   +void setProfessorResponsavel(Professor professorResponsavel)
+  +String toString()
 }
 
 class Turma {
@@ -69,6 +73,7 @@ class Turma {
   +Integer calcularCargaHorariaTotal()
   +Float calcularMediaDasNotas()
   +void listarAlunosAprovados(Float mediaMinima)
+  +String toString()
 }
 
 class DisciplinaEnum {
@@ -89,7 +94,7 @@ Pessoa <|-- Aluno
 Pessoa <|-- Professor
 ```
 
-> Os construtores foram omitidos no diagrama
+> Os construtores foram omitidos no diagrama. Verifique os códigos de exemplo para descobrir como são as assinaturas dos construtores de cada classe.
 
 ## 3. Requisitos
 
@@ -117,6 +122,7 @@ Faça **validações**, garantindo que:
 1. Implemente um método na classe **Turma** para calcular a média de notas dos alunos da turma.
 1. Implemente um método na classe **Turma** para exibir todas as informações da turma, incluindo o ano letivo, a lista de alunos e as disciplinas ofertadas.
 1. Implemente um método na classe **Turma** para listar os alunos aprovados, considerando uma média mínima para aprovação. Essa média mínima deve ser um parâmetro configurável.
+1. Implemente um método `toString` para cada uma das classes: **Pessoa**, **Aluno**, **Professor**, **Disciplina** e **Turma**. Para classes que usam composição, o método `toString` deve chamar os métodos `toString` das classes referenciadas. Por exemplo, o `toString` da classe **Disciplina** deve chamar o `toString` da classe **Professor**.
 
 ## 5. Exemplo de uso
 
