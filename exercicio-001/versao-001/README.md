@@ -88,16 +88,16 @@ A implementação não se limita à modelagem das classes, mas também prioriza 
 
 #### 2.2.3. Métodos públicos
 
-| Rótulo               | Parâmetros             | Retorno  |
-| :------------------- | :--------------------- | :------- |
-| getNome              |                        | `String` |
-| setNome              | nome: `String`         |          |
-| getIdade             |                        | `int`    |
-| setIdade             | idade: `int`           |          |
-| getSalario           |                        | `float`  |
-| setSalario           | salario: `float`       |          |
-| getAnosDeExperiencia |                        | `int`    |
-| setAnosDeExperiencia | anosExperiencia: `int` |          |
+| Rótulo               | Parâmetros               | Retorno  |
+| :------------------- | :----------------------- | :------- |
+| getNome              |                          | `String` |
+| setNome              | nome: `String`           |          |
+| getIdade             |                          | `int`    |
+| setIdade             | idade: `int`             |          |
+| getSalario           |                          | `float`  |
+| setSalario           | salario: `float`         |          |
+| getAnosDeExperiencia |                          | `int`    |
+| setAnosDeExperiencia | anosDeExperiencia: `int` |          |
 
 ### 2.3. Time
 
