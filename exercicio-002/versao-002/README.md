@@ -20,6 +20,7 @@ class Pessoa {
   +void setNome(String nome)
   +Integer getIdade()
   +void setIdade(Integer idade)
+  +String toString()
 }
 
 class Piloto {
@@ -30,6 +31,7 @@ class Piloto {
   +Double getPontuacao()
   -void setPontuacao(Double pontuacao)
   +void atualizarPontuacao(Double valor)
+  +String toString()
 }
 
 class Tecnico {
@@ -40,6 +42,7 @@ class Tecnico {
   +Double getSalario()
   +void setSalario(Double salario)
   +void aumentarSalario(Integer bonificacaoPercentual)
+  +String toString()
 }
 
 class Carro {
@@ -49,6 +52,7 @@ class Carro {
   +void setModelo(String modelo)
   +String getFabricante()
   +void setFabricante(String fabricante)
+  +String toString()
 }
 
 class Equipe {
@@ -64,6 +68,7 @@ class Equipe {
   +void adicionarPiloto(Piloto pilotoParaAdicionar)
   +void adicionarTecnico(Tecnico tecnicoParaAdicionar)
   +void adicionarCarro(Carro carroParaAdicionar)
+  +String toString()
 }
 
 class Corrida {
@@ -75,6 +80,7 @@ class Corrida {
   +void adicionarEquipe(Equipe equipeParaAdicionar)
   +void exibirInformacoes()
   +Double calcularPontuacaoTotal()
+  +String toString()
 }
 
 class EquipeEnum {
@@ -94,7 +100,7 @@ Pessoa <|-- Piloto
 Pessoa <|-- Tecnico
 ```
 
-> Os construtores foram omitidos no diagrama
+> Os construtores foram omitidos no diagrama. Verifique os códigos de exemplo para descobrir como são as assinaturas dos construtores de cada classe.
 
 ## 3. Requisitos
 
@@ -121,6 +127,7 @@ Faça **validações**, garantindo que:
 1. Implemente um método na classe **Corrida** para adicionar uma equipe à corrida.
 1. Implemente um método na classe **Corrida** para exibir todas as informações da corrida, incluindo a data de realização, as equipes participantes e a pontuação total.
 1. Implemente um método na classe **Corrida** para calcular a pontuação total de todas as equipes participantes.
+1. Implemente um método `toString` para cada uma das classes: **Pessoa**, **Piloto**, **Tecnico**, **Carro**, **Equipe** e **Corrida**. Para classes que usam composição, o método `toString` deve chamar os métodos `toString` das classes referenciadas. Por exemplo, o `toString` da classe **Corrida** deve chamar o `toString` da classe **Equipe**.
 
 ## 5. Exemplo de uso
 
