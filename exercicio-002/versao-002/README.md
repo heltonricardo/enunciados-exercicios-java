@@ -138,9 +138,10 @@ public class Main {
         Piloto piloto2 = new Piloto("Max Verstappen", 24, 33);
         Piloto piloto3 = new Piloto("Charles Leclerc", 23, 16);
 
-        piloto1.atualizarPontuacao(-8);
+        piloto1.atualizarPontuacao(28);
         piloto2.atualizarPontuacao(18);
         piloto3.atualizarPontuacao(15);
+        piloto1.atualizarPontuacao(-7);
 
         Tecnico tecnico1 = new Tecnico("James Allison", 45, 1, 8000.0);
         Tecnico tecnico2 = new Tecnico("Andrew Shovlin", 40, 2, 7500.0);
