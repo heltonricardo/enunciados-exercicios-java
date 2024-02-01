@@ -76,11 +76,10 @@ class Corrida {
   -List < Equipe > listaDeEquipesParticipantes
   +LocalDate getDataRealizacao()
   +void setDataRealizacao(LocalDate dataRealizacao)
-  +List < Equipe > getEquipesParticipantes()
+  +List < Equipe > getListaDeEquipesParticipantes()
   +void adicionarEquipe(Equipe equipeParaAdicionar)
-  +void exibirInformacoes()
   +Double calcularPontuacaoTotal()
-  +String toString()
+  +void exibirInformacoes()
 }
 
 class EquipeEnum {
@@ -125,9 +124,9 @@ Faça **validações**, garantindo que:
 1. Implemente um método na classe **Equipe** para adicionar um carro à equipe.
 1. Implemente um método na classe **Equipe** para adicionar um piloto à equipe. Atenção: o número do piloto deve ser único dentro de uma equipe.
 1. Implemente um método na classe **Corrida** para adicionar uma equipe à corrida.
-1. Implemente um método na classe **Corrida** para exibir todas as informações da corrida, incluindo a data de realização, as equipes participantes e a pontuação total.
 1. Implemente um método na classe **Corrida** para calcular a pontuação total de todas as equipes participantes.
-1. Implemente um método `toString` para cada uma das classes: **Pessoa**, **Piloto**, **Tecnico**, **Carro**, **Equipe** e **Corrida**. Para classes que usam composição, o método `toString` deve chamar os métodos `toString` das classes referenciadas. Por exemplo, o `toString` da classe **Corrida** deve chamar o `toString` da classe **Equipe**.
+1. Implemente um método `toString` para cada uma das classes: **Pessoa**, **Piloto**, **Tecnico**, **Carro** e **Equipe**. Para classes que usam composição, o método `toString` deve chamar os métodos `toString` das classes referenciadas. Por exemplo, o `toString` da classe **Equipe** deve chamar o `toString` da classe **Equipe**.
+1. Implemente um método na classe **Corrida** para exibir todas as informações da corrida, incluindo a data de realização, as equipes participantes e a pontuação total. Esse método deve referenciar os métodos `toSting` das classes que a compõe.
 
 ## 5. Exemplo de uso
 
