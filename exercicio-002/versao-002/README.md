@@ -126,7 +126,7 @@ Faça **validações**, garantindo que:
 1. Implemente um método na classe **Corrida** para adicionar uma equipe à corrida.
 1. Implemente um método na classe **Corrida** para calcular a pontuação total de todas as equipes participantes.
 1. Implemente um método `toString` para cada uma das classes: **Pessoa**, **Piloto**, **Tecnico**, **Carro** e **Equipe**. Para classes que usam composição, o método `toString` deve chamar os métodos `toString` das classes referenciadas. Por exemplo, o `toString` da classe **Equipe** deve chamar o `toString` da classe **Piloto**.
-1. Implemente um método na classe **Corrida** para exibir todas as informações da corrida, incluindo a data de realização, as equipes participantes e a pontuação total. Esse método deve referenciar os métodos `toSting` das classes que a compõe.
+1. Implemente um método na classe **Corrida** para exibir todas as informações da corrida, incluindo a data de realização, as equipes participantes e a pontuação total. Esse método deve referenciar os métodos `toString` das classes que a compõe.
 
 ## 5. Exemplo de uso
 
