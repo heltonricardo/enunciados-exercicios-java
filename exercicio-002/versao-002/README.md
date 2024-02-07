@@ -63,12 +63,15 @@ class Equipe {
   +EquipeEnum getNome()
   +void setNome(EquipeEnum nome)
   +List < Piloto > getListaDePilotos()
+  -void setListaDePilotos(List < Piloto > listaDePilotos)
   +List < Tecnico > getListaDeTecnicos()
+  -void setListaDeTecnicos(List < Tecnico > listaDeTecnicos)
   +List < Carro > getListaDeCarros()
+  -void setListaDeCarros(List < Carro > listaDeCarros)
   +void adicionarPiloto(Piloto pilotoParaAdicionar)
   +void adicionarTecnico(Tecnico tecnicoParaAdicionar)
   +void adicionarCarro(Carro carroParaAdicionar)
-  +String toString()
+  +void exibirInformacoes()
 }
 
 class Corrida {
@@ -77,6 +80,7 @@ class Corrida {
   +LocalDate getDataRealizacao()
   +void setDataRealizacao(LocalDate dataRealizacao)
   +List < Equipe > getListaDeEquipesParticipantes()
+  -void setListaDeEquipesParticipantes(List < Equipe > listaDeEquipesParticipantes)
   +void adicionarEquipe(Equipe equipeParaAdicionar)
   +Double calcularPontuacaoTotal()
   +void exibirInformacoes()
@@ -100,6 +104,8 @@ Pessoa <|-- Tecnico
 ```
 
 > Os construtores foram omitidos no diagrama. Verifique os códigos de exemplo para descobrir como são as assinaturas dos construtores de cada classe.
+
+> Procure usar a chamada dos métodos `set` dentro dos construtores em vez de atribuir os valores diretamente nos atributos.
 
 ## 3. Requisitos
 
@@ -125,8 +131,9 @@ Faça **validações**, garantindo que:
 1. Implemente um método na classe **Equipe** para adicionar um piloto à equipe. Atenção: o número do piloto deve ser único dentro de uma equipe.
 1. Implemente um método na classe **Corrida** para adicionar uma equipe à corrida.
 1. Implemente um método na classe **Corrida** para calcular a pontuação total de todas as equipes participantes.
-1. Implemente um método `toString` para cada uma das classes: **Pessoa**, **Piloto**, **Tecnico**, **Carro** e **Equipe**. Para classes que usam composição, o método `toString` deve chamar os métodos `toString` das classes referenciadas. Por exemplo, o `toString` da classe **Equipe** deve chamar o `toString` da classe **Piloto**.
-1. Implemente um método na classe **Corrida** para exibir todas as informações da corrida, incluindo a data de realização, as equipes participantes e a pontuação total. Esse método deve referenciar os métodos `toString` das classes que a compõe.
+1. Implemente o método `toString` para cada uma das classes: **Pessoa**, **Piloto**, **Tecnico**, **Carro**. As subclasses devem chamar os métodos `toString` da superclasse através do `super` para compor o seu `toString`.
+1. Implemente um método na classe **Equipe** para exibir todas as informações da equipe. Esse método deve chamar os métodos `toString` das classes que a compõe.
+1. Implemente um método na classe **Corrida** para exibir todas as informações da corrida, incluindo a data de realização, as equipes participantes e a pontuação total. Esse método deve chamar o método `exibirInformacoes` e cada objeto `Equipe` em sua lista.
 
 ## 5. Exemplo de uso
 
@@ -167,9 +174,6 @@ public class Main {
         corrida.adicionarEquipe(equipe2);
 
         corrida.exibirInformacoes();
-
-        Double pontuacaoTotal = corrida.calcularPontuacaoTotal();
-        System.out.println("Pontuação total da corrida: " + pontuacaoTotal);
     }
 }
 ```
