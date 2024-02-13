@@ -1,6 +1,20 @@
 # Projeto Java: Sistema de gerenciamento escolar
 
+O projeto visa desenvolver um sistema de gerenciamento escolar em Java, com classes para Alunos, Professores, Disciplinas e Turmas, focando na organização e manipulação eficiente de informações acadêmicas, com implementação de funcionalidades que agregam valor ao sistema.
+
 [Voltar](../../README.md)
+
+# Índice
+
+<!-- TOC -->
+
+- [1. Descrição](#1-descri%C3%A7%C3%A3o)
+- [2. Componentes](#2-componentes)
+- [3. Requisitos](#3-requisitos)
+- [4. Funcionalidades](#4-funcionalidades)
+- [5. Exemplo de uso](#5-exemplo-de-uso)
+
+<!-- /TOC -->
 
 ## 1. Descrição
 
