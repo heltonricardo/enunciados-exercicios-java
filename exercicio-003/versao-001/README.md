@@ -2,6 +2,8 @@
 
 Este projeto Java tem como objetivo criar um sistema de gerenciamento de filmes, incorporando classes para atores, diretores, críticos e outras entidades, com ênfase em funcionalidades avançadas que aprimoram o sistema.
 
+> ⚠ Sob construção
+
 [Voltar](../../README.md)
 
 # Índice
@@ -173,3 +175,7 @@ Avaliavel <.. Estudio
 Avaliavel <.. Filme
 
 ```
+
+> ⚠ Sob construção
+
+[Voltar](../../README.md)
