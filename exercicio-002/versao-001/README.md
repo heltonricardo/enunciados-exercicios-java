@@ -77,7 +77,7 @@ class Turma {
 }
 
 class DisciplinaEnum {
-  <<enumeration>>
+  <<Enumeration>>
   MATEMATICA
   PORTUGUES
   CIENCIAS

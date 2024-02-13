@@ -87,7 +87,7 @@ class Corrida {
 }
 
 class EquipeEnum {
-  <<enumeration>>
+  <<Enumeration>>
   MERCEDES
   FERRARI
   RED_BULL
