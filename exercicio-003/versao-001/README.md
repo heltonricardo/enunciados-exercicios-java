@@ -44,6 +44,7 @@ class VeiculoDeCritica {
   JORNAL,
   CANAL_YOUTUBE,
   PODCAST
+  +String toString()
 }
 
 class Classificacao {
@@ -54,6 +55,7 @@ class Classificacao {
   MAIOR_14
   MAIOR_16
   MAIOR_18
+  +String toString()
 }
 
 class Genero {
@@ -67,6 +69,7 @@ class Genero {
   ROMANCE
   SUSPENSE
   OUTRO
+  +String toString()
 }
 
 class Ator {
@@ -173,7 +176,6 @@ Ator <|-- AtorCoadjuvante
 
 Avaliavel <.. Estudio
 Avaliavel <.. Filme
-
 ```
 
 > ⚠ Sob construção
