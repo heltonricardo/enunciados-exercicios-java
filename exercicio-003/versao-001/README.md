@@ -113,19 +113,19 @@ class Estudio {
   -String nome
   -Boolean independente
   -List < Avaliacao > avaliacoes
+  -void setAvaliacoes(List < Avaliacao > avaliacoes)
   +String getNome()
   +void setNome(String nome)
   +Boolean isIndependente()
   +void setIndependente(Boolean independente)
   +List < Avaliacao > getAvaliacoes()
-  -void setAvaliacoes(List < Avaliacao > avaliacoes)
   +String toString()
 }
 
 class Filme {
   -String titulo
   -LocalTime tempoDeDuracao;
-  -LocalDate DataDeLancamento;
+  -LocalDate dataDeLancamento;
   -Diretor diretor
   -Genero genero
   -Estudio estudio
