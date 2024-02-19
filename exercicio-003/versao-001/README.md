@@ -30,7 +30,7 @@ classDiagram
 class Pessoa {
   <<Abstract>>
   -String nome
-  -Integer idade
+  #Integer idade
   +String getNome()
   +void setNome(String nome)
   +Integer getIdade()
