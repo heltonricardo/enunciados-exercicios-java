@@ -189,7 +189,7 @@ Faça **validações**, garantindo que:
 1. A nacionalidade dos diretores não seja nula, vazia ou apenas espaços em branco;
 1. O título dos filmes não seja nulo, vazio ou apenas espaços em branco;
 1. O tempo de duração dos filmes seja positivo;
-1. A data de lançamento dos filmes seja anterior ou igual à data atual;
+1. A data e horário de lançamento dos filmes seja anterior ou igual à data e horário atuais;
 1. O nome do estúdio dos filmes não seja nulo, vazio ou apenas espaços em branco;
 1. A pontuação das avaliações dos filmes esteja dentro do intervalo de **0.0** a **10.0**;
 1. O atributo de independência dos estúdios seja um valor verdadeiro ou falso;
