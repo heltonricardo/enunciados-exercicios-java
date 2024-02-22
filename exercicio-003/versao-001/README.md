@@ -192,6 +192,7 @@ Faça **validações**, garantindo que:
 1. A data e horário de lançamento dos filmes seja anterior à data e horário atual;
 1. O nome do estúdio dos filmes não seja nulo, vazio ou apenas espaços em branco;
 1. A pontuação das avaliações dos filmes esteja dentro do intervalo de **0.0** a **10.0**;
+1. A pontuação das avaliações dos estúdios esteja dentro do intervalo de **0.0** a **5.0**;
 1. O atributo de independência dos estúdios seja um valor verdadeiro ou falso;
 1. O número de anos de experiência dos atores principais seja positivo;
 1. Cada filme possua pelo menos um diretor associado;
