@@ -124,8 +124,8 @@ class Estudio {
 
 class Filme {
   -String titulo
-  -LocalTime tempoDeDuracao;
-  -LocalDate dataDeLancamento;
+  -Duration tempoDeDuracao;
+  -LocalDateTime dataHorarioDeLancamento;
   -Diretor diretor
   -Genero genero
   -Estudio estudio
@@ -135,10 +135,10 @@ class Filme {
   -void setAvaliacoes(List < Avaliacao > avaliacoes)
   +String getTitulo()
   +void setTitulo(String titulo)
-  +LocalTime getTempoDeDuracao()
-  +void setTempoDeDuracao(LocalTime tempoDeDuracao)
-  +LocalDate getDataDeLancamento()
-  +void setDataDeLancamento(LocalDate DataDeLancamento)
+  +Duration getTempoDeDuracao()
+  +void setTempoDeDuracao(Duration tempoDeDuracao)
+  +LocalDate getDataHorarioDeLancamento()
+  +void setDataHorarioDeLancamento(LocalDate DataHorarioDeLancamento)
   +Diretor getDiretor()
   +void setDiretor(Diretor diretor)
   +Genero getGenero()
