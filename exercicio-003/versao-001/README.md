@@ -13,6 +13,7 @@ Este projeto Java tem como objetivo criar um sistema de gerenciamento de filmes,
 - [1. Descrição](#1-descri%C3%A7%C3%A3o)
 - [2. Componentes](#2-componentes)
 - [3. Requisitos](#3-requisitos)
+- [4. Funcionalidades](#4-funcionalidades)
 
 <!-- /TOC -->
 
@@ -119,7 +120,7 @@ class Estudio {
   +Boolean isIndependente()
   +void setIndependente(Boolean independente)
   +List < Avaliacao > getAvaliacoes()
-  +String toString()
+  +void exibirInformacoes()
 }
 
 class Filme {
@@ -148,6 +149,7 @@ class Filme {
   +List < Ator > getElenco()
   +List < Avaliacao > getAvaliacoes()
   +void adicionarAtor(Ator ator)
+  +void exibirAvaliacoes()
   +void exibirInformacoes()
 }
 
@@ -184,23 +186,38 @@ Avaliavel <.. Filme
 Faça **validações**, garantindo que:
 
 1. A idade dos diretores e críticos seja maior ou igual a **18** anos;
-1. A idade dos atores seja maior ou igual a **5** anos. Para isso, sobrescreva o `setIdade` da superclasse;
-1. O grau de fama dos atores coadjuvantes esteja dentro do intervalo de **0.0** a **10.0**;
-1. A nacionalidade dos diretores não seja nula, vazia ou apenas espaços em branco;
-1. O título dos filmes não seja nulo, vazio ou apenas espaços em branco;
-1. O tempo de duração dos filmes seja positivo;
-1. A data e horário de lançamento dos filmes seja anterior à data e horário atual;
-1. O nome do estúdio dos filmes não seja nulo, vazio ou apenas espaços em branco;
-1. A pontuação das avaliações dos filmes esteja dentro do intervalo de **0.0** a **10.0**;
-1. A pontuação das avaliações dos estúdios esteja dentro do intervalo de **0.0** a **5.0**;
-1. O atributo de independência dos estúdios seja um valor verdadeiro ou falso;
-1. O número de anos de experiência dos atores principais seja positivo;
-1. Cada filme possua pelo menos um diretor associado;
-1. Cada filme possua pelo menos um ator principal;
-1. Cada estúdio possua um nome exclusivo, sem repetições;
-1. Cada filme possua um título único, sem repetições;
-1. Cada ator possua um nome exclusivo, sem repetições;
-1. Cada diretor possua um nome exclusivo, sem repetições;
+2. A idade dos atores seja maior ou igual a **5** anos. Para isso, sobrescreva o `setIdade` da superclasse;
+3. O grau de fama dos atores coadjuvantes esteja dentro do intervalo de **0.0** a **10.0**;
+4. A nacionalidade dos diretores não seja nula, vazia ou apenas espaços em branco;
+5. O título dos filmes não seja nulo, vazio ou apenas espaços em branco;
+6. O tempo de duração dos filmes seja positivo;
+7. A data e horário de lançamento dos filmes seja anterior à data e horário atual;
+8. O nome do estúdio dos filmes não seja nulo, vazio ou apenas espaços em branco;
+9. A pontuação das avaliações dos filmes esteja dentro do intervalo de **0.0** a **10.0**;
+10. A pontuação das avaliações dos estúdios esteja dentro do intervalo de **0.0** a **5.0**;
+11. O atributo de independência dos estúdios seja um valor verdadeiro ou falso;
+12. O número de anos de experiência dos atores principais seja positivo;
+13. Cada filme possua pelo menos um diretor associado;
+14. Cada filme possua pelo menos um ator principal;
+15. Cada filme possua um título único em um estúdio, sem repetições;
+16. Cada ator possua um nome exclusivo em um filme, sem repetições;
+17. Cada diretor possua um nome exclusivo em um filme, sem repetições;
+
+## 4. Funcionalidades
+
+1. Implemente um método na classe **Filme** para calcular a classificação indicativa do filme com base na idade dos atores principais. Considere que a classificação indicativa será a menor entre as idades dos atores principais mais 5 anos. Por exemplo, se o filme tem um ator principal com 15 anos e outro com 30 anos, a classificação indicativa será de 20 anos.
+2. Implemente um método na classe **Filme** para calcular a média das avaliações do filme.
+3. Implemente um método na classe **Estudio** para calcular a média das avaliações de todos os filmes produzidos pelo estúdio.
+4. Implemente um método na classe **Filme** para exibir as informações das avaliações do filme, incluindo o nome do crítico e a pontuação atribuída. Este método deve chamar os métodos `toString` das classes que compõem a avaliação.
+5. Implemente um método na classe **Estudio** para exibir as informações das avaliações de todos os filmes produzidos pelo estúdio, incluindo o título do filme e a pontuação atribuída. Este método deve chamar os métodos `toString` das classes que compõem a avaliação.
+6. Implemente um método na classe **Filme** para exibir a classificação indicativa do filme calculada pelo sistema.
+7. Implemente um método na classe **Filme** para exibir a média das avaliações do filme.
+8. Implemente um método na classe **Estudio** para exibir a média das avaliações de todos os filmes produzidos pelo estúdio.
+9. Implemente um método na classe **Ator** para calcular a média de idade dos atores coadjuvantes associados a ele. Considere apenas os atores coadjuvantes válidos, ou seja, aqueles com grau de fama dentro do intervalo de 0.0 a 10.0.
+10. Implemente um método na classe **Diretor** para adicionar um novo filme dirigido por ele à lista de filmes dirigidos.
+11. Implemente um método na classe **Diretor** para calcular a média da duração dos filmes dirigidos por ele.
+12. Implemente um método na classe **Estudio** para adicionar um novo filme produzido pelo estúdio à lista de filmes produzidos.
+13. Implemente um método na classe **Estudio** para calcular a média da duração dos filmes produzidos pelo estúdio.
 
 > ⚠ Sob construção
 
