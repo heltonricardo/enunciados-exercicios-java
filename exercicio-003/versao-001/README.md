@@ -199,9 +199,7 @@ Faça **validações**, garantindo que:
 12. O número de anos de experiência dos atores principais seja positivo;
 13. Cada filme possua pelo menos um diretor associado;
 14. Cada filme possua pelo menos um ator principal;
-15. Cada filme possua um título único em um estúdio, sem repetições;
-16. Cada ator possua um nome exclusivo em um filme, sem repetições;
-17. Cada diretor possua um nome exclusivo em um filme, sem repetições;
+15. Cada ator possua um nome exclusivo em um filme, sem repetições;
 
 ## 4. Funcionalidades
 
