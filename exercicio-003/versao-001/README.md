@@ -151,14 +151,14 @@ class Filme {
   +void adicionarAtor(Ator ator)
   +void exibirAvaliacoes()
   +void exibirInformacoes()
-  +Classificacao retornarClassificacao() 
+  +Classificacao calcularClassificacao()
 }
 
 class Avaliavel {
   <<Interface>>
   +void adicionarAvaliacao(Avaliacao avaliacao)
   +void limparAvaliacoes()
-  +Double calcularMediaAvaliacoes()
+  +Double calcularMediaDasAvaliacoes()
 }
 
 class Avaliacao {
@@ -205,18 +205,16 @@ Faça **validações**, garantindo que:
 ## 4. Funcionalidades
 
 1. Implemente um método na classe **Filme** para calcular a classificação indicativa do filme com base na idade dos atores principais. Considere que a classificação indicativa será a menor entre as idades dos atores principais mais 5 anos. Por exemplo, se o filme tem um ator principal com 15 anos e outro com 30 anos, a classificação indicativa será de 20 anos.
-2. Implemente um método na classe **Filme** para calcular a média das avaliações do filme.
-3. Implemente um método na classe **Estudio** para calcular a média das avaliações de todos os filmes produzidos pelo estúdio.
-4. Implemente um método na classe **Filme** para exibir as informações das avaliações do filme, incluindo o nome do crítico e a pontuação atribuída. Este método deve chamar os métodos `toString` das classes que compõem a avaliação.
-5. Implemente um método na classe **Estudio** para exibir as informações das avaliações de todos os filmes produzidos pelo estúdio, incluindo o título do filme e a pontuação atribuída. Este método deve chamar os métodos `toString` das classes que compõem a avaliação.
-6. Implemente um método na classe **Filme** para exibir a classificação indicativa do filme calculada pelo sistema.
-7. Implemente um método na classe **Filme** para exibir a média das avaliações do filme.
-8. Implemente um método na classe **Estudio** para exibir a média das avaliações de todos os filmes produzidos pelo estúdio.
-9. Implemente um método na classe **Ator** para calcular a média de idade dos atores coadjuvantes associados a ele. Considere apenas os atores coadjuvantes válidos, ou seja, aqueles com grau de fama dentro do intervalo de 0.0 a 10.0.
-10. Implemente um método na classe **Diretor** para adicionar um novo filme dirigido por ele à lista de filmes dirigidos.
-11. Implemente um método na classe **Diretor** para calcular a média da duração dos filmes dirigidos por ele.
-12. Implemente um método na classe **Estudio** para adicionar um novo filme produzido pelo estúdio à lista de filmes produzidos.
-13. Implemente um método na classe **Estudio** para calcular a média da duração dos filmes produzidos pelo estúdio.
+2. Implemente um método na classe **Filme** para exibir as informações das avaliações do filme, incluindo o nome do crítico e a pontuação atribuída. Este método deve chamar os métodos `toString` das classes que compõem a avaliação.
+3. Implemente um método na classe **Estudio** para exibir as informações das avaliações de todos os filmes produzidos pelo estúdio, incluindo o título do filme e a pontuação atribuída. Este método deve chamar os métodos `toString` das classes que compõem a avaliação.
+4. Implemente um método na classe **Filme** para exibir a classificação indicativa do filme calculada pelo sistema.
+5. Implemente um método na classe **Filme** para exibir a média das avaliações do filme.
+6. Implemente um método na classe **Estudio** para exibir a média das avaliações de todos os filmes produzidos pelo estúdio.
+7. Implemente um método na classe **Ator** para calcular a média de idade dos atores coadjuvantes associados a ele. Considere apenas os atores coadjuvantes válidos, ou seja, aqueles com grau de fama dentro do intervalo de 0.0 a 10.0.
+8. Implemente um método na classe **Diretor** para adicionar um novo filme dirigido por ele à lista de filmes dirigidos.
+9. Implemente um método na classe **Diretor** para calcular a média da duração dos filmes dirigidos por ele.
+10. Implemente um método na classe **Estudio** para adicionar um novo filme produzido pelo estúdio à lista de filmes produzidos.
+11. Implemente um método na classe **Estudio** para calcular a média da duração dos filmes produzidos pelo estúdio.
 
 > ⚠ Sob construção
 
