@@ -210,8 +210,7 @@ Faça **validações**, garantindo que:
 2. Implemente um método na classe **Filme** para exibir as informações das avaliações do filme, incluindo o nome do crítico e a pontuação atribuída. Este método deve chamar o método `toString` da classe que compõem a avaliação.
 3. Implemente um método na classe **Filme** para exibir a classificação indicativa do filme calculada pelo sistema.
 4. Implemente um método na classe **Filme** para exibir a média das avaliações do filme com duas casas decimais.
-5. Implemente um método na classe **Estudio** para exibir a média das avaliações de todos os filmes produzidos pelo estúdio.
-6. Implemente um método na classe **Ator** para calcular a média de idade dos atores coadjuvantes associados a ele. Considere apenas os atores coadjuvantes válidos, ou seja, aqueles com grau de fama dentro do intervalo de 0.0 a 10.0.
+6. Implemente um método na classe **Filme** para calcular a média de idade dos atores coadjuvantes associados a ele.
 7. Implemente um método na classe **Diretor** para adicionar um novo filme dirigido por ele à lista de filmes dirigidos.
 8. Implemente um método na classe **Diretor** para calcular a média da duração dos filmes dirigidos por ele.
 9. Implemente um método na classe **Estudio** para adicionar um novo filme produzido pelo estúdio à lista de filmes produzidos.
