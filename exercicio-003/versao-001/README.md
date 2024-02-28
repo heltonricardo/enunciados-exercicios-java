@@ -152,6 +152,7 @@ class Filme {
   +void exibirAvaliacoes()
   +void exibirInformacoes()
   +Classificacao calcularClassificacao()
+  +void exibirClassificacao()
 }
 
 class Avaliavel {
