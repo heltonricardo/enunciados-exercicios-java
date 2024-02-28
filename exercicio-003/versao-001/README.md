@@ -151,14 +151,14 @@ class Filme {
   +void adicionarAtor(Ator ator)
   +void exibirAvaliacoes()
   +void exibirInformacoes()
-  +Classificacao retornarClassificacao() 
+  +Classificacao calcularClassificacao()
 }
 
 class Avaliavel {
   <<Interface>>
   +void adicionarAvaliacao(Avaliacao avaliacao)
   +void limparAvaliacoes()
-  +Double calcularMediaAvaliacoes()
+  +Double calcularMediaDasAvaliacoes()
 }
 
 class Avaliacao {
