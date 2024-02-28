@@ -151,6 +151,7 @@ class Filme {
   +void adicionarAtor(Ator ator)
   +void exibirAvaliacoes()
   +void exibirInformacoes()
+  +Classificacao retornarClassificacao() 
 }
 
 class Avaliavel {
