@@ -18,6 +18,6 @@ Tags: `atributo` `classe` `composição` `construtor` `localdate` `encapsulament
 
 ## Exercício 003
 
-Tags: `atributo` `classe` `classe abstrata` `classe intermediária` `composição` `construtor` `duration` `localdatetime` `encapsulamento` `enum` `get/set` `herança` `interface` `lista` `método` `objeto` `operador lógico` `polimorfismo` `sobrescrita` `string` `to string` `uml` `wrapper`
+Tags: `atributo` `classe` `classe abstrata` `classe intermediária` `composição` `construtor` `duration` `localdatetime` `encapsulamento` `enum` `get/set` `herança` `instanceof` `interface` `lista` `método` `objeto` `operador lógico` `polimorfismo` `sobrescrita` `string` `to string` `uml` `wrapper`
 
 - [Sistema de gerenciamento de filmes](./exercicio-003/versao-001/README.md)

@@ -154,6 +154,7 @@ class Filme {
   +Classificacao calcularClassificacao()
   +void exibirClassificacao()
   +void exibirMediaDasAvaliacoes()
+  +Double calcularMediaDeIdadeDosCoadjuvantes()
 }
 
 class Avaliavel {
