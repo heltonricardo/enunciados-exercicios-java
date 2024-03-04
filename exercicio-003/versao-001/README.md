@@ -227,14 +227,16 @@ public class Main {
         Diretor diretor = new Diretor("Christopher Nolan", 51, "Britânico");
 
         Estudio estudio = new Estudio("Warner Bros.", false);
-
-        Filme filme = new Filme("Inception", Duration.ofMinutes(148), LocalDate.of(2010, 7, 16), diretor, estudio, atorPrincipal1, Genero.SUSPENSE);
+        
+        LocalDateTime dataHoraLancamento = LocalDateTime.of(2010, 7, 16, 20, 30);
+        
+        Filme filme = new Filme("Inception", Duration.ofMinutes(148), dataHoraLancamento, diretor, estudio, atorPrincipal1, Genero.SUSPENSE);
         filme.adicionarAtor(atorPrincipal2);
         filme.adicionarAtor(atorCoadjuvante1);
         filme.adicionarAtor(atorCoadjuvante2);
 
-        Critico critico1 = new Critico("Roger Ebert", VeiculoDeCritica.JORNAL);
-        Critico critico2 = new Critico("Peter Travers", VeiculoDeCritica.REVISTA);
+        Critico critico1 = new Critico("Roger Ebert", 70, VeiculoDeCritica.JORNAL);
+        Critico critico2 = new Critico("Peter Travers", 80, VeiculoDeCritica.REVISTA);
 
         Avaliacao avaliacao1 = new Avaliacao(critico1, 9.0);
         Avaliacao avaliacao2 = new Avaliacao(critico2, 8.5);
