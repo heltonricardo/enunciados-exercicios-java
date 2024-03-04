@@ -228,8 +228,7 @@ public class Main {
 
         Estudio estudio = new Estudio("Warner Bros.", false);
 
-        Filme filme = new Filme("Inception", Duration.ofMinutes(148), LocalDate.of(2010, 7, 16), diretor, Genero.SUSPENSE, estudio);
-        filme.adicionarAtor(atorPrincipal1);
+        Filme filme = new Filme("Inception", Duration.ofMinutes(148), LocalDate.of(2010, 7, 16), diretor, estudio, atorPrincipal1, Genero.SUSPENSE);
         filme.adicionarAtor(atorPrincipal2);
         filme.adicionarAtor(atorCoadjuvante1);
         filme.adicionarAtor(atorCoadjuvante2);
