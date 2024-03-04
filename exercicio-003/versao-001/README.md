@@ -2,8 +2,6 @@
 
 Este projeto Java tem como objetivo criar um sistema de gerenciamento de filmes, incorporando classes para atores, diretores, críticos e outras entidades, com ênfase em funcionalidades avançadas que aprimoram o sistema.
 
-> ⚠ Sob construção
-
 [Voltar](../../README.md)
 
 # Índice
@@ -14,6 +12,7 @@ Este projeto Java tem como objetivo criar um sistema de gerenciamento de filmes,
 - [2. Componentes](#2-componentes)
 - [3. Requisitos](#3-requisitos)
 - [4. Funcionalidades](#4-funcionalidades)
+- [5. Exemplo de uso](#5-exemplo-de-uso)
 
 <!-- /TOC -->
 
@@ -211,12 +210,47 @@ Faça **validações**, garantindo que:
 2. Implemente um método na classe **Filme** para exibir as informações das avaliações do filme, incluindo o nome do crítico e a pontuação atribuída. Este método deve chamar o método `toString` da classe que compõem a avaliação.
 3. Implemente um método na classe **Filme** para exibir a classificação indicativa do filme calculada pelo sistema.
 4. Implemente um método na classe **Filme** para exibir a média das avaliações do filme com duas casas decimais.
-6. Implemente um método na classe **Filme** para calcular a média de idade dos atores coadjuvantes associados a ele.
-7. Implemente um método na classe **Diretor** para adicionar um novo filme dirigido por ele à lista de filmes dirigidos.
-8. Implemente um método na classe **Diretor** para calcular a média da duração dos filmes dirigidos por ele.
-9. Implemente um método na classe **Estudio** para adicionar um novo filme produzido pelo estúdio à lista de filmes produzidos.
-10. Implemente um método na classe **Estudio** para calcular a média da duração dos filmes produzidos pelo estúdio.
+5. Implemente um método na classe **Filme** para calcular a média de idade dos atores coadjuvantes associados a ele.
 
-> ⚠ Sob construção
+## 5. Exemplo de uso
+
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        AtorPrincipal atorPrincipal1 = new AtorPrincipal("Jennifer Lawrence", 30, Genero.DRAMA, 10);
+        AtorPrincipal atorPrincipal2 = new AtorPrincipal("Leonardo DiCaprio", 47, Genero.SUSPENSE, 25);
+
+        AtorCoadjuvante atorCoadjuvante1 = new AtorCoadjuvante("Tom Holland", 25, Genero.AVENTURA, 9.5);
+        AtorCoadjuvante atorCoadjuvante2 = new AtorCoadjuvante("Zendaya", 25, Genero.AVENTURA, 8.7);
+
+        Diretor diretor = new Diretor("Christopher Nolan", 51, "Britânico");
+
+        Estudio estudio = new Estudio("Warner Bros.", false);
+
+        Filme filme = new Filme("Inception", Duration.ofMinutes(148), LocalDate.of(2010, 7, 16), diretor, Genero.SUSPENSE, estudio);
+        filme.adicionarAtor(atorPrincipal1);
+        filme.adicionarAtor(atorPrincipal2);
+        filme.adicionarAtor(atorCoadjuvante1);
+        filme.adicionarAtor(atorCoadjuvante2);
+
+        Critico critico1 = new Critico("Roger Ebert", VeiculoDeCritica.JORNAL);
+        Critico critico2 = new Critico("Peter Travers", VeiculoDeCritica.REVISTA);
+
+        Avaliacao avaliacao1 = new Avaliacao(critico1, 9.0);
+        Avaliacao avaliacao2 = new Avaliacao(critico2, 8.5);
+
+        filme.adicionarAvaliacao(avaliacao1);
+        filme.adicionarAvaliacao(avaliacao2);
+
+        filme.exibirInformacoes();
+        filme.exibirAvaliacoes();
+        filme.exibirClassificacao();
+        filme.exibirMediaDasAvaliacoes();
+        System.out.println("Média de idade dos atores coadjuvantes: " + filme.calcularMediaDeIdadeDosCoadjuvantes());
+    }
+}
+
+```
 
 [Voltar](../../README.md)
