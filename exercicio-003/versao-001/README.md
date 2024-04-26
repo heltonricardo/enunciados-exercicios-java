@@ -1,6 +1,6 @@
-# Projeto Java: Sistema de gerenciamento de filmes
+# Projeto Java: Sistema de gerenciamento escolar
 
-Este projeto Java tem como objetivo criar um sistema de gerenciamento de filmes, incorporando classes para atores, diretores, críticos e outras entidades, com ênfase em funcionalidades avançadas que aprimoram o sistema.
+O projeto visa desenvolver um sistema de gerenciamento escolar em Java, com classes para Alunos, Professores, Disciplinas e Turmas, focando na organização e manipulação eficiente de informações acadêmicas, com implementação de funcionalidades que agregam valor ao sistema.
 
 [Voltar](../../README.md)
 
@@ -18,9 +18,9 @@ Este projeto Java tem como objetivo criar um sistema de gerenciamento de filmes,
 
 ## 1. Descrição
 
-Este projeto visa criar um sistema de gerenciamento de filmes em Java, abordando entidades essenciais do mundo cinematográfico, como Filmes, Diretores, Atores, Avaliações de Filmes, entre outros. O sistema oferece uma estrutura robusta para organização e manipulação de informações relacionadas aos filmes.
+Este projeto tem como objetivo a criação de um sistema de gerenciamento escolar em Java, abrangendo as principais entidades presentes em um ambiente educacional. Suas classes fundamentais englobam representações para Alunos, Professores, Disciplinas e Turmas, proporcionando uma estrutura coesa para a organização e manipulação de informações acadêmicas.
 
-A implementação não se limita apenas à modelagem das classes, mas também prioriza a entrega de um conjunto de funcionalidades avançadas que enriquecem e aprimoram o sistema como um todo.
+A implementação não se limita apenas à modelagem das classes, mas também prioriza a entrega de um conjunto de funcionalidades que enriquecem e aprimoram o sistema como um todo.
 
 ## 2. Componentes
 
@@ -28,9 +28,8 @@ A implementação não se limita apenas à modelagem das classes, mas também pr
 classDiagram
 
 class Pessoa {
-  <<Abstract>>
   -String nome
-  #Integer idade
+  -Integer idade
   +String getNome()
   +void setNome(String nome)
   +Integer getIdade()
@@ -38,220 +37,157 @@ class Pessoa {
   +String toString()
 }
 
-class VeiculoDeCritica {
-  <<Enumeration>>
-  SITE,
-  REVISTA,
-  JORNAL,
-  CANAL_YOUTUBE,
-  PODCAST
+class Aluno {
+  -Integer matricula
+  -Float media
+  +Integer getMatricula()
+  +void setMatricula(Integer matricula)
+  +Float getMedia()
+  -void setMedia(Float media)
+  +void atualizarMedia(Float nota)
   +String toString()
 }
 
-class Classificacao {
-  <<Enumeration>>
-  LIVRE
-  MAIOR_10
-  MAIOR_12
-  MAIOR_14
-  MAIOR_16
-  MAIOR_18
+class Professor {
+  -Integer codigo
+  -Double salario
+  +Integer getCodigo()
+  +void setCodigo(Integer codigo)
+  +Double getSalario()
+  +void setSalario(Double salario)
+  +void aumentarSalario(Integer bonificacaoPercentual)
   +String toString()
 }
 
-class Genero {
-  <<Enumeration>>
-  ACAO
-  AVENTURA
-  COMEDIA
-  DRAMA
-  FICCAO_CIENTIFICA
-  HORROR
-  ROMANCE
-  SUSPENSE
-  OUTRO
+class Disciplina {
+  -DisciplinaEnum nome
+  -String codigo
+  -Integer cargaHoraria
+  -Professor professorResponsavel
+  +DisciplinaEnum getNome()
+  +void setNome(DisciplinaEnum nome)
+  +Integer getCargaHoraria()
+  +void setCargaHoraria(Integer cargaHoraria)
+  +Professor getProfessorResponsavel()
+  +void setProfessorResponsavel(Professor professorResponsavel)
   +String toString()
 }
 
-class Ator {
-  <<Abstract>>
-  -Genero generoPrincipal
-  +Genero getGeneroPrincipal()
-  +void setGeneroPrincipal(Genero generoPrincipal)
-  +String toString()
-}
-
-class AtorPrincipal {
-  -Integer anosDeExperiencia
-  +Integer getAnosDeExperiencia()
-  +void setAnosDeExperiencia(Integer anosDeExperiencia)
-  +String toString()
-}
-
-class AtorCoadjuvante {
-  -Double grauDeFama
-  +Double getGrauDeFama()
-  +void setGrauDeFama(Double grauDeFama)
-  +String toString()
-}
-
-class Critico {
-  -VeiculoDeCritica veiculoDeCritica
-  +VeiculoDeCritica getVeiculoDeCritica()
-  +void setVeiculoDeCritica(VeiculoDeCritica veiculoDeCritica)
-  +String toString()
-}
-
-class Diretor {
-  -String nacionalidade
-  +String getNacionalidade()
-  +void setNacionalidade(String nacionalidade)
-  +String toString()
-}
-
-class Estudio {
-  -String nome
-  -Boolean independente
-  -List < Avaliacao > avaliacoes
-  -void setAvaliacoes(List < Avaliacao > avaliacoes)
-  +String getNome()
-  +void setNome(String nome)
-  +Boolean isIndependente()
-  +void setIndependente(Boolean independente)
-  +List < Avaliacao > getAvaliacoes()
+class Turma {
+  -LocalDate dataInicio
+  -List < Aluno > alunos
+  -List < Disciplina > disciplinasOfertadas
+  +LocalDate getDataInicio()
+  +void setDataInicio(LocalDate dataInicio)
+  +List < Aluno > getAlunos()
+  +List < Disciplina > getDisciplinasOfertadas()
+  +void adicionarAluno(Aluno alunoParaAdicionar)
+  +void adicionarDisciplina(Disciplina disciplinaParaAdicionar)
   +void exibirInformacoes()
-}
-
-class Filme {
-  -String titulo
-  -Duration tempoDeDuracao;
-  -LocalDateTime dataHorarioDeLancamento;
-  -Diretor diretor
-  -Genero genero
-  -Estudio estudio
-  -List < Ator > elenco
-  -List < Avaliacao > avaliacoes
-  -void setElenco(List < Ator > elenco)
-  -void setAvaliacoes(List < Avaliacao > avaliacoes)
-  +String getTitulo()
-  +void setTitulo(String titulo)
-  +Duration getTempoDeDuracao()
-  +void setTempoDeDuracao(Duration tempoDeDuracao)
-  +LocalDate getDataHorarioDeLancamento()
-  +void setDataHorarioDeLancamento(LocalDate DataHorarioDeLancamento)
-  +Diretor getDiretor()
-  +void setDiretor(Diretor diretor)
-  +Genero getGenero()
-  +void setGenero(Genero genero)
-  +Estudio getEstudio()
-  +void setEstudio(Estudio estudio)
-  +List < Ator > getElenco()
-  +List < Avaliacao > getAvaliacoes()
-  +void adicionarAtor(Ator ator)
-  +void exibirAvaliacoes()
-  +void exibirInformacoes()
-  +Classificacao calcularClassificacao()
-  +void exibirClassificacao()
-  +void exibirMediaDasAvaliacoes()
-  +Double calcularMediaDeIdadeDosCoadjuvantes()
-}
-
-class Avaliavel {
-  <<Interface>>
-  +void adicionarAvaliacao(Avaliacao avaliacao)
-  +void limparAvaliacoes()
-  +Double calcularMediaDasAvaliacoes()
-}
-
-class Avaliacao {
-  -Critico critico
-  -Double pontuacao
-  +Critico getCritico()
-  +void setCritico(Critico critico)
-  +Double getPontuacao()
-  +void setPontuacao(Double pontuacao)
+  +Integer calcularCargaHorariaTotal()
+  +Float calcularMediaDasNotas()
+  +void listarAlunosAprovados(Float mediaMinima)
   +String toString()
 }
 
-Pessoa <|-- Ator
-Pessoa <|-- Diretor
-Pessoa <|-- Critico
+class DisciplinaEnum {
+  <<Enumeration>>
+  MATEMATICA
+  PORTUGUES
+  CIENCIAS
+  HISTORIA
+  GEOGRAFIA
+  INGLES
+  FISICA
+  QUIMICA
+  ARTES
+  EDUCACAO_FISICA
+}
 
-Ator <|-- AtorPrincipal
-Ator <|-- AtorCoadjuvante
-
-Avaliavel <.. Estudio
-Avaliavel <.. Filme
+Pessoa <|-- Aluno
+Pessoa <|-- Professor
 ```
+
+> Os construtores foram omitidos no diagrama. Verifique os códigos de exemplo para descobrir como são as assinaturas dos construtores de cada classe.
 
 ## 3. Requisitos
 
 Faça **validações**, garantindo que:
 
-1. A idade dos diretores e críticos seja maior ou igual a **18** anos;
-2. A idade dos atores seja maior ou igual a **5** anos. Para isso, sobrescreva o `setIdade` da superclasse;
-3. O grau de fama dos atores coadjuvantes esteja dentro do intervalo de **0.0** a **10.0**;
-4. A nacionalidade dos diretores não seja nula, vazia ou apenas espaços em branco;
-5. O título dos filmes não seja nulo, vazio ou apenas espaços em branco;
-6. O tempo de duração dos filmes seja positivo;
-7. A data e horário de lançamento dos filmes seja anterior à data e horário atual;
-8. O nome do estúdio dos filmes não seja nulo, vazio ou apenas espaços em branco;
-9. A pontuação das avaliações dos filmes esteja dentro do intervalo de **0.0** a **10.0**;
-10. A pontuação das avaliações dos estúdios esteja dentro do intervalo de **0.0** a **5.0**;
-11. O atributo de independência dos estúdios seja um valor verdadeiro ou falso;
-12. O número de anos de experiência dos atores principais seja positivo;
-13. Cada filme possua pelo menos um diretor associado;
-14. Cada filme possua pelo menos um ator principal;
-15. Cada ator possua um nome exclusivo em um filme, sem repetições;
+1. A idade de alunos e professores seja maior que zero.
+1. A média dos alunos não seja negativa e não ultrapasse o valor 10.
+1. O salário não seja negativo para professores.
+1. A carga horária das disciplinas seja positiva.
+1. O professor responsável pela disciplina não seja nulo.
+1. O código da disciplina não seja vazio e seja gravado com todas as letras em maiúsculo.
+
+> **Dicas**
+>
+> - Faça as validações **antes** de atribuir os valores nos atributos!
+> - Adapte os métodos existentes ou crie novos métodos para atender a esses requisitos adicionais.
 
 ## 4. Funcionalidades
 
-1. Implemente um método na classe **Filme** para calcular a classificação indicativa do filme com base na idade dos atores principais. Considere que a classificação indicativa será a menor entre as idades dos atores principais mais 5 anos. Por exemplo, se o filme tem um ator principal com 15 anos e outro com 30 anos, a classificação indicativa será de 20 anos.
-2. Implemente um método na classe **Filme** para exibir as informações das avaliações do filme, incluindo o nome do crítico e a pontuação atribuída. Este método deve chamar o método `toString` da classe que compõem a avaliação.
-3. Implemente um método na classe **Filme** para exibir a classificação indicativa do filme calculada pelo sistema.
-4. Implemente um método na classe **Filme** para exibir a média das avaliações do filme com duas casas decimais.
-5. Implemente um método na classe **Filme** para calcular a média de idade dos atores coadjuvantes associados a ele.
+1. Implemente um método na classe **Aluno** para atualizar a média, considerando a média atual e uma nota (positiva ou negativa) passada por parâmetro para o método.
+1. Implemente um método na classe **Professor** para aumentar o salário, considerando o salário atual e um aumento percentual passado por parâmetro para o método (1~30%). Por exemplo: 15 para 15%.
+1. Implemente um método na classe **Turma** para adicionar uma disciplina à turma.
+1. Implemente um método na classe **Turma** para adicionar um aluno à turma. Atenção: a matrícula do aluno deve ser único dentro de uma turma.
+1. Implemente um método na classe **Turma** para calcular a carga horária total das disciplinas oferecidas.
+1. Implemente um método na classe **Turma** para calcular a média de notas dos alunos da turma.
+1. Implemente um método na classe **Turma** para exibir todas as informações da turma, incluindo o ano letivo, a lista de alunos e as disciplinas ofertadas.
+1. Implemente um método na classe **Turma** para listar os alunos aprovados, considerando uma média mínima para aprovação. Essa média mínima deve ser um parâmetro configurável.
+1. Implemente um método `toString` para cada uma das classes: **Pessoa**, **Aluno**, **Professor**, **Disciplina** e **Turma**. Para classes que usam composição, o método `toString` deve chamar os métodos `toString` das classes referenciadas. Por exemplo, o `toString` da classe **Disciplina** deve chamar o `toString` da classe **Professor**.
 
 ## 5. Exemplo de uso
 
 ```java
 public class Main {
     public static void main(String[] args) {
+        Professor professor1 = new Professor("Carlos", 40, 123, 5000.0);
+        Professor professor2 = new Professor("Ana", 35, 124, 4800.0);
 
-        AtorPrincipal atorPrincipal1 = new AtorPrincipal("Jennifer Lawrence", 30, Genero.DRAMA, 10);
-        AtorPrincipal atorPrincipal2 = new AtorPrincipal("Leonardo DiCaprio", 47, Genero.SUSPENSE, 25);
+        Disciplina disciplina1 = new Disciplina(DisciplinaEnum.MATEMATICA, "MAT123", 60, professor1);
+        Disciplina disciplina2 = new Disciplina(DisciplinaEnum.PORTUGUES, "POR456", 45, professor2);
 
-        AtorCoadjuvante atorCoadjuvante1 = new AtorCoadjuvante("Tom Holland", 25, Genero.AVENTURA, 9.5);
-        AtorCoadjuvante atorCoadjuvante2 = new AtorCoadjuvante("Zendaya", 25, Genero.AVENTURA, 8.7);
+        Aluno aluno1 = new Aluno("Maria", 16, 1001, 5.8F);
+        Aluno aluno2 = new Aluno("Pedro", 17, 1002, 8.4F);
+        Aluno aluno3 = new Aluno("João", 16, 1003, 5.7F);
+        Aluno aluno4 = new Aluno("Isabela", 17, 1004, 5.7F);
+        Aluno aluno5 = new Aluno("Julia", 15, 1008, 9.1F);
+        Aluno aluno6 = new Aluno("Guilherme", 18, 1009, 7.5F);
 
-        Diretor diretor = new Diretor("Christopher Nolan", 51, "Britânico");
+        Turma turma = new Turma(LocalDate.now());
 
-        Estudio estudio = new Estudio("Warner Bros.", false);
-        
-        LocalDateTime dataHoraLancamento = LocalDateTime.of(2010, 7, 16, 20, 30);
-        
-        Filme filme = new Filme("Inception", Duration.ofMinutes(148), dataHoraLancamento, diretor, estudio, atorPrincipal1, Genero.SUSPENSE);
-        filme.adicionarAtor(atorPrincipal2);
-        filme.adicionarAtor(atorCoadjuvante1);
-        filme.adicionarAtor(atorCoadjuvante2);
+        turma.adicionarAluno(aluno1);
+        turma.adicionarAluno(aluno2);
+        turma.adicionarAluno(aluno3);
+        turma.adicionarAluno(aluno4);
+        turma.adicionarAluno(aluno5);
+        turma.adicionarAluno(aluno6);
+        turma.adicionarDisciplina(disciplina1);
+        turma.adicionarDisciplina(disciplina2);
 
-        Critico critico1 = new Critico("Roger Ebert", 70, VeiculoDeCritica.JORNAL);
-        Critico critico2 = new Critico("Peter Travers", 80, VeiculoDeCritica.REVISTA);
+        professor1.aumentarSalario(12);
+        professor2.aumentarSalario(15);
 
-        Avaliacao avaliacao1 = new Avaliacao(critico1, 9.0);
-        Avaliacao avaliacao2 = new Avaliacao(critico2, 8.5);
+        System.out.println("Salário do professor de Matemática: " + professor1.getSalario());
+        System.out.println("Salário do professor de Português: " + professor2.getSalario());
 
-        filme.adicionarAvaliacao(avaliacao1);
-        filme.adicionarAvaliacao(avaliacao2);
+        System.out.println("Média de notas dos alunos da turma: " + turma.calcularMediaDasNotas());
 
-        filme.exibirInformacoes();
-        filme.exibirAvaliacoes();
-        filme.exibirClassificacao();
-        filme.exibirMediaDasAvaliacoes();
-        System.out.println("Média de idade dos atores coadjuvantes: " + filme.calcularMediaDeIdadeDosCoadjuvantes());
+        turma.exibirInformacoes();
+
+        aluno4.atualizarMedia(0.3);
+        aluno2.atualizarMedia(-0.5);
+
+        System.out.println("Alunos aprovados:");
+        turma.listarAlunosAprovados(6.0);
+
+        System.out.println("Carga horária total das disciplinas: " + turma.calcularCargaHorariaTotal());
+
+        turma.exibirInformacoes();
     }
 }
-
 ```
 
 [Voltar](../../README.md)

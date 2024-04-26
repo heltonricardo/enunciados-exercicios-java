@@ -1,6 +1,6 @@
-# Projeto Java: Sistema de gerenciamento escolar
+# Projeto Java: Sistema de gerenciamento de times de futebol
 
-O projeto visa desenvolver um sistema de gerenciamento escolar em Java, com classes para Alunos, Professores, Disciplinas e Turmas, focando na organização e manipulação eficiente de informações acadêmicas, com implementação de funcionalidades que agregam valor ao sistema.
+Este projeto Java tem como objetivo criar um sistema de gerenciamento de times de futebol, incorporando classes para Jogadores, Técnicos e Times, com ênfase em funcionalidades que aprimoram o sistema.
 
 [Voltar](../../README.md)
 
@@ -9,7 +9,19 @@ O projeto visa desenvolver um sistema de gerenciamento escolar em Java, com clas
 <!-- TOC -->
 
 - [1. Descrição](#1-descri%C3%A7%C3%A3o)
-- [2. Componentes](#2-componentes)
+- [2. Classes](#2-classes)
+  - [2.1. Jogador](#21-jogador)
+    - [2.1.1. Atributos privados](#211-atributos-privados)
+    - [2.1.2. Construtores públicos](#212-construtores-p%C3%BAblicos)
+    - [2.1.3. Métodos públicos](#213-m%C3%A9todos-p%C3%BAblicos)
+  - [2.2. Tecnico](#22-tecnico)
+    - [2.2.1. Atributos privados](#221-atributos-privados)
+    - [2.2.2. Construtores públicos](#222-construtores-p%C3%BAblicos)
+    - [2.2.3. Métodos públicos](#223-m%C3%A9todos-p%C3%BAblicos)
+  - [2.3. Time](#23-time)
+    - [2.3.1. Atributos privados](#231-atributos-privados)
+    - [2.3.2. Construtores públicos](#232-construtores-p%C3%BAblicos)
+    - [2.3.3. Métodos públicos](#233-m%C3%A9todos-p%C3%BAblicos)
 - [3. Requisitos](#3-requisitos)
 - [4. Funcionalidades](#4-funcionalidades)
 - [5. Exemplo de uso](#5-exemplo-de-uso)
@@ -18,174 +30,143 @@ O projeto visa desenvolver um sistema de gerenciamento escolar em Java, com clas
 
 ## 1. Descrição
 
-Este projeto tem como objetivo a criação de um sistema de gerenciamento escolar em Java, abrangendo as principais entidades presentes em um ambiente educacional. Suas classes fundamentais englobam representações para Alunos, Professores, Disciplinas e Turmas, proporcionando uma estrutura coesa para a organização e manipulação de informações acadêmicas.
+Este projeto visa criar um sistema de gerenciamento de times de futebol em Java, contemplando as principais entidades presentes em um ambiente esportivo. As classes principais incluem representações para Jogadores, Técnicos e Times, proporcionando uma estrutura coesa para a organização e manipulação de informações relacionadas ao mundo do futebol.
 
-A implementação não se limita apenas à modelagem das classes, mas também prioriza a entrega de um conjunto de funcionalidades que enriquecem e aprimoram o sistema como um todo.
+A implementação não se limita à modelagem das classes, mas também prioriza a entrega de um conjunto de funcionalidades que enriquecem e aprimoram o sistema como um todo.
 
-## 2. Componentes
+## 2. Classes
 
-```mermaid
-classDiagram
+### 2.1. Jogador
 
-class Pessoa {
-  -String nome
-  -Integer idade
-  +String getNome()
-  +void setNome(String nome)
-  +Integer getIdade()
-  +void setIdade(Integer idade)
-  +String toString()
-}
+#### 2.1.1. Atributos privados
 
-class Aluno {
-  -Integer matricula
-  -Float media
-  +Integer getMatricula()
-  +void setMatricula(Integer matricula)
-  +Float getMedia()
-  -void setMedia(Float media)
-  +void atualizarMedia(Float nota)
-  +String toString()
-}
+| Rótulo     | Tipo      |
+| :--------- | :-------- |
+| nome       | `String`  |
+| idade      | `int`     |
+| posicao    | `String`  |
+| salario    | `float`   |
+| contratado | `boolean` |
 
-class Professor {
-  -Integer codigo
-  -Double salario
-  +Integer getCodigo()
-  +void setCodigo(Integer codigo)
-  +Double getSalario()
-  +void setSalario(Double salario)
-  +void aumentarSalario(Integer bonificacaoPercentual)
-  +String toString()
-}
+#### 2.1.2. Construtores públicos
 
-class Disciplina {
-  -DisciplinaEnum nome
-  -String codigo
-  -Integer cargaHoraria
-  -Professor professorResponsavel
-  +DisciplinaEnum getNome()
-  +void setNome(DisciplinaEnum nome)
-  +Integer getCargaHoraria()
-  +void setCargaHoraria(Integer cargaHoraria)
-  +Professor getProfessorResponsavel()
-  +void setProfessorResponsavel(Professor professorResponsavel)
-  +String toString()
-}
+| Rótulo  | Parâmetros                                                                               |
+| :------ | :--------------------------------------------------------------------------------------- |
+| Jogador | nome: `String`, idade: `int`, posicao: `String`, salario: `float`, contratado: `boolean` |
 
-class Turma {
-  -LocalDate dataInicio
-  -List < Aluno > alunos
-  -List < Disciplina > disciplinasOfertadas
-  +LocalDate getDataInicio()
-  +void setDataInicio(LocalDate dataInicio)
-  +List < Aluno > getAlunos()
-  +List < Disciplina > getDisciplinasOfertadas()
-  +void adicionarAluno(Aluno alunoParaAdicionar)
-  +void adicionarDisciplina(Disciplina disciplinaParaAdicionar)
-  +void exibirInformacoes()
-  +Integer calcularCargaHorariaTotal()
-  +Float calcularMediaDasNotas()
-  +void listarAlunosAprovados(Float mediaMinima)
-  +String toString()
-}
+#### 2.1.3. Métodos públicos
 
-class DisciplinaEnum {
-  <<Enumeration>>
-  MATEMATICA
-  PORTUGUES
-  CIENCIAS
-  HISTORIA
-  GEOGRAFIA
-  INGLES
-  FISICA
-  QUIMICA
-  ARTES
-  EDUCACAO_FISICA
-}
+| Rótulo        | Parâmetros            | Retorno   |
+| :------------ | :-------------------- | :-------- |
+| getNome       |                       | `String`  |
+| setNome       | nome: `String`        |           |
+| getIdade      |                       | `int`     |
+| setIdade      | idade: `int`          |           |
+| getPosicao    |                       | `String`  |
+| setPosicao    | posicao: `String`     |           |
+| getSalario    |                       | `float`   |
+| setSalario    | salario: `float`      |           |
+| isContratado  |                       | `boolean` |
+| setContratado | contratado: `boolean` |           |
 
-Pessoa <|-- Aluno
-Pessoa <|-- Professor
-```
+### 2.2. Tecnico
 
-> Os construtores foram omitidos no diagrama. Verifique os códigos de exemplo para descobrir como são as assinaturas dos construtores de cada classe.
+#### 2.2.1. Atributos privados
+
+| Rótulo            | Tipo     |
+| :---------------- | :------- |
+| nome              | `String` |
+| idade             | `int`    |
+| salario           | `float`  |
+| anosDeExperiencia | `int`    |
+
+#### 2.2.2. Construtores públicos
+
+| Rótulo  | Parâmetros                                                               |
+| :------ | :----------------------------------------------------------------------- |
+| Tecnico | nome: `String`, idade: `int`, salario: `float`, anosDeExperiencia: `int` |
+
+#### 2.2.3. Métodos públicos
+
+| Rótulo               | Parâmetros               | Retorno  |
+| :------------------- | :----------------------- | :------- |
+| getNome              |                          | `String` |
+| setNome              | nome: `String`           |          |
+| getIdade             |                          | `int`    |
+| setIdade             | idade: `int`             |          |
+| getSalario           |                          | `float`  |
+| setSalario           | salario: `float`         |          |
+| getAnosDeExperiencia |                          | `int`    |
+| setAnosDeExperiencia | anosDeExperiencia: `int` |          |
+
+### 2.3. Time
+
+#### 2.3.1. Atributos privados
+
+| Rótulo             | Tipo            |
+| :----------------- | :-------------- |
+| nome               | `String`        |
+| cidade             | `String`        |
+| anoDeFundacao      | `int`           |
+| tecnicoResponsavel | `Tecnico`       |
+| listaDeJogadores   | `List<Jogador>` |
+
+#### 2.3.2. Construtores públicos
+
+| Rótulo | Parâmetros                                                                            |
+| :----- | :------------------------------------------------------------------------------------ |
+| Time   | nome: `String`, cidade: `String`, anoDeFundacao: `int`, tecnicoResponsavel: `Tecnico` |
+
+#### 2.3.3. Métodos públicos
+
+| Rótulo                           | Parâmetros                      | Retorno         |
+| :------------------------------- | :------------------------------ | :-------------- |
+| getNome                          |                                 | `String`        |
+| setNome                          | nome: `String`                  |                 |
+| getCidade                        |                                 | `String`        |
+| setCidade                        | cidade: `String`                |                 |
+| getAnoDeFundacao                 |                                 | `int`           |
+| setAnoDeFundacao                 | anoDeFundacao: `int`            |                 |
+| getTecnicoResponsavel            |                                 | `Tecnico`       |
+| setTecnicoResponsavel            | tecnicoResponsavel: `Tecnico`   |                 |
+| getListaDeJogadores              |                                 | `List<Jogador>` |
+| adicionarJogador                 | jogadorParaAdicionar: `Jogador` |                 |
+| calcularMediaDeIdadeDosJogadores |                                 | `float`         |
+| exibirTodasAsInformacoes         |                                 |                 |
 
 ## 3. Requisitos
 
 Faça **validações**, garantindo que:
 
-1. A idade de alunos e professores seja maior que zero.
-1. A média dos alunos não seja negativa e não ultrapasse o valor 10.
-1. O salário não seja negativo para professores.
-1. A carga horária das disciplinas seja positiva.
-1. O professor responsável pela disciplina não seja nulo.
-1. O código da disciplina não seja vazio e seja gravado com todas as letras em maiúsculo.
+1. A idade dos jogadores seja maior que zero.
+1. A idade do técnico seja maior que dezoito.
+1. O salário não seja negativo para jogadores e técnicos.
+1. O ano de fundação do time não pode ser um ano futuro.
 
-> **Dicas**
->
-> - Faça as validações **antes** de atribuir os valores nos atributos!
-> - Adapte os métodos existentes ou crie novos métodos para atender a esses requisitos adicionais.
+> Dica: faça as validações **antes** de atribuir os valores nos atributos!
 
 ## 4. Funcionalidades
 
-1. Implemente um método na classe **Aluno** para atualizar a média, considerando a média atual e uma nota (positiva ou negativa) passada por parâmetro para o método.
-1. Implemente um método na classe **Professor** para aumentar o salário, considerando o salário atual e um aumento percentual passado por parâmetro para o método (1~30%). Por exemplo: 15 para 15%.
-1. Implemente um método na classe **Turma** para adicionar uma disciplina à turma.
-1. Implemente um método na classe **Turma** para adicionar um aluno à turma. Atenção: a matrícula do aluno deve ser único dentro de uma turma.
-1. Implemente um método na classe **Turma** para calcular a carga horária total das disciplinas oferecidas.
-1. Implemente um método na classe **Turma** para calcular a média de notas dos alunos da turma.
-1. Implemente um método na classe **Turma** para exibir todas as informações da turma, incluindo o ano letivo, a lista de alunos e as disciplinas ofertadas.
-1. Implemente um método na classe **Turma** para listar os alunos aprovados, considerando uma média mínima para aprovação. Essa média mínima deve ser um parâmetro configurável.
-1. Implemente um método `toString` para cada uma das classes: **Pessoa**, **Aluno**, **Professor**, **Disciplina** e **Turma**. Para classes que usam composição, o método `toString` deve chamar os métodos `toString` das classes referenciadas. Por exemplo, o `toString` da classe **Disciplina** deve chamar o `toString` da classe **Professor**.
+1. Implemente um método na classe **Time** para adicionar um jogador à lista de jogadores do time.
+1. Implemente um método na classe **Time** para calcular a média de idade dos jogadores do time.
+1. Implemente um método na classe **Time** para exibir todas as informações do time, incluindo o nome, cidade, ano de fundação, informações do técnico e a lista de jogadores.
 
 ## 5. Exemplo de uso
 
 ```java
 public class Main {
     public static void main(String[] args) {
-        Professor professor1 = new Professor("Carlos", 40, 123, 5000.0);
-        Professor professor2 = new Professor("Ana", 35, 124, 4800.0);
+        Jogador jogador1 = new Jogador("Neymar", 29, "Atacante", 500000.0F, true);
+        Jogador jogador2 = new Jogador("Casemiro", 29, "Meio-campista", 300000.0F, true);
 
-        Disciplina disciplina1 = new Disciplina(DisciplinaEnum.MATEMATICA, "MAT123", 60, professor1);
-        Disciplina disciplina2 = new Disciplina(DisciplinaEnum.PORTUGUES, "POR456", 45, professor2);
+        Tecnico tecnico = new Tecnico("Tite", 60, 1000000.0F, 20);
 
-        Aluno aluno1 = new Aluno("Maria", 16, 1001, 5.8F);
-        Aluno aluno2 = new Aluno("Pedro", 17, 1002, 8.4F);
-        Aluno aluno3 = new Aluno("João", 16, 1003, 5.7F);
-        Aluno aluno4 = new Aluno("Isabela", 17, 1004, 5.7F);
-        Aluno aluno5 = new Aluno("Julia", 15, 1008, 9.1F);
-        Aluno aluno6 = new Aluno("Guilherme", 18, 1009, 7.5F);
+        Time time = new Time("Seleção Brasileira", "Rio de Janeiro", 1914, tecnico);
+        time.adicionarJogador(jogador1);
+        time.adicionarJogador(jogador2);
 
-        Turma turma = new Turma(LocalDate.now());
-
-        turma.adicionarAluno(aluno1);
-        turma.adicionarAluno(aluno2);
-        turma.adicionarAluno(aluno3);
-        turma.adicionarAluno(aluno4);
-        turma.adicionarAluno(aluno5);
-        turma.adicionarAluno(aluno6);
-        turma.adicionarDisciplina(disciplina1);
-        turma.adicionarDisciplina(disciplina2);
-
-        professor1.aumentarSalario(12);
-        professor2.aumentarSalario(15);
-
-        System.out.println("Salário do professor de Matemática: " + professor1.getSalario());
-        System.out.println("Salário do professor de Português: " + professor2.getSalario());
-
-        System.out.println("Média de notas dos alunos da turma: " + turma.calcularMediaDasNotas());
-
-        turma.exibirInformacoes();
-
-        aluno4.atualizarMedia(0.3);
-        aluno2.atualizarMedia(-0.5);
-
-        System.out.println("Alunos aprovados:");
-        turma.listarAlunosAprovados(6.0);
-
-        System.out.println("Carga horária total das disciplinas: " + turma.calcularCargaHorariaTotal());
-
-        turma.exibirInformacoes();
+        System.out.println("Média de idade dos jogadores: " + time.calcularMediaDeIdadeDosJogadores());
+        time.exibirTodasAsInformacoes();
     }
 }
 ```

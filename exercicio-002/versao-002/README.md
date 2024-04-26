@@ -1,6 +1,6 @@
-# Projeto Java: Sistema de gerenciamento de corrida automobilística
+# Projeto Java: Sistema de gerenciamento de bandas de K-pop
 
-Este projeto visa criar um sistema de gerenciamento de corrida em Java, com classes para Pilotos, Técnicos, Carros, Equipes e Corridas, visando organizar e manipular informações relacionadas às competições, com implementação de funcionalidades que aprimoram o sistema.
+Este projeto Java visa criar um sistema de gerenciamento de bandas de K-pop, incorporando classes para Membros, Managers e Bandas, com ênfase em funcionalidades que aprimoram o sistema.
 
 [Voltar](../../README.md)
 
@@ -9,7 +9,19 @@ Este projeto visa criar um sistema de gerenciamento de corrida em Java, com clas
 <!-- TOC -->
 
 - [1. Descrição](#1-descri%C3%A7%C3%A3o)
-- [2. Componentes](#2-componentes)
+- [2. Classes](#2-classes)
+  - [2.1. Membro](#21-membro)
+    - [2.1.1. Atributos privados](#211-atributos-privados)
+    - [2.1.2. Construtores públicos](#212-construtores-p%C3%BAblicos)
+    - [2.1.3. Métodos públicos](#213-m%C3%A9todos-p%C3%BAblicos)
+  - [2.2. Manager](#22-manager)
+    - [2.2.1. Atributos privados](#221-atributos-privados)
+    - [2.2.2. Construtores públicos](#222-construtores-p%C3%BAblicos)
+    - [2.2.3. Métodos públicos](#223-m%C3%A9todos-p%C3%BAblicos)
+  - [2.3. Banda](#23-banda)
+    - [2.3.1. Atributos privados](#231-atributos-privados)
+    - [2.3.2. Construtores públicos](#232-construtores-p%C3%BAblicos)
+    - [2.3.3. Métodos públicos](#233-m%C3%A9todos-p%C3%BAblicos)
 - [3. Requisitos](#3-requisitos)
 - [4. Funcionalidades](#4-funcionalidades)
 - [5. Exemplo de uso](#5-exemplo-de-uso)
@@ -18,176 +30,143 @@ Este projeto visa criar um sistema de gerenciamento de corrida em Java, com clas
 
 ## 1. Descrição
 
-Este projeto tem como objetivo a criação de um sistema de gerenciamento de corrida automobilística em Java, abrangendo as principais entidades presentes em um ambiente de competição automotiva. Suas classes fundamentais englobam representações para Pilotos, Técnicos, Carros, Equipes e Corridas, proporcionando uma estrutura coesa para a organização e manipulação de informações relacionadas às corridas.
+Este projeto tem como objetivo criar um sistema de gerenciamento de bandas de K-pop em Java, abrangendo as principais entidades presentes no cenário musical. As classes principais incluem representações para Membros, Managers e Bandas, proporcionando uma estrutura coesa para a organização e manipulação de informações relacionadas ao universo do K-pop.
 
 A implementação não se limita apenas à modelagem das classes, mas também prioriza a entrega de um conjunto de funcionalidades que enriquecem e aprimoram o sistema como um todo.
 
-## 2. Componentes
+## 2. Classes
 
-```mermaid
-classDiagram
+### 2.1. Membro
 
-class Pessoa {
-  -String nome
-  -Integer idade
-  +String getNome()
-  +void setNome(String nome)
-  +Integer getIdade()
-  +void setIdade(Integer idade)
-  +String toString()
-}
+#### 2.1.1. Atributos privados
 
-class Piloto {
-  -Integer numero
-  -Double pontuacao
-  +Integer getNumero()
-  +void setNumero(Integer numero)
-  +Double getPontuacao()
-  -void setPontuacao(Double pontuacao)
-  +void atualizarPontuacao(Double valor)
-  +String toString()
-}
+| Rótulo     | Tipo      |
+| :--------- | :-------- |
+| nome       | `String`  |
+| idade      | `int`     |
+| cargo      | `String`  |
+| salario    | `float`   |
+| contratado | `boolean` |
 
-class Tecnico {
-  -Integer codigo
-  -Double salario
-  +Integer getCodigo()
-  +void setCodigo(Integer codigo)
-  +Double getSalario()
-  +void setSalario(Double salario)
-  +void aumentarSalario(Integer bonificacaoPercentual)
-  +String toString()
-}
+#### 2.1.2. Construtores públicos
 
-class Carro {
-  -String modelo
-  -String fabricante
-  +String getModelo()
-  +void setModelo(String modelo)
-  +String getFabricante()
-  +void setFabricante(String fabricante)
-  +String toString()
-}
+| Rótulo | Parâmetros                                                                             |
+| :----- | :------------------------------------------------------------------------------------- |
+| Membro | nome: `String`, idade: `int`, cargo: `String`, salario: `float`, contratado: `boolean` |
 
-class Equipe {
-  -EquipeEnum nome
-  -List < Piloto > listaDePilotos
-  -List < Tecnico > listaDeTecnicos
-  -List < Carro > listaDeCarros
-  +EquipeEnum getNome()
-  +void setNome(EquipeEnum nome)
-  +List < Piloto > getListaDePilotos()
-  -void setListaDePilotos(List < Piloto > listaDePilotos)
-  +List < Tecnico > getListaDeTecnicos()
-  -void setListaDeTecnicos(List < Tecnico > listaDeTecnicos)
-  +List < Carro > getListaDeCarros()
-  -void setListaDeCarros(List < Carro > listaDeCarros)
-  +void adicionarPiloto(Piloto pilotoParaAdicionar)
-  +void adicionarTecnico(Tecnico tecnicoParaAdicionar)
-  +void adicionarCarro(Carro carroParaAdicionar)
-  +void exibirInformacoes()
-}
+#### 2.1.3. Métodos públicos
 
-class Corrida {
-  -LocalDate dataRealizacao
-  -List < Equipe > listaDeEquipesParticipantes
-  +LocalDate getDataRealizacao()
-  +void setDataRealizacao(LocalDate dataRealizacao)
-  +List < Equipe > getListaDeEquipesParticipantes()
-  -void setListaDeEquipesParticipantes(List < Equipe > listaDeEquipesParticipantes)
-  +void adicionarEquipe(Equipe equipeParaAdicionar)
-  +Double calcularPontuacaoTotal()
-  +void exibirInformacoes()
-}
+| Rótulo        | Parâmetros            | Retorno   |
+| :------------ | :-------------------- | :-------- |
+| getNome       |                       | `String`  |
+| setNome       | nome: `String`        |           |
+| getIdade      |                       | `int`     |
+| setIdade      | idade: `int`          |           |
+| getCargo      |                       | `String`  |
+| setCargo      | cargo: `String`       |           |
+| getSalario    |                       | `float`   |
+| setSalario    | salario: `float`      |           |
+| isContratado  |                       | `boolean` |
+| setContratado | contratado: `boolean` |           |
 
-class EquipeEnum {
-  <<Enumeration>>
-  MERCEDES
-  FERRARI
-  RED_BULL
-  MCLAREN
-  ALPINE
-  ALFA_ROMEO
-  HAAS
-  ASTON_MARTIN
-  WILLIAMS
-}
+### 2.2. Manager
 
-Pessoa <|-- Piloto
-Pessoa <|-- Tecnico
-```
+#### 2.2.1. Atributos privados
 
-> Os construtores foram omitidos no diagrama. Verifique os códigos de exemplo para descobrir como são as assinaturas dos construtores de cada classe.
+| Rótulo            | Tipo     |
+| :---------------- | :------- |
+| nome              | `String` |
+| idade             | `int`    |
+| salario           | `float`  |
+| anosDeExperiencia | `int`    |
 
-> Procure usar a chamada dos métodos `set` dentro dos construtores em vez de atribuir os valores diretamente nos atributos.
+#### 2.2.2. Construtores públicos
+
+| Rótulo  | Parâmetros                                                               |
+| :------ | :----------------------------------------------------------------------- |
+| Manager | nome: `String`, idade: `int`, salario: `float`, anosDeExperiencia: `int` |
+
+#### 2.2.3. Métodos públicos
+
+| Rótulo               | Parâmetros               | Retorno  |
+| :------------------- | :----------------------- | :------- |
+| getNome              |                          | `String` |
+| setNome              | nome: `String`           |          |
+| getIdade             |                          | `int`    |
+| setIdade             | idade: `int`             |          |
+| getSalario           |                          | `float`  |
+| setSalario           | salario: `float`         |          |
+| getAnosDeExperiencia |                          | `int`    |
+| setAnosDeExperiencia | anosDeExperiencia: `int` |          |
+
+### 2.3. Banda
+
+#### 2.3.1. Atributos privados
+
+| Rótulo             | Tipo           |
+| :----------------- | :------------- |
+| nome               | `String`       |
+| agencia            | `String`       |
+| anoDeEstreia       | `int`          |
+| managerResponsavel | `Manager`      |
+| listaDeMembros     | `List<Membro>` |
+
+#### 2.3.2. Construtores públicos
+
+| Rótulo | Parâmetros                                                                            |
+| :----- | :------------------------------------------------------------------------------------ |
+| Banda  | nome: `String`, agencia: `String`, anoDeEstreia: `int`, managerResponsavel: `Manager` |
+
+#### 2.3.3. Métodos públicos
+
+| Rótulo                         | Parâmetros                    | Retorno        |
+| :----------------------------- | :---------------------------- | :------------- |
+| getNome                        |                               | `String`       |
+| setNome                        | nome: `String`                |                |
+| getAgencia                     |                               | `String`       |
+| setAgencia                     | agencia: `String`             |                |
+| getAnoDeEstreia                |                               | `int`          |
+| setAnoDeEstreia                | anoDeEstreia: `int`           |                |
+| getManagerResponsavel          |                               | `Manager`      |
+| setManagerResponsavel          | managerResponsavel: `Manager` |                |
+| getListaDeMembros              |                               | `List<Membro>` |
+| adicionarMembro                | membroParaAdicionar: `Membro` |                |
+| calcularMediaDeIdadeDosMembros |                               | `float`        |
+| exibirTodasAsInformacoes       |                               |                |
 
 ## 3. Requisitos
 
 Faça **validações**, garantindo que:
 
-1. A idade dos pilotos e técnicos seja maior ou igual a 18.
-1. A pontuação dos pilotos não seja negativa.
-1. O salário dos técnicos da equipe seja positivo.
-1. O modelo e o fabricante dos carros não sejam nulos ou vazios.
-1. O modelo do carro seja gravado com todas as letras em maiúsculo.
+1. A idade dos membros seja maior que zero.
+1. A idade do manager seja maior que dezoito.
+1. O salário não pode ser negativo para membros e managers.
+1. O ano de estreia da banda não pode ser um ano futuro.
 
-> **Dicas**
->
-> - Faça as validações **antes** de atribuir os valores nos atributos!
-> - Adapte os métodos existentes ou crie novos métodos para atender a esses requisitos adicionais.
+> Dica: faça as validações **antes** de atribuir os valores nos atributos!
 
 ## 4. Funcionalidades
 
-1. Implemente um método na classe **Piloto** para atualizar a pontuação, considerando a pontuação atual e uma pontuação (positiva ou negativa) passada por parâmetro para o método.
-1. Implemente um método na classe **Tecnico** para aumentar o salário, considerando o salário atual e um aumento percentual passado por parâmetro para o método (1~30%). Por exemplo: 15 para 15%.
-1. Implemente um método na classe **Equipe** para adicionar um técnico à equipe.
-1. Implemente um método na classe **Equipe** para adicionar um carro à equipe.
-1. Implemente um método na classe **Equipe** para adicionar um piloto à equipe. Atenção: o número do piloto deve ser único dentro de uma equipe.
-1. Implemente um método na classe **Corrida** para adicionar uma equipe à corrida.
-1. Implemente um método na classe **Corrida** para calcular a pontuação total de todas as equipes participantes.
-1. Implemente o método `toString` para cada uma das classes: **Pessoa**, **Piloto**, **Tecnico**, **Carro**. As subclasses devem chamar os métodos `toString` da superclasse através do `super` para compor o seu `toString`.
-1. Implemente um método na classe **Equipe** para exibir todas as informações da equipe. Esse método deve chamar os métodos `toString` das classes que a compõe.
-1. Implemente um método na classe **Corrida** para exibir todas as informações da corrida, incluindo a data de realização, as equipes participantes e a pontuação total. Esse método deve chamar o método `exibirInformacoes` e cada objeto `Equipe` em sua lista.
+1. Implemente um método na classe **Banda** para adicionar um membro à lista de membros da banda.
+1. Implemente um método na classe **Banda** para calcular a média de idade dos membros da banda.
+1. Implemente um método na classe **Banda** para exibir todas as informações da banda, incluindo o nome, agência, ano de estreia, informações do manager e a lista de membros.
 
 ## 5. Exemplo de uso
 
 ```java
 public class Main {
     public static void main(String[] args) {
+        Membro membro1 = new Membro("Jimin", 25, "Vocalista", 300000.0F, true);
+        Membro membro2 = new Membro("Jungkook", 24, "Maknae", 350000.0F, true);
 
-        Piloto piloto1 = new Piloto("Lewis Hamilton", 36, 44);
-        Piloto piloto2 = new Piloto("Max Verstappen", 24, 33);
-        Piloto piloto3 = new Piloto("Charles Leclerc", 23, 16);
+        Manager manager = new Manager("Bang Si-hyuk", 45, 1500000.0F, 15);
 
-        piloto1.atualizarPontuacao(28);
-        piloto2.atualizarPontuacao(18);
-        piloto3.atualizarPontuacao(15);
-        piloto1.atualizarPontuacao(-7);
+        Banda banda = new Banda("BTS", "Big Hit Entertainment", 2013, manager);
+        banda.adicionarMembro(membro1);
+        banda.adicionarMembro(membro2);
 
-        Tecnico tecnico1 = new Tecnico("James Allison", 45, 1, 8000.0);
-        Tecnico tecnico2 = new Tecnico("Andrew Shovlin", 40, 2, 7500.0);
-
-        tecnico1.aumentarSalario(10.87);
-        tecnico2.aumentarSalario(15.13);
-
-        Carro carro1 = new Carro("W12", "Mercedes");
-        Carro carro2 = new Carro("RB16B", "Red Bull");
-
-        Equipe equipe1 = new Equipe(EquipeEnum.MERCEDES);
-        equipe1.adicionarPiloto(piloto1);
-        equipe1.adicionarTecnico(tecnico1);
-        equipe1.adicionarCarro(carro1);
-
-        Equipe equipe2 = new Equipe(EquipeEnum.RED_BULL);
-        equipe2.adicionarPiloto(piloto2);
-        equipe2.adicionarTecnico(tecnico2);
-        equipe2.adicionarCarro(carro2);
-
-        Corrida corrida = new Corrida(LocalDate.now());
-        corrida.adicionarEquipe(equipe1);
-        corrida.adicionarEquipe(equipe2);
-
-        corrida.exibirInformacoes();
+        System.out.println("Média de idade dos membros: " + banda.calcularMediaDeIdadeDosMembros());
+        banda.exibirTodasAsInformacoes();
     }
 }
 ```
