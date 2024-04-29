@@ -12,7 +12,7 @@
 
 <!-- /TOC -->
 
-## Descrição
+## 1. Descrição
 
 Desenvolva uma classe em Java para gerenciar informações pessoais básicas de uma pessoa. A classe deve conter atributos para armazenar:
 
@@ -22,12 +22,12 @@ Desenvolva uma classe em Java para gerenciar informações pessoais básicas de 
 - Salário (double)
 - Estudante (boolean)
 
-## Requisitos
+## 2. Requisitos
 
 1. Todos os atributos devem ser privados.
 2. Todos os atributos devem ter métodos públicos para acessá-los (getters) e modificá-los (setters).
 
-## Exemplo de Uso
+## 3. Exemplo de Uso
 
 ```java
 public class Main {
