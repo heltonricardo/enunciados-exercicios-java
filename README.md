@@ -2,6 +2,12 @@
 
 Este repositório contém uma coleção abrangente de exercícios práticos em Java, projetados para aprimorar as habilidades em programação orientada a objetos. Os exercícios exploram diversos conceitos, proporcionando uma experiência completa no desenvolvimento em Java.
 
+## Exercício 001
+
+Tags: `atributo` `classe` `encapsulamento` `get/set` `método` `objeto`
+
+- [Gerenciando informações pessoais](./exercicio-001/versao-001/README.md)
+
 ## Exercício 002
 
 Tags: `atributo` `classe` `composição` `construtor` `encapsulamento` `get/set` `lista` `método` `objeto`
