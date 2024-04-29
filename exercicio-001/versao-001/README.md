@@ -14,18 +14,18 @@
 
 ## 1. Descrição
 
-Desenvolva uma classe em Java para gerenciar informações pessoais básicas de uma pessoa. A classe deve conter atributos para armazenar:
+Desenvolva uma classe **Pessoa** para gerenciar informações pessoais básicas de uma pessoa. A classe deve conter atributos para armazenar:
 
-- Nome (String)
-- Idade (int)
-- Altura (float)
-- Salário (double)
-- Estudante (boolean)
+- **Nome** (`String`)
+- **Idade** (`int`)
+- **Altura** (`float`)
+- **Salário** (`double`)
+- **Estudante** (`boolean`)
 
 ## 2. Requisitos
 
 1. Todos os atributos devem ser privados.
-2. Todos os atributos devem ter métodos públicos para acessá-los (getters) e modificá-los (setters).
+2. Todos os atributos devem ter métodos públicos para acessá-los (_getters_) e modificá-los (_setters_).
 
 ## 3. Exemplo de Uso
 
