@@ -27,3 +27,9 @@ Tags: `atributo` `classe` `composição` `construtor` `localdate` `encapsulament
 Tags: `atributo` `classe` `classe abstrata` `classe intermediária` `composição` `construtor` `duration` `localdatetime` `encapsulamento` `enum` `get/set` `herança` `instanceof` `interface` `lista` `método` `objeto` `operador lógico` `polimorfismo` `sobrescrita` `string` `to string` `uml` `wrapper`
 
 - [Sistema de gerenciamento de filmes](./exercicio-004/versao-001/README.md)
+
+## Exercício 005
+
+Tags: `atributo` `atributo estático` `classe` `construtor` `duration` `encapsulamento` `get/set` `método` `método estático` `método estático de fábrica` `objeto`
+
+- [Gerenciando contas bancárias](./exercicio-005/versao-001/README.md)

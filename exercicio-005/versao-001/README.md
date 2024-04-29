@@ -16,21 +16,23 @@
 
 Desenvolva uma classe Java chamada **ContaBancaria** para representar uma conta bancária simples. A classe deve conter os seguintes elementos:
 
-1. Atributos estáticos:
+1. **Atributos estáticos e privados**:
    - `taxaDeJuros`: define a taxa de juros para todas as contas bancárias.
-2. Métodos estáticos:
+2. **Métodos estáticos e públicos**:
    - `setTaxaDeJuros(double taxa)`: define a taxa de juros para todas as contas bancárias.
    - `getTaxaDeJuros()`: retorna a taxa de juros atual.
-3. Atributos não estáticos:
+   - `criarComSaldoZerado()`: retorna um novo objeto com saldo zerado.
+3. **Atributos não estáticos e privados**:
    - `saldo`: armazena o saldo atual da conta.
-4. Métodos não estáticos:
+4. **Métodos não estáticos e públicos**:
    - `depositar(double valor)`: deposita uma quantia na conta.
    - `sacar(double valor)`: saca uma quantia da conta.
    - `calcularJuros(int meses)`: calcula e retorna o valor dos juros acumulados após um determinado número de meses, usando a taxa de juros definida.
 
 ## 2. Requisitos
 
-- Implemente verificação para garantir que o saldo não se torne negativo durante saques.
+1. Implemente um construtor que receba o saldo inicial.
+2. Implemente verificação para garantir que o saldo não se torne negativo durante saques.
 
 Implemente a classe **ContaBancaria** e um programa principal para testar o funcionamento do sistema de conta bancária.
 
@@ -41,7 +43,7 @@ public class Main {
     public static void main(String[] args) {
         ContaBancaria.setTaxaDeJuros(0.05);
 
-        ContaBancaria conta = new ContaBancaria();
+        ContaBancaria conta = ContaBancaria.criarComSaldoZerado();
 
         conta.depositar(1000.0);
         System.out.println("Saldo após depósito: R$ " + conta.getSaldo());
