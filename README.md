@@ -4,7 +4,7 @@ Este repositório contém uma coleção abrangente de exercícios práticos em J
 
 ## Exercício 001
 
-Tags: `atributo` `classe` `encapsulamento` `get/set` `método` `objeto`
+Tags: `atributo` `classe` `encapsulamento` `get/set` `método` `objeto` `orientação a objeto` `poo`
 
 - [Gerenciando informações pessoais](./exercicio-001/versao-001/README.md)
 
@@ -33,3 +33,15 @@ Tags: `atributo` `classe` `classe abstrata` `classe intermediária` `composiçã
 Tags: `atributo` `atributo estático` `classe` `construtor` `duration` `encapsulamento` `get/set` `método` `método estático` `método estático de fábrica` `objeto`
 
 - [Gerenciando contas bancárias](./exercicio-005/versao-001/README.md)
+
+## Exercício 006
+
+Tags: TODO
+
+- TODO
+
+## Exercício 007
+
+Tags: `expressão lambda` `função anônima` `interface` `interface funcional` `programação funcional`
+
+- [Manipulador de String](./exercicio-007/versao-001/README.md)
