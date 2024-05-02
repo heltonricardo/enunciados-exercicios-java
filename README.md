@@ -40,6 +40,12 @@ Tags: `catch` `tratamento de exceção` `try`
 
 - [Exercício: exceções 1](./exercicio-006/versao-001/README.md)
 
+## Exercício 007
+
+Tags: `catch` `finally` `tratamento de exceção` `throw` `try`
+
+- [Exercício: exceções 2](./exercicio-007/versao-001/README.md)
+
 ## Exercício 009
 
 Tags: `expressão lambda` `função anônima` `interface` `interface funcional` `programação funcional`
