@@ -36,9 +36,9 @@ Tags: `atributo` `atributo estático` `classe` `construtor` `duration` `encapsul
 
 ## Exercício 006
 
-Tags: TODO
+Tags: `catch` `tratamento de exceção` `try`
 
-- TODO
+- [Exercício: exceções 1](./exercicio-006/versao-001/README.md)
 
 ## Exercício 009
 
