@@ -40,7 +40,7 @@ Tags: TODO
 
 - TODO
 
-## Exercício 007
+## Exercício 009
 
 Tags: `expressão lambda` `função anônima` `interface` `interface funcional` `programação funcional`
 
