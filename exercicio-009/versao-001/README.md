@@ -1,4 +1,4 @@
-# Exercício: Manipulador de String
+# Exercício Java: Manipulador de string
 
 ## 1. Descrição
 

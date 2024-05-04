@@ -1,4 +1,4 @@
-# Projeto Java: Sistema de gerenciamento de times de futebol
+# Exercício Java: Times de futebol
 
 Este projeto Java tem como objetivo criar um sistema de gerenciamento de times de futebol, incorporando classes para Jogadores, Técnicos e Times, com ênfase em funcionalidades que aprimoram o sistema.
 

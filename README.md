@@ -6,45 +6,45 @@ Este repositório contém uma coleção abrangente de exercícios práticos em J
 
 Tags: `atributo` `classe` `encapsulamento` `get/set` `método` `objeto` `orientação a objeto` `poo`
 
-- [Gerenciando informações pessoais](./exercicio-001/versao-001/README.md)
+- [Informações pessoais](./exercicio-001/versao-001/README.md)
 
 ## Exercício 002
 
 Tags: `atributo` `classe` `composição` `construtor` `encapsulamento` `get/set` `lista` `método` `objeto`
 
-- [Sistema de gerenciamento de times de futebol](./exercicio-002/versao-001/README.md)
-- [Sistema de gerenciamento de bandas de K-pop](./exercicio-002/versao-002/README.md)
+- [Times de futebol](./exercicio-002/versao-001/README.md)
+- [Bandas de k-pop](./exercicio-002/versao-002/README.md)
 
 ## Exercício 003
 
 Tags: `atributo` `classe` `composição` `construtor` `localdate` `encapsulamento` `enum` `get/set` `herança` `lista` `método` `objeto` `operador lógico` `string` `to string` `uml` `wrapper`
 
-- [Sistema de gerenciamento escolar](./exercicio-003/versao-001/README.md)
-- [Sistema de gerenciamento de corrida automobilística](./exercicio-003/versao-002/README.md)
+- [Escola](./exercicio-003/versao-001/README.md)
+- [Corrida automobilística](./exercicio-003/versao-002/README.md)
 
 ## Exercício 004
 
 Tags: `atributo` `classe` `classe abstrata` `classe intermediária` `composição` `construtor` `duration` `localdatetime` `encapsulamento` `enum` `get/set` `herança` `instanceof` `interface` `lista` `método` `objeto` `operador lógico` `polimorfismo` `sobrescrita` `string` `to string` `uml` `wrapper`
 
-- [Sistema de gerenciamento de filmes](./exercicio-004/versao-001/README.md)
+- [Filmes](./exercicio-004/versao-001/README.md)
 
 ## Exercício 005
 
 Tags: `atributo` `atributo estático` `classe` `construtor` `duration` `encapsulamento` `get/set` `método` `método estático` `método estático de fábrica` `objeto`
 
-- [Gerenciando contas bancárias](./exercicio-005/versao-001/README.md)
+- [Contas bancárias](./exercicio-005/versao-001/README.md)
 
 ## Exercício 006
 
 Tags: `catch` `tratamento de exceção` `try`
 
-- [Exercício: exceções 1](./exercicio-006/versao-001/README.md)
+- [Exceções 1](./exercicio-006/versao-001/README.md)
 
 ## Exercício 007
 
 Tags: `catch` `finally` `tratamento de exceção` `throw` `try`
 
-- [Exercício: exceções 2](./exercicio-007/versao-001/README.md)
+- [Exceções 2](./exercicio-007/versao-001/README.md)
 
 ## Exercício 008
 
@@ -56,4 +56,4 @@ Tags: TODO
 
 Tags: `expressão lambda` `função anônima` `interface` `interface funcional` `programação funcional`
 
-- [Manipulador de String](./exercicio-007/versao-001/README.md)
+- [Manipulador de string](./exercicio-009/versao-001/README.md)

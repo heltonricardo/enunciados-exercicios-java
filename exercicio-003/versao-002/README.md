@@ -1,4 +1,4 @@
-# Projeto Java: Sistema de gerenciamento de corrida automobilística
+# Exercício Java: Corrida automobilística
 
 Este projeto visa criar um sistema de gerenciamento de corrida em Java, com classes para Pilotos, Técnicos, Carros, Equipes e Corridas, visando organizar e manipular informações relacionadas às competições, com implementação de funcionalidades que aprimoram o sistema.
 

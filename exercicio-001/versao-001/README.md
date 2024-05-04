@@ -1,4 +1,4 @@
-# Exercício: Gerenciando informações pessoais
+# Exercício Java: Informações pessoais
 
 [Voltar](../../README.md)
 

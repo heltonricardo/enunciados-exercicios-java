@@ -1,4 +1,4 @@
-# Projeto Java: Sistema de gerenciamento de bandas de K-pop
+# Exercício Java: Bandas de k-pop
 
 Este projeto Java visa criar um sistema de gerenciamento de bandas de K-pop, incorporando classes para Membros, Managers e Bandas, com ênfase em funcionalidades que aprimoram o sistema.
 

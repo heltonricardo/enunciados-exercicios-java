@@ -1,4 +1,4 @@
-# Projeto Java: Sistema de gerenciamento escolar
+# Exercício Java: Escola
 
 O projeto visa desenvolver um sistema de gerenciamento escolar em Java, com classes para Alunos, Professores, Disciplinas e Turmas, focando na organização e manipulação eficiente de informações acadêmicas, com implementação de funcionalidades que agregam valor ao sistema.
 

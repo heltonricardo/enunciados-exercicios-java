@@ -1,4 +1,4 @@
-# Projeto Java: Sistema de gerenciamento de filmes
+# Exercício Java: Filmes
 
 Este projeto Java tem como objetivo criar um sistema de gerenciamento de filmes, incorporando classes para atores, diretores, críticos e outras entidades, com ênfase em funcionalidades avançadas que aprimoram o sistema.
 

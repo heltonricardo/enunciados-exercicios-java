@@ -1,4 +1,4 @@
-# Exercício: Gerenciando contas bancárias
+# Exercício Java: Contas bancárias
 
 [Voltar](../../README.md)
 
