@@ -16,7 +16,7 @@ Você foi designado para criar um programa que manipula strings de várias manei
 
 5. Na função principal (_main_), faça uma expressão lambda (função anônima) que implementa a interface **Operacao**. Essa expressão deve retornar a exponenciação entre os dois valores, sendo o primeiro a base e o segundo o expoente.
 
-6. TODO
+6. Altere o tipo da variável criada no método _main_ por uma interface que já vem no Java, especificamente do pacote `java.util.function`. Essas interfaces estão descritas em https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html e abaixo, você encontra a versão traduzida:
 
 | Interface               | Descrição                                                                                                         |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------- |
@@ -63,7 +63,5 @@ Você foi designado para criar um programa que manipula strings de várias manei
 | ToLongBiFunction<T,U>   | Representa uma função que aceita dois argumentos e produz um resultado long.                                      |
 | ToLongFunction<T>       | Representa uma função que produz um resultado long.                                                               |
 | UnaryOperator<T>        | Representa uma operação em um único operando que produz um resultado do mesmo tipo que seu operando.              |
-
-https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html
 
 [Voltar](../../README.md)
