@@ -57,3 +57,9 @@ Tags: TODO
 Tags: `expressão lambda` `função anônima` `interface` `interface funcional` `programação funcional`
 
 - [Manipulador de string](./exercicio-009/versao-001/README.md)
+
+## Exercício 010
+
+Tags: `expressão lambda` `função anônima` `interface` `interface funcional` `programação funcional` `referência de método`
+
+- [Calculadora funcional](./exercicio-010/versao-001/README.md)
