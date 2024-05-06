@@ -16,7 +16,7 @@ Você foi designado para criar um programa que manipula strings de várias manei
 
 5. Na função principal (_main_), faça uma expressão lambda (função anônima) que implementa a interface **Operacao**. Essa expressão deve retornar a exponenciação entre os dois valores, sendo o primeiro a base e o segundo o expoente.
 
-6. Altere o tipo da variável criada no método _main_ por uma interface que já vem no Java, especificamente do pacote `java.util.function`. Essas interfaces estão descritas em https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html e abaixo, você encontra a versão traduzida:
+6. Altere o tipo da variável criada no método _main_ por uma interface que já vem no Java, especificamente do pacote `java.util.function`. Você deverá encontrar uma interface que se adéque aos tipos usados no exercício. Essas interfaces estão descritas em https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html e abaixo, você encontra a versão traduzida:
 
 | Interface               | Descrição                                                                                                         |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------- |
