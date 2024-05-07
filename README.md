@@ -48,9 +48,9 @@ Tags: `catch` `finally` `tratamento de exceção` `throw` `try`
 
 ## Exercício 008
 
-Tags: TODO
+Tags: `catch` `finally` `tratamento de exceção` `throw` `try` `try-with-resources`
 
-- TODO
+- [Exceções 3](./exercicio-008/versao-001/README.md)
 
 ## Exercício 009
 
