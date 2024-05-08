@@ -48,7 +48,7 @@ Tags: `catch` `finally` `tratamento de exceção` `throw` `try`
 
 ## Exercício 008
 
-Tags: `catch` `finally` `tratamento de exceção` `throw` `try` `try-with-resources`
+Tags: `escrita em arquivo` `catch` `finally` `tratamento de exceção` `throw` `try` `try-with-resources`
 
 - [Exceções 3](./exercicios/exercicio-008/versao-001/README.md)
 
@@ -63,3 +63,9 @@ Tags: `expressão lambda` `função anônima` `interface` `interface funcional` 
 Tags: `expressão lambda` `função anônima` `interface` `interface funcional` `programação funcional` `referência de método`
 
 - [Calculadora funcional](./exercicios/exercicio-010/versao-001/README.md)
+
+## Exercício 011
+
+Tags: `expressão lambda` `forEach` `função anônima` `interface` `interface funcional` `programação funcional` `referência de método`
+
+- [Operações funcionais em lista](./exercicios/exercicio-011/versao-001/README.md)
