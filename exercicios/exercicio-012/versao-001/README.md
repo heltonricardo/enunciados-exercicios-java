@@ -4,7 +4,7 @@
 
 Vamos criar um programa em Java para trabalhar com uma lista de produtos. Cada produto terá um **nome**, um **preço** e um **desconto** associado. Utilizaremos diferentes tipos de interfaces funcionais para manipular esses produtos.
 
-## passo 1: Definindo a classe produto
+## Passo 1: Definindo a classe produto
 
 Crie uma classe chamada `Produto` com os seguintes atributos:
 
@@ -14,7 +14,7 @@ Crie uma classe chamada `Produto` com os seguintes atributos:
 
 > **Dica**: implemente um construtor que receba todos os atributos e o método `toString` para auxiliar no seu teste.
 
-## passo 2: Implementando as funções anônimas
+## Passo 2: Implementando as funções anônimas
 
 Agora, vamos criar funções anônimas utilizando diferentes tipos de interfaces funcionais para manipular os produtos. Crie uma classe com método _main_ e faça o que é solicitado:
 
@@ -34,7 +34,7 @@ Agora, vamos criar funções anônimas utilizando diferentes tipos de interfaces
 
 7. **Consumer - _imprimirProduto_**: Crie uma função anônima que receba um produto e imprima suas informações (nome, preço e desconto).
 
-## passo 3: Unindo todas as funções
+## Passo 3: Unindo todas as funções
 
 Faça um código que use as funções criadas anteriormente, encadeando-as através dos métodos `andThen` das interfaces **Function** e **UnaryOperator**:
 
