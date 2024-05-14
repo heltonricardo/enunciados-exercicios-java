@@ -75,3 +75,9 @@ Tags: `expressão lambda` `função anônima` `interface` `interface funcional` 
 Tags: `expressão lambda` `forEach` `função anônima` `interface` `interface funcional` `programação funcional` `referência de método`
 
 - [Operações funcionais em lista](./exercicios/exercicio-011/versao-001/README.md)
+
+### Exercício 012
+
+Tags: `expressão lambda` `endThen` `forEach` `função anônima` `interface` `interface funcional` `programação funcional`
+
+- [Manipulação de produtos](./exercicios/exercicio-012/versao-001/README.md)
