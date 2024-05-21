@@ -32,7 +32,7 @@ Agora, vamos criar funções anônimas utilizando diferentes tipos de interfaces
 
 6. **UnaryOperator - _arredondarPreco_**: Crie uma função anônima que receba um preço e arredonde para duas casas decimais.
 
-7. **Consumer - _imprimirProduto_**: Crie uma função anônima que receba um produto e imprima suas informações (nome, preço e desconto).
+7. **BiConsumer - _imprimirProduto_**: Crie uma função anônima que receba um produto e seu novo preço e imprima o nome do produto e o preço recebido.
 
 ## Passo 3: Unindo todas as funções
 
