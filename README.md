@@ -86,4 +86,4 @@ Tags: `expressão lambda` `endThen` `forEach` `função anônima` `interface` `i
 
 Tags: `expressão lambda` `expressão regular` `filter` `forEach` `função anônima` `interface` `interface funcional` `map` `programação funcional` `regex` `stream`
 
-- [Filtragem e mapeamento de dados](./exercicios/exercicio-013/versao-001/README.md)
+- [Filtragem e mapeamento de frutas](./exercicios/exercicio-013/versao-001/README.md)

@@ -1,4 +1,4 @@
-# Exercício Java: Filtragem e mapeamento de dados
+# Exercício Java: Filtragem e mapeamento de frutas
 
 [Voltar](../../../README.md)
 
