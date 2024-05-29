@@ -81,3 +81,9 @@ Tags: `expressão lambda` `forEach` `função anônima` `interface` `interface f
 Tags: `expressão lambda` `endThen` `forEach` `função anônima` `interface` `interface funcional` `programação funcional`
 
 - [Manipulação de produtos](./exercicios/exercicio-012/versao-001/README.md)
+
+### Exercício 013
+
+Tags: `expressão lambda` `expressão regular` `filter` `forEach` `função anônima` `interface` `interface funcional` `map` `programação funcional` `regex` `stream`
+
+- [Filtragem e mapeamento de dados](./exercicios/exercicio-013/versao-001/README.md)
