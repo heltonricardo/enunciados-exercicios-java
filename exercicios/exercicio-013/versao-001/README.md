@@ -11,7 +11,7 @@ Neste exercício, você deverá criar uma aplicação em Java que utilize interf
    - Um predicado que retorna verdadeiro se o primeiro caractere da string for diferente do último.
    - Um operador unário que converte a string para maiúsculas e adiciona um ponto de exclamação no final.
    - Um predicado que retorna verdadeiro se a primeira letra da string for uma vogal.
-   - Um consumidor que imprime a string no formato "Fruta: " seguido pelo nome da fruta.rima os valores no console com "Fruta: " antes de cada elemento.
+   - Um consumidor que imprime a string no formato "Fruta: " seguido pelo nome da fruta.
 
 2. Crie uma lista de strings contendo os elementos: `["laranja", "banana", "abacaxi", "uva", "kiwi", "melancia", "acerola", "morango", "ameixa", "jabuticaba", "umbu-cajá"]`.
 
