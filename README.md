@@ -84,6 +84,12 @@ Tags: `expressão lambda` `endThen` `forEach` `função anônima` `interface` `i
 
 ### Exercício 013
 
-Tags: `expressão lambda` `expressão regular` `filter` `forEach` `função anônima` `interface` `interface funcional` `map` `programação funcional` `regex` `stream`
+Tags: `expressão lambda` `filter` `forEach` `função anônima` `interface` `interface funcional` `map` `programação funcional` `stream`
 
 - [Filtragem e mapeamento de frutas](./exercicios/exercicio-013/versao-001/README.md)
+
+### Exercício 014
+
+Tags: `expressão lambda` `enum` `filter` `forEach` `função anônima` `interface` `interface funcional` `map` `programação funcional` `stream`
+
+- [Filtragem e mapeamento de músicas](./exercicios/exercicio-014/versao-001/README.md)
