@@ -19,9 +19,10 @@ Neste exercício, você deverá criar uma aplicação em Java que utilize interf
    - `int duracaoEmSegundos`
    - `Genero genero`
 
-   > Crie um construtor com todos os atributos.
    >
-   > Crie métodos getter e setter para cada atributo.
+   > Implemente um construtor com todos os atributos.
+   >
+   > Implemente métodos getter e setter para cada atributo.
 
 3. Crie uma classe `MusicaMapper` com os seguintes atributos privados:
 
@@ -32,14 +33,16 @@ Neste exercício, você deverá criar uma aplicação em Java que utilize interf
 
    - `double segundosParaMinutos` que recebe um valor inteiro em segundos e retorna o equivalente em minutos.
 
-   > Crie um construtor que aceite apenas um objeto `Musica` e extrai dele o que for necessário.
    >
-   > Crie métodos getter e setter para cada atributo. No getter da duração, retorne o valor com apenas duas casas decimais.
+   > Implemente um construtor que aceite apenas um objeto `Musica` e extrai dele o que for necessário.
    >
-   > Crie um método `toString` no formato "Música: [Título] - [Duração em Minutos] minutos" (use os getters da classe).
+   > Implemente métodos getter e setter para cada atributo. No getter da duração, retorne o valor com apenas duas casas decimais.
+   >
+   > Implemente um método `toString` no formato "Música: [Título] - [Duração em Minutos] minutos" (use os getters da classe).
 
 4. Instancie uma lista de músicas em uma classe com método `main` com pelo menos 10 objetos `Musica`, cada um com valores diferentes para os atributos.
 
+   >
    > Exemplo:
    >
    > - Hey Jude - The Beatles - 210 segundos - ROCK
