@@ -2,14 +2,15 @@
 
 [Voltar](../../../README.md)
 
-Neste exercício, você deverá criar uma aplicação em Java que utilize interfaces funcionais e Streams, aplicando operações diretamente nas lambdas dentro de `map` e `filter`. Além disso, você deverá criar uma classe `Musica` para representar os objetos nos quais as operações serão realizadas, e um `enum` para representar os gêneros musicais. Siga as instruções detalhadas abaixo:
+Neste exercício, você deverá criar uma aplicação em Java que utilize interfaces funcionais e Streams, aplicando operações diretamente nas lambdas dentro de `filter`, `map`, `sorted` e `forEach`. Além disso, você deverá criar uma classe `Musica` e uma classe `MusicaMapper` para representar os objetos nos quais as operações serão realizadas, e um `enum` para representar os gêneros musicais. Siga as instruções detalhadas abaixo:
 
 1. Crie um `enum` chamado `Genero` com os seguintes valores:
 
-   - `ROCK`
-   - `POP`
-   - `JAZZ`
    - `CLASSICA`
+   - `HIPHOP`
+   - `JAZZ`
+   - `POP`
+   - `ROCK`
 
 2. Crie uma classe `Musica` com os seguintes atributos privados:
 
@@ -18,21 +19,47 @@ Neste exercício, você deverá criar uma aplicação em Java que utilize interf
    - `int duracaoEmSegundos`
    - `Genero genero`
 
-3. Crie um construtor com todos os atributos e um método `toString` no formato "Música: [Título] - [Duração em Minutos] minutos".
+   > Crie um construtor com todos os atributos.
+   >
+   > Crie métodos getter e setter para cada atributo.
 
-4. Instancie uma lista de músicas com pelo menos 10 objetos `Musica`, cada um com valores diferentes para os atributos.
+3. Crie uma classe `MusicaMapper` com os seguintes atributos privados:
 
-5. Obtenha um `Stream` a partir da lista de músicas.
+   - `String titulo`
+   - `double duracaoEmMinutos`
 
-6. Aplique as seguintes operações no stream, utilizando lambdas diretamente nas chamadas de `map` e `filter`:
+   E o seguinte método privado:
 
-   - Filtre (`filter`) as músicas cuja duração seja maior ou igual a 250 segundos.
+   - `double segundosParaMinutos` que recebe um valor inteiro em segundos e retorna o equivalente em minutos.
+
+   > Crie um construtor que aceite apenas um objeto `Musica` e extrai dele o que for necessário.
+   >
+   > Crie métodos getter e setter para cada atributo. No getter da duração, retorne o valor com apenas duas casas decimais.
+   >
+   > Crie um método `toString` no formato "Música: [Título] - [Duração em Minutos] minutos" (use os getters da classe).
+
+4. Instancie uma lista de músicas em uma classe com método `main` com pelo menos 10 objetos `Musica`, cada um com valores diferentes para os atributos.
+
+   > Exemplo:
+   >
+   > - Hey Jude - The Beatles - 210 segundos - ROCK
+   > - Imagine - John Lennon - 180 segundos - POP
+   > - Like a Rolling Stone - Bob Dylan - 370 segundos - ROCK
+   > - Blue Train - John Coltrane - 220 segundos - JAZZ
+   > - Clair de Lune - Debussy - 240 segundos - CLASSICA
+   > - Hotel California - Eagles - 390 segundos - ROCK
+   > - Stairway to Heaven - Led Zeppelin - 480 segundos - ROCK
+   > - Purple Rain - Prince - 500 segundos - POP
+   > - Juicy - The Notorious B.I.G. - 360 segundos - HIPHOP
+   > - Let It Be - The Beatles - 230 segundos - ROCK
+
+5. Obtenha um `Stream` a partir da lista criada, aplicando as seguintes operações:
+
+   - Filtre (`filter`) as músicas cuja duração seja maior que 250 segundos.
    - Filtre (`filter`) as músicas do gênero `ROCK`.
-   - Mapeie (`map`) as músicas para um objeto que contenha apenas o título e a duração convertida de segundos para minutos.
-   - Filtre (`filter`) as músicas cujo título tenha mais de uma palavra.
-   - Ordene (`sorted`) as músicas por duração em ordem decrescente.
-   - Imprima cada música (`forEach`) resultante no console usando o `toString` da classe.
-
-7. A implementação deve ser feita utilizando lambdas diretamente nas operações do stream.
+   - Mapeie (`map`) as músicas para objetos `MusicaMapper`.
+   - Filtre (`filter`) as músicas cujo título tenha mais de duas palavras.
+   - Ordene (`sorted`) as músicas por duração em minutos em ordem decrescente.
+   - Imprima cada música (`forEach`) resultante no console usando o `toString` da classe `MusicaMapper`.
 
 [Voltar](../../../README.md)
