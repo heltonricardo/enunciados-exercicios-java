@@ -19,10 +19,11 @@ Neste exercício, você deverá criar uma aplicação em Java que utilize interf
    - `int duracaoEmSegundos`
    - `Genero genero`
 
-   >
-   > Implemente um construtor com todos os atributos.
-   >
-   > Implemente métodos getter e setter para cada atributo.
+> [!NOTE]
+>
+> Implemente um construtor com todos os atributos.
+>
+> Implemente métodos getter e setter para cada atributo.
 
 3. Crie uma classe `MusicaMapper` com os seguintes atributos privados:
 
@@ -33,28 +34,28 @@ Neste exercício, você deverá criar uma aplicação em Java que utilize interf
 
    - `double segundosParaMinutos` que recebe um valor inteiro em segundos e retorna o equivalente em minutos.
 
-   >
-   > Implemente um construtor que aceite apenas um objeto `Musica` e extrai dele o que for necessário.
-   >
-   > Implemente métodos getter e setter para cada atributo. No getter da duração, retorne o valor com apenas duas casas decimais.
-   >
-   > Implemente um método `toString` no formato "Música: [Título] - [Duração em Minutos] minutos" (use os getters da classe).
+> [!NOTE]
+>
+> Implemente um construtor que aceite apenas um objeto `Musica` e extrai dele o que for necessário.
+>
+> Implemente métodos getter e setter para cada atributo. No getter da duração, retorne o valor com apenas duas casas decimais.
+>
+> Implemente um método `toString` no formato "Música: [Título] - [Duração em Minutos] minutos" (use os getters da classe).
 
 4. Instancie uma lista de músicas em uma classe com método `main` com pelo menos 10 objetos `Musica`, cada um com valores diferentes para os atributos.
 
-   >
-   > Exemplo:
-   >
-   > - Hey Jude - The Beatles - 210 segundos - ROCK
-   > - Imagine - John Lennon - 180 segundos - POP
-   > - Like a Rolling Stone - Bob Dylan - 370 segundos - ROCK
-   > - Blue Train - John Coltrane - 220 segundos - JAZZ
-   > - Clair de Lune - Debussy - 240 segundos - CLASSICA
-   > - Hotel California - Eagles - 390 segundos - ROCK
-   > - Stairway to Heaven - Led Zeppelin - 480 segundos - ROCK
-   > - Purple Rain - Prince - 500 segundos - POP
-   > - Juicy - The Notorious B.I.G. - 360 segundos - HIPHOP
-   > - Let It Be - The Beatles - 230 segundos - ROCK
+> [!TIP]
+>
+> - Hey Jude - The Beatles - 210 segundos - ROCK
+> - Imagine - John Lennon - 180 segundos - POP
+> - Like a Rolling Stone - Bob Dylan - 370 segundos - ROCK
+> - Blue Train - John Coltrane - 220 segundos - JAZZ
+> - Clair de Lune - Debussy - 240 segundos - CLASSICA
+> - Hotel California - Eagles - 390 segundos - ROCK
+> - Stairway to Heaven - Led Zeppelin - 480 segundos - ROCK
+> - Purple Rain - Prince - 500 segundos - POP
+> - Juicy - The Notorious B.I.G. - 360 segundos - HIPHOP
+> - Let It Be - The Beatles - 230 segundos - ROCK
 
 5. Obtenha um `Stream` a partir da lista criada, aplicando as seguintes operações:
 
