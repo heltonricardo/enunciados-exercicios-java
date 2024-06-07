@@ -23,11 +23,11 @@ Crie uma classe `Musica` com os seguintes atributos privados:
 - `int duracaoEmSegundos`
 - `Genero genero`
 
-> [!NOTE]
+> [!IMPORTANT]
 >
-> Implemente um construtor com todos os atributos.
+> 1. Implemente um construtor com todos os atributos.
 >
-> Implemente métodos getter e setter para cada atributo.
+> 2. Implemente métodos getter e setter para cada atributo.
 
 ### Passo 3
 
@@ -40,13 +40,13 @@ E o seguinte método privado:
 
 - `double segundosParaMinutos` que recebe um valor inteiro em segundos e retorna o equivalente em minutos.
 
-> [!NOTE]
+> [!IMPORTANT]
 >
-> Implemente um construtor que aceite apenas um objeto `Musica` e extrai dele o que for necessário.
+> 1. Implemente um construtor que aceite apenas um objeto `Musica` e extrai dele o que for necessário.
 >
-> Implemente métodos getter e setter para cada atributo. No getter da duração, retorne o valor com apenas duas casas decimais.
+> 2. Implemente métodos getter e setter para cada atributo. No getter da duração, retorne o valor com apenas duas casas decimais.
 >
-> Implemente um método `toString` no formato "Música: [Título] - [Duração em Minutos] minutos" (use os getters da classe).
+> 3. Implemente um método `toString` no formato "**Música:** [Título] **-** [Duração em Minutos] **minutos**" (use os getters da classe).
 
 ### Passo 4
 
