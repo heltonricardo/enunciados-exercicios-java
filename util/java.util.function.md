@@ -30,6 +30,11 @@ As interfaces funcionais no pacote `java.util.function` fornecem tipos de destin
 
 ---
 
+> [!IMPORTANT]
+> Os tipos _T_, _U_ e _R_ são conhecidos como **generics** (tipos genéricos) e podem ser usados com qualquer tipo de objeto, incluindo os tipos primitivos encapsulados em suas classes wrapper correspondentes, como `Integer`, `Double`, `Long`, `Float`, `Short`, `Byte`, `Character`, e `Boolean`.
+
+---
+
 ### Interfaces para tipos primitivos
 
 | Interface              | Método característico | Entrada        | Saída   |
@@ -61,59 +66,55 @@ As interfaces funcionais no pacote `java.util.function` fornecem tipos de destin
 
 ---
 
-> [!IMPORTANT]
-> Os tipos _T_, _U_ e _R_ são conhecidos como **generics** (tipos genéricos) e podem ser usados com qualquer tipo de objeto, incluindo os tipos primitivos encapsulados em suas classes wrapper correspondentes, como `Integer`, `Double`, `Long`, `Float`, `Short`, `Byte`, `Character`, e `Boolean`.
+### Exemplos
 
-> [!TIP]
->
-> ```java
-> Consumer<Produto> imprimirNome = produto -> System.out.println("Nome do produto: " + produto.getNome());
->
-> BiConsumer<Produto, Integer> diminuirEstoque = (produto, quantidade) -> produto.setEstoque(produto.getEstoque() - quantidade);
->
-> ObjDoubleConsumer<Produto> aplicarDesconto = (produto, desconto) -> {
->     double precoComDesconto = produto.getPreco() * (1 - desconto);
->     produto.setPreco(precoComDesconto);
-> };
->
-> ObjIntConsumer<Produto> adicionarAoCarrinho = (produto, quantidade) -> {
->     CarrinhoItem item = new CarrinhoItem(produto, quantidade);
->     carrinho.adicionarItem(item);
-> };
->
-> ObjLongConsumer<Produto> registrarVenda = (produto, timestamp) -> {
->     Venda venda = new Venda(produto, new Date(timestamp));
->     registroDeVendas.adicionarVenda(venda);
-> };
->
-> Supplier<Produto> criarNovoProduto = () -> new Produto("Novo Produto", 100.0, 50);
->
-> BooleanSupplier estaVazio = () -> carrinho.getQuantidadeItens() == 0;
->
-> Function<Produto, String> extrairNome = produto -> produto.getNome();
->
-> BiFunction<Produto, Integer, Double> calcularTotal = (produto, quantidade) -> produto.getPreco() * quantidade;
->
-> ToDoubleFunction<Produto> calcularPreco = produto -> produto.getPreco();
->
-> ToDoubleBiFunction<Produto, Integer> calcularPrecoTotal = (produto, quantidade) -> produto.getPreco() * quantidade;
->
-> ToIntFunction<Produto> extrairQuantidade = produto -> produto.getQuantidade();
->
-> ToIntBiFunction<Produto, Integer> calcularQuantidadeTotal = (produto, quantidade) -> produto.getQuantidade() * quantidade;
->
-> ToLongFunction<Produto> extrairTimestamp = produto -> produto.getTimestamp();
->
-> ToLongBiFunction<Produto, Integer> calcularTimestampTotal = (produto, quantidade) -> produto.getTimestamp() * quantidade;
->
-> UnaryOperator<Produto> duplicarProduto = produto -> new Produto(produto.getNome(), produto.getPreco(), produto.getQuantidade() * 2);
->
-> BinaryOperator<Integer> somarValores = (a, b) -> a + b;
->
-> Predicate<Produto> filtroPreco = produto -> produto.getPreco() < 50.0;
->
-> BiPredicate<Produto, Integer> filtroEstoque = (produto, quantidade) -> produto.getEstoque() >= quantidade;
->
-> ```
+```java
+Consumer<Produto> imprimirNome = produto -> System.out.println("Nome do produto: " + produto.getNome());
+
+BiConsumer<Produto, Integer> diminuirEstoque = (produto, quantidade) -> produto.setEstoque(produto.getEstoque() - quantidade);
+
+ObjDoubleConsumer<Produto> aplicarDesconto = (produto, desconto) -> {
+    double precoComDesconto = produto.getPreco() * (1 - desconto);
+    produto.setPreco(precoComDesconto);
+};
+
+ObjIntConsumer<Produto> adicionarAoCarrinho = (produto, quantidade) -> {
+    CarrinhoItem item = new CarrinhoItem(produto, quantidade);
+    carrinho.adicionarItem(item);
+};
+
+ObjLongConsumer<Produto> registrarVenda = (produto, timestamp) -> {
+    Venda venda = new Venda(produto, new Date(timestamp));
+    registroDeVendas.adicionarVenda(venda);
+};
+
+Supplier<Produto> criarNovoProduto = () -> new Produto("Novo Produto", 100.0, 50);
+
+BooleanSupplier estaVazio = () -> carrinho.getQuantidadeItens() == 0;
+
+Function<Produto, String> extrairNome = produto -> produto.getNome();
+
+BiFunction<Produto, Integer, Double> calcularTotal = (produto, quantidade) -> produto.getPreco() * quantidade;
+
+ToDoubleFunction<Produto> calcularPreco = produto -> produto.getPreco();
+
+ToDoubleBiFunction<Produto, Integer> calcularPrecoTotal = (produto, quantidade) -> produto.getPreco() * quantidade;
+
+ToIntFunction<Produto> extrairQuantidade = produto -> produto.getQuantidade();
+
+ToIntBiFunction<Produto, Integer> calcularQuantidadeTotal = (produto, quantidade) -> produto.getQuantidade() * quantidade;
+
+ToLongFunction<Produto> extrairTimestamp = produto -> produto.getTimestamp();
+
+ToLongBiFunction<Produto, Integer> calcularTimestampTotal = (produto, quantidade) -> produto.getTimestamp() * quantidade;
+
+UnaryOperator<Produto> duplicarProduto = produto -> new Produto(produto.getNome(), produto.getPreco(), produto.getQuantidade() * 2);
+
+BinaryOperator<Integer> somarValores = (a, b) -> a + b;
+
+Predicate<Produto> filtroPreco = produto -> produto.getPreco() < 50.0;
+
+BiPredicate<Produto, Integer> filtroEstoque = (produto, quantidade) -> produto.getEstoque() >= quantidade;
+```
 
 Referência: [Documentação oficial do Java](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html)
