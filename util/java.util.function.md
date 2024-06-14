@@ -4,55 +4,55 @@ As interfaces funcionais fornecem tipos de destino para expressões lambda e ref
 
 ## Interfaces para Objetos
 
-| Interface                 | Método característico | Descrição                                                                                                         |
-| ------------------------- | --------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `BiConsumer<T,U>`         | `accept`              | Representa uma operação que aceita dois argumentos de entrada e não retorna resultado.                            |
-| `BiFunction<T,U,R>`       | `apply`               | Representa uma função que aceita dois argumentos e produz um resultado.                                           |
-| `BinaryOperator<T>`       | `apply`               | Representa uma operação com dois operandos do mesmo tipo, produzindo um resultado do mesmo tipo que os operandos. |
-| `BiPredicate<T,U>`        | `test`                | Representa um predicado (função que retorna um booleano) de dois argumentos.                                      |
-| `BooleanSupplier`         | `getAsBoolean`        | Representa um fornecedor de resultados booleanos.                                                                 |
-| `Consumer<T>`             | `accept`              | Representa uma operação que aceita um único argumento de entrada e não retorna resultado.                         |
-| `Function<T,R>`           | `apply`               | Representa uma função que aceita um argumento e produz um resultado.                                              |
-| `ObjDoubleConsumer<T>`    | `accept`              | Representa uma operação que aceita um argumento do tipo objeto e um argumento double, e não retorna resultado.    |
-| `ObjIntConsumer<T>`       | `accept`              | Representa uma operação que aceita um argumento do tipo objeto e um argumento int, e não retorna resultado.       |
-| `ObjLongConsumer<T>`      | `accept`              | Representa uma operação que aceita um argumento do tipo objeto e um argumento long, e não retorna resultado.      |
-| `Predicate<T>`            | `test`                | Representa um predicado (função que retorna um booleano) de um argumento.                                         |
-| `Supplier<T>`             | `get`                 | Representa um fornecedor de resultados.                                                                           |
-| `ToDoubleBiFunction<T,U>` | `applyAsDouble`       | Representa uma função que aceita dois argumentos e produz um resultado double.                                    |
-| `ToDoubleFunction<T>`     | `applyAsDouble`       | Representa uma função que produz um resultado double.                                                             |
-| `ToIntBiFunction<T,U>`    | `applyAsInt`          | Representa uma função que aceita dois argumentos e produz um resultado int.                                       |
-| `ToIntFunction<T>`        | `applyAsInt`          | Representa uma função que produz um resultado int.                                                                |
-| `ToLongBiFunction<T,U>`   | `applyAsLong`         | Representa uma função que aceita dois argumentos e produz um resultado long.                                      |
-| `ToLongFunction<T>`       | `applyAsLong`         | Representa uma função que produz um resultado long.                                                               |
-| `UnaryOperator<T>`        | `apply`               | Representa uma operação em um único operando que produz um resultado do mesmo tipo que seu operando.              |
+| Interface                 | Método característico | Entrada   | Saída   |
+| ------------------------- | --------------------- | --------- | ------- |
+| `Consumer<T>`             | `accept`              | T         | void    |
+| `BiConsumer<T,U>`         | `accept`              | T, U      | void    |
+| `ObjDoubleConsumer<T>`    | `accept`              | T, double | void    |
+| `ObjIntConsumer<T>`       | `accept`              | T, int    | void    |
+| `ObjLongConsumer<T>`      | `accept`              | T, long   | void    |
+| `Supplier<T>`             | `get`                 | -         | T       |
+| `BooleanSupplier`         | `getAsBoolean`        | -         | boolean |
+| `Function<T,R>`           | `apply`               | T         | R       |
+| `BiFunction<T,U,R>`       | `apply`               | T, U      | R       |
+| `ToDoubleFunction<T>`     | `applyAsDouble`       | T         | double  |
+| `ToDoubleBiFunction<T,U>` | `applyAsDouble`       | T, U      | double  |
+| `ToIntFunction<T>`        | `applyAsInt`          | T         | int     |
+| `ToIntBiFunction<T,U>`    | `applyAsInt`          | T, U      | int     |
+| `ToLongFunction<T>`       | `applyAsLong`         | T         | long    |
+| `ToLongBiFunction<T,U>`   | `applyAsLong`         | T, U      | long    |
+| `UnaryOperator<T>`        | `apply`               | T         | T       |
+| `BinaryOperator<T>`       | `apply`               | T, T      | T       |
+| `Predicate<T>`            | `test`                | T         | boolean |
+| `BiPredicate<T,U>`        | `test`                | T, U      | boolean |
 
 ## Interfaces para tipos primitivos
 
-| Interface              | Método característico | Descrição                                                                             |
-| ---------------------- | --------------------- | ------------------------------------------------------------------------------------- |
-| `DoubleBinaryOperator` | `applyAsDouble`       | Representa uma operação com dois operandos double e produz um resultado double.       |
-| `DoubleConsumer`       | `accept`              | Representa uma operação que aceita um único argumento double e não retorna resultado. |
-| `DoubleFunction<R>`    | `apply`               | Representa uma função que aceita um argumento double e produz um resultado.           |
-| `DoublePredicate`      | `test`                | Representa um predicado (função que retorna um booleano) de um argumento double.      |
-| `DoubleSupplier`       | `getAsDouble`         | Representa um fornecedor de resultados double.                                        |
-| `DoubleToIntFunction`  | `applyAsInt`          | Representa uma função que aceita um argumento double e produz um resultado int.       |
-| `DoubleToLongFunction` | `applyAsLong`         | Representa uma função que aceita um argumento double e produz um resultado long.      |
-| `DoubleUnaryOperator`  | `applyAsDouble`       | Representa uma operação em um único operando double que produz um resultado double.   |
-| `IntBinaryOperator`    | `applyAsInt`          | Representa uma operação com dois operandos int e produz um resultado int.             |
-| `IntConsumer`          | `accept`              | Representa uma operação que aceita um único argumento int e não retorna resultado.    |
-| `IntFunction<R>`       | `apply`               | Representa uma função que aceita um argumento int e produz um resultado.              |
-| `IntPredicate`         | `test`                | Representa um predicado (função que retorna um booleano) de um argumento int.         |
-| `IntSupplier`          | `getAsInt`            | Representa um fornecedor de resultados int.                                           |
-| `IntToDoubleFunction`  | `applyAsDouble`       | Representa uma função que aceita um argumento int e produz um resultado double.       |
-| `IntToLongFunction`    | `applyAsLong`         | Representa uma função que aceita um argumento int e produz um resultado long.         |
-| `IntUnaryOperator`     | `applyAsInt`          | Representa uma operação em um único operando int que produz um resultado int.         |
-| `LongBinaryOperator`   | `applyAsLong`         | Representa uma operação com dois operandos long e produz um resultado long.           |
-| `LongConsumer`         | `accept`              | Representa uma operação que aceita um único argumento long e não retorna resultado.   |
-| `LongFunction<R>`      | `apply`               | Representa uma função que aceita um argumento long e produz um resultado.             |
-| `LongPredicate`        | `test`                | Representa um predicado (função que retorna um booleano) de um argumento long.        |
-| `LongSupplier`         | `getAsLong`           | Representa um fornecedor de resultados long.                                          |
-| `LongToDoubleFunction` | `applyAsDouble`       | Representa uma função que aceita um argumento long e produz um resultado double.      |
-| `LongToIntFunction`    | `applyAsInt`          | Representa uma função que aceita um argumento long e produz um resultado int.         |
-| `LongUnaryOperator`    | `applyAsLong`         | Representa uma operação em um único operando long que produz um resultado long.       |
+| Interface              | Método característico | Entrada        | Saída   |
+| ---------------------- | --------------------- | -------------- | ------- |
+| `DoubleConsumer`       | `accept`              | double         | void    |
+| `IntConsumer`          | `accept`              | int            | void    |
+| `LongConsumer`         | `accept`              | long           | void    |
+| `DoubleSupplier`       | `getAsDouble`         | -              | double  |
+| `IntSupplier`          | `getAsInt`            | -              | int     |
+| `LongSupplier`         | `getAsLong`           | -              | long    |
+| `DoubleFunction<R>`    | `apply`               | double         | R       |
+| `IntFunction<R>`       | `apply`               | int            | R       |
+| `LongFunction<R>`      | `apply`               | long           | R       |
+| `DoubleToIntFunction`  | `applyAsInt`          | double         | int     |
+| `DoubleToLongFunction` | `applyAsLong`         | double         | long    |
+| `IntToDoubleFunction`  | `applyAsDouble`       | int            | double  |
+| `IntToLongFunction`    | `applyAsLong`         | int            | long    |
+| `LongToDoubleFunction` | `applyAsDouble`       | long           | double  |
+| `LongToIntFunction`    | `applyAsInt`          | long           | int     |
+| `DoubleUnaryOperator`  | `applyAsDouble`       | double         | double  |
+| `IntUnaryOperator`     | `applyAsInt`          | int            | int     |
+| `LongUnaryOperator`    | `applyAsLong`         | long           | long    |
+| `DoubleBinaryOperator` | `applyAsDouble`       | double, double | double  |
+| `IntBinaryOperator`    | `applyAsInt`          | int, int       | int     |
+| `LongBinaryOperator`   | `applyAsLong`         | long, long     | long    |
+| `DoublePredicate`      | `test`                | double         | boolean |
+| `IntPredicate`         | `test`                | int            | boolean |
+| `LongPredicate`        | `test`                | long           | boolean |
 
 Referência: [Documentação oficial do Java](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html)
