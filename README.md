@@ -92,4 +92,8 @@ Tags: `expressão lambda` `filter` `forEach` `função anônima` `interface` `in
 
 Tags: `expressão lambda` `enum` `filter` `forEach` `função anônima` `interface` `interface funcional` `map` `programação funcional` `stream`
 
-- [Filtragem e mapeamento de músicas](./exercicios/exercicio-014/versao-001/README.md)
+### Exercício 015
+
+Tags: `api` `cliente-servidor` `crud` `hibernate` `jpa` `mysql` `rest` `spring initializr` `spring boot`
+
+- [API REST com CRUD de Produtos](./exercicios/exercicio-015/versao-001/README.md)
