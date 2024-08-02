@@ -97,3 +97,9 @@ Tags: `expressão lambda` `enum` `filter` `forEach` `função anônima` `interfa
 Tags: `api` `cliente-servidor` `crud` `hibernate` `jpa` `mysql` `rest` `spring initializr` `spring boot`
 
 - [API REST com CRUD de Produtos](./exercicios/exercicio-015/versao-001/README.md)
+
+### Exercício 016
+
+Tags: `api` `cliente-servidor` `crud` `hibernate` `jpa` `mysql` `relacionamento` `rest` `spring initializr` `spring boot` `validation`
+
+- [Gerenciando chamados](./exercicios/exercicio-016/versao-001/README.md)

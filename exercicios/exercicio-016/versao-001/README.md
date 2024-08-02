@@ -1,4 +1,4 @@
-# Exercício Java: Filmes
+# Exercício Java: Gerenciando chamados
 
 Este projeto Java tem como objetivo criar um sistema de controle de chamados, incorporando classes para técnicos, categorias de chamado e outras entidades, com ênfase em funcionalidades avançadas que aprimoram o sistema.
 
