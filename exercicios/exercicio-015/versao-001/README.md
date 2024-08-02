@@ -31,9 +31,10 @@ Instale e configure o MySQL Community Edition.
 
 Crie o projeto usando o Spring Initializr (https://start.spring.io/), adicionando as seguintes dependências:
 
--   **Spring Boot DevTools**: Ferramentas de desenvolvimento para facilitar o desenvolvimento e a depuração do aplicativo.
 -   **MySQL Driver**: Driver JDBC necessário para a conexão com o banco de dados MySQL.
+-   **Spring Boot DevTools**: Ferramentas de desenvolvimento para facilitar o desenvolvimento e a depuração do aplicativo.
 -   **Spring Data JPA**: Abstração de persistência que simplifica o acesso a bancos de dados relacionais e fornece uma implementação do JPA (Java Persistence API).
+-   **Spring Web**: Facilita a criação de aplicativos web, incluindo RESTful APIs.
 
 ## Configuração do `application.properties`
 
