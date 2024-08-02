@@ -30,6 +30,7 @@ class Tecnico {
   -String nome
   -String especialidade
   -String email
+  +Tecnico()
   +getters()
   +setters()
 }
@@ -38,6 +39,7 @@ class CategoriaChamado {
   -Long id
   -String nome
   -String descricao
+  +CategoriaChamado()
   +getters()
   +setters()
 }
@@ -52,6 +54,7 @@ class Chamado {
   -LocalDateTime dataFechamento
   -Tecnico tecnico
   -CategoriaChamado categoria
+  +Chamado()
   +getters()
   +setters()
 }
@@ -63,7 +66,7 @@ CategoriaChamado "1" <-- "0..*" Chamado : classifica
 ## 3. Estrutura do Projeto
 
 ```
-src/main/java/com/seu_projeto/api
+src/main/java/com/group/demo
 ├── controller
 │   ├── ChamadoController.java
 │   ├── TecnicoController.java
