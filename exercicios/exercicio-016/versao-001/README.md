@@ -29,7 +29,7 @@ classDiagram
 class Tecnico {
   -Long id
   -String nome
-  -String especialidade
+  -Especialidade especialidade
   -String email
   +Tecnico()
   +getters()
@@ -49,8 +49,8 @@ class Chamado {
   -Long id
   -String titulo
   -String descricao
-  -String status
-  -String prioridade
+  -Status status
+  -Prioridade prioridade
   -LocalDateTime dataAbertura
   -LocalDateTime dataFechamento
   -Tecnico tecnico
@@ -60,8 +60,36 @@ class Chamado {
   +setters()
 }
 
+class Especialidade {
+    <<enumeration>>
+    FRONTEND
+    BACKEND
+    FULLSTACK
+    DBA
+    DEVOPS
+}
+
+class Prioridade {
+    <<enumeration>>
+    BAIXA
+    MEDIA
+    ALTA
+    URGENTE
+}
+
+class Status {
+    <<enumeration>>
+    ABERTO
+    EM_ANDAMENTO
+    FECHADO
+}
+
 Tecnico "1" <-- "0..*" Chamado
 CategoriaChamado "1" <-- "0..*" Chamado
+
+Especialidade <|-- Tecnico
+Prioridade <|-- Chamado
+Status <|-- Chamado
 ```
 
 ## 3. Estrutura do Projeto
@@ -69,22 +97,26 @@ CategoriaChamado "1" <-- "0..*" Chamado
 ```
 src/main/java/com/group/demo
 ├── controller
+│   ├── CategoriaChamadoController.java
 │   ├── ChamadoController.java
-│   ├── TecnicoController.java
-│   └── CategoriaChamadoController.java
+│   └── TecnicoController.java
+├── enums
+│   ├── Especialidade.java
+│   ├── Prioridade.java
+│   └── Status.java
 ├── model
 │   ├── entity
+│   │   ├── CategoriaChamado.java
 │   │   ├── Chamado.java
-│   │   ├── Tecnico.java
-│   │   └── CategoriaChamado.java
+│   │   └── Tecnico.java
 │   └── repository
+│       ├── CategoriaChamadoRepository.java
 │       ├── ChamadoRepository.java
-│       ├── TecnicoRepository.java
-│       └── CategoriaChamadoRepository.java
+│       └── TecnicoRepository.java
 ├── service
+│   ├── CategoriaChamadoService.java
 │   ├── ChamadoService.java
-│   ├── TecnicoService.java
-│   └── CategoriaChamadoService.java
+│   └── TecnicoService.java
 └── Application.java
 ```
 
