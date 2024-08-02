@@ -30,28 +30,16 @@ class Tecnico {
   -String nome
   -String especialidade
   -String email
-  +Long getId()
-  +void setId(Long id)
-  +String getNome()
-  +void setNome(String nome)
-  +String getEspecialidade()
-  +void setEspecialidade(String especialidade)
-  +String getEmail()
-  +void setEmail(String email)
-  +String toString()
+  +getters()
+  +setters()
 }
 
 class CategoriaChamado {
   -Long id
   -String nome
   -String descricao
-  +Long getId()
-  +void setId(Long id)
-  +String getNome()
-  +void setNome(String nome)
-  +String getDescricao()
-  +void setDescricao(String descricao)
-  +String toString()
+  +getters()
+  +setters()
 }
 
 class Chamado {
@@ -64,25 +52,8 @@ class Chamado {
   -LocalDateTime dataFechamento
   -Tecnico tecnico
   -CategoriaChamado categoria
-  +Long getId()
-  +void setId(Long id)
-  +String getTitulo()
-  +void setTitulo(String titulo)
-  +String getDescricao()
-  +void setDescricao(String descricao)
-  +String getStatus()
-  +void setStatus(String status)
-  +String getPrioridade()
-  +void setPrioridade(String prioridade)
-  +LocalDateTime getDataAbertura()
-  +void setDataAbertura(LocalDateTime dataAbertura)
-  +LocalDateTime getDataFechamento()
-  +void setDataFechamento(LocalDateTime dataFechamento)
-  +Tecnico getTecnico()
-  +void setTecnico(Tecnico tecnico)
-  +CategoriaChamado getCategoria()
-  +void setCategoria(CategoriaChamado categoria)
-  +String toString()
+  +getters()
+  +setters()
 }
 
 Tecnico "1" <-- "0..*" Chamado : resolve
