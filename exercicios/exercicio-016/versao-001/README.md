@@ -9,20 +9,43 @@ Este projeto Java tem como objetivo criar um sistema de controle de chamados, in
 <!-- TOC -->
 
 - [1. Descrição](#1-descri%C3%A7%C3%A3o)
-- [2. Componentes](#2-componentes)
-- [3. Estrutura do Projeto](#3-estrutura-do-projeto)
-- [4. Validações](#4-valida%C3%A7%C3%B5es)
-- [5. Endpoints e Métodos HTTP](#5-endpoints-e-m%C3%A9todos-http)
+- [2. Configurações](#2-configura%C3%A7%C3%B5es)
+- [3. Componentes](#3-componentes)
+- [4. Estrutura do Projeto](#4-estrutura-do-projeto)
+- [5. Validações](#5-valida%C3%A7%C3%B5es)
+- [6. Endpoints e Métodos HTTP](#6-endpoints-e-m%C3%A9todos-http)
 
 <!-- /TOC -->
 
 ## 1. Descrição
 
-Este projeto visa criar um sistema de controle de chamados em Java, abordando entidades essenciais como Chamados, Técnicos, e Categorias de Chamado. O sistema oferece uma estrutura robusta para a organização e manipulação de informações relacionadas aos chamados.
+Este projeto tem como objetivo criar um sistema de controle de chamados em Java, abordando as principais entidades como **Chamados**, **Técnicos** e **Categorias de Chamado**. O sistema fornece uma estrutura organizada para gerenciar e manipular informações relacionadas aos chamados de forma eficiente.
 
-A implementação não se limita apenas à modelagem das classes, mas também prioriza a entrega de um conjunto de funcionalidades avançadas que enriquecem e aprimoram o sistema como um todo.
+## 2. Configurações
 
-## 2. Componentes
+Seguem algumas configurações sugeridas:
+
+**1. Dependências (`pom.xml`)**
+
+- MySQL Driver
+- Spring Boot DevTools
+- Spring Data JPA
+- Spring Web
+- Validation
+
+**2. `application.properties`**
+
+```properties
+spring.jpa.open-in-view=false
+spring.datasource.username=root
+spring.datasource.password=12345678
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mysql://localhost:3306/chamados?createDatabaseIfNotExist=true
+```
+
+## 3. Componentes
+
+A diagramação a seguir apresenta a estrutura dos principais componentes do sistema, incluindo as classes e suas relações.
 
 ```mermaid
 classDiagram
@@ -37,11 +60,11 @@ class Tecnico {
   +setters()
 }
 
-class CategoriaChamado {
+class CategoriaDeChamado {
   -Long id
   -String nome
   -String descricao
-  +CategoriaChamado()
+  +CategoriaDeChamado()
   +getters()
   +setters()
 }
@@ -55,7 +78,7 @@ class Chamado {
   -LocalDateTime dataAbertura
   -LocalDateTime dataFechamento
   -Tecnico tecnico
-  -CategoriaChamado categoria
+  -CategoriaDeChamado categoria
   +Chamado()
   +getters()
   +setters()
@@ -86,19 +109,21 @@ class Status {
 }
 
 Tecnico "1" <-- "0..*" Chamado
-CategoriaChamado "1" <-- "0..*" Chamado
+CategoriaDeChamado "1" <-- "0..*" Chamado
 
 Especialidade <|-- Tecnico
 Prioridade <|-- Chamado
 Status <|-- Chamado
 ```
 
-## 3. Estrutura do Projeto
+## 4. Estrutura do Projeto
+
+A estrutura do projeto é organizada para promover uma arquitetura clara e modular. Embora essa estrutura seja sugerida para facilitar a organização e a manutenção do código, não é obrigatório segui-la rigorosamente. Sinta-se à vontade para adaptá-la de acordo com suas necessidades e preferências.
 
 ```
 src/main/java/com/group/demo
 ├── controller
-│   ├── CategoriaChamadoController.java
+│   ├── CategoriaDeChamadoController.java
 │   ├── ChamadoController.java
 │   └── TecnicoController.java
 ├── enums
@@ -107,21 +132,21 @@ src/main/java/com/group/demo
 │   └── Status.java
 ├── model
 │   ├── entity
-│   │   ├── CategoriaChamado.java
+│   │   ├── CategoriaDeChamado.java
 │   │   ├── Chamado.java
 │   │   └── Tecnico.java
 │   └── repository
-│       ├── CategoriaChamadoRepository.java
+│       ├── CategoriaDeChamadoRepository.java
 │       ├── ChamadoRepository.java
 │       └── TecnicoRepository.java
 ├── service
-│   ├── CategoriaChamadoService.java
+│   ├── CategoriaDeChamadoService.java
 │   ├── ChamadoService.java
 │   └── TecnicoService.java
 └── DemoApplication.java
 ```
 
-## 4. Validações
+## 5. Validações
 
 Utilize anotações JPA para implementar restrições de validação automática nos atributos das entidades. Elas ajudarão a garantir que os dados sejam validados e armazenados corretamente, mantendo a integridade e a qualidade dos dados no sistema.
 
@@ -133,32 +158,32 @@ Utilize anotações JPA para implementar restrições de validação automática
 >
 > Não esqueça de usar a anotação `@Valid` nos parâmetros das _controllers_ para que a validação funcione corretamente.
 
-## 5. Endpoints e Métodos HTTP
+## 6. Endpoints e Métodos HTTP
 
 A seguir estão os endpoints e métodos HTTP que devem estar disponíveis para cada entidade no sistema:
 
 **Categoria de Chamado**
 
--   **POST `/categorias-de-chamado`**: Cria uma nova categoria de chamado.
--   **GET `/categorias-de-chamado`**: Retorna uma lista de todas as categorias de chamado.
--   **GET `/categorias-de-chamado/{id}`**: Retorna uma categoria específica com base no seu ID.
--   **PUT `/categorias-de-chamado/{id}`**: Atualiza as informações de uma categoria de chamado existente com base no seu ID.
--   **DELETE `/categorias-de-chamado/{id}`**: Remove uma categoria de chamado com base no seu ID.
+- **POST `/categorias-de-chamado`**: Cria uma nova categoria de chamado.
+- **GET `/categorias-de-chamado`**: Retorna uma lista de todas as categorias de chamado.
+- **GET `/categorias-de-chamado/{id}`**: Retorna uma categoria específica com base no seu ID.
+- **PUT `/categorias-de-chamado/{id}`**: Atualiza as informações de uma categoria de chamado existente com base no seu ID.
+- **DELETE `/categorias-de-chamado/{id}`**: Remove uma categoria de chamado com base no seu ID.
 
 **Chamado**
 
--   **POST `/chamados`**: Cria um novo chamado.
--   **GET `/chamados`**: Retorna uma lista de todos os chamados.
--   **GET `/chamados/{id}`**: Retorna um chamado específico com base no seu ID.
--   **PUT `/chamados/{id}`**: Atualiza as informações de um chamado existente com base no seu ID.
--   **DELETE `/chamados/{id}`**: Remove um chamado com base no seu ID.
+- **POST `/chamados`**: Cria um novo chamado.
+- **GET `/chamados`**: Retorna uma lista de todos os chamados.
+- **GET `/chamados/{id}`**: Retorna um chamado específico com base no seu ID.
+- **PUT `/chamados/{id}`**: Atualiza as informações de um chamado existente com base no seu ID.
+- **DELETE `/chamados/{id}`**: Remove um chamado com base no seu ID.
 
 **Técnico**
 
--   **POST `/tecnicos`**: Cria um novo técnico.
--   **GET `/tecnicos`**: Retorna uma lista de todos os técnicos.
--   **GET `/tecnicos/{id}`**: Retorna um técnico específico com base no seu ID.
--   **PUT `/tecnicos/{id}`**: Atualiza as informações de um técnico existente com base no seu ID.
--   **DELETE `/tecnicos/{id}`**: Remove um técnico com base no seu ID.
+- **POST `/tecnicos`**: Cria um novo técnico.
+- **GET `/tecnicos`**: Retorna uma lista de todos os técnicos.
+- **GET `/tecnicos/{id}`**: Retorna um técnico específico com base no seu ID.
+- **PUT `/tecnicos/{id}`**: Atualiza as informações de um técnico existente com base no seu ID.
+- **DELETE `/tecnicos/{id}`**: Remove um técnico com base no seu ID.
 
 [Voltar](../../../README.md)
