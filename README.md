@@ -4,6 +4,7 @@ Este repositório contém uma coleção abrangente de exercícios práticos em J
 
 ## Materiais úteis
 
+- [Pacote jakarta.validation.constraints](./util/jakarta.validation.constraints.md)
 - [Pacote java.util.function](./util/java.util.function.md)
 
 ## Exercícios
