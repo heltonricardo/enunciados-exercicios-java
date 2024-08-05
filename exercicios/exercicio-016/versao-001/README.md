@@ -123,27 +123,11 @@ src/main/java/com/group/demo
 
 ## 4. Validações
 
-Utilize anotações JPA para implementar restrições de validação automática nos atributos da entidades. Seguem algumas mais comumente usadas em projetos:
+Utilize anotações JPA para implementar restrições de validação automática nos atributos das entidades. Elas ajudarão a garantir que os dados sejam validados e armazenados corretamente, mantendo a integridade e a qualidade dos dados no sistema.
 
--   **Campos Obrigatórios**: Utilize `@NotNull` para garantir que campos essenciais não sejam nulos. Para garantir que campos de texto não sejam apenas espaços em branco, utilize `@NotBlank`.
-
--   **Tamanho e Comprimento**: Utilize `@Size` para definir limites de tamanho para campos de texto, como `@Size(min = 5, max = 50)`.
-
--   **Formato de Dados**: Utilize `@Pattern` para validar que os dados seguem um formato específico, como números de telefone ou códigos postais.
-
--   **Validação de Email**: Utilize `@Email` para assegurar que o campo de email contenha um endereço de email válido.
-
--   **Valores Numéricos**: Utilize `@Min` e `@Max` para definir os valores mínimo e máximo permitidos para campos numéricos, como `@Min(0)` para valores não negativos ou `@Max(100)` para limitar valores máximos. Use também `@DecimalMin` e `@DecimalMax` para números decimais.
-
--   **Positividade e Negatividade**: Utilize `@Positive` para garantir que valores numéricos sejam positivos, `@Negative` para garantir que sejam negativos, `@PositiveOrZero` para valores positivos ou zero, e `@NegativeOrZero` para valores negativos ou zero.
-
--   **Datas**: Utilize `@Future` para garantir que uma data esteja no futuro e `@Past` para garantir que uma data esteja no passado.
-
--   **Unicidade**: Utilize `@Column(unique = true)` para garantir que valores em um campo específico sejam únicos no banco de dados.
-
--   **Validações Adicionais**: Utilize `@AssertTrue` e `@AssertFalse` para validar condições booleanas, `@URL` para garantir URLs válidas e `@CreditCardNumber` para validar números de cartões de crédito.
-
-Essas anotações ajudarão a garantir que os dados sejam validados e armazenados corretamente, mantendo a integridade e a qualidade dos dados no sistema.
+> [!TIP]
+>
+> Essas anotações podem ser encontradas no arquivo [jakarta.validation.constraints.md](../../../util/jakarta.validation.constraints.md).
 
 > [!WARNING]
 >
@@ -155,11 +139,11 @@ A seguir estão os endpoints e métodos HTTP que devem estar disponíveis para c
 
 **Categoria de Chamado**
 
--   **GET /categorias**: Retorna uma lista de todas as categorias de chamado.
--   **GET /categorias/{id}**: Retorna uma categoria específica com base no seu ID.
--   **POST /categorias**: Cria uma nova categoria de chamado.
--   **PUT /categorias/{id}**: Atualiza as informações de uma categoria de chamado existente com base no seu ID.
--   **DELETE /categorias/{id}**: Remove uma categoria de chamado com base no seu ID.
+-   **GET /categorias-de-chamado**: Retorna uma lista de todas as categorias de chamado.
+-   **GET /categorias-de-chamado/{id}**: Retorna uma categoria específica com base no seu ID.
+-   **POST /categorias-de-chamado**: Cria uma nova categoria de chamado.
+-   **PUT /categorias-de-chamado/{id}**: Atualiza as informações de uma categoria de chamado existente com base no seu ID.
+-   **DELETE /categorias-de-chamado/{id}**: Remove uma categoria de chamado com base no seu ID.
 
 **Chamado**
 
