@@ -139,26 +139,26 @@ A seguir estão os endpoints e métodos HTTP que devem estar disponíveis para c
 
 **Categoria de Chamado**
 
--   **GET /categorias-de-chamado**: Retorna uma lista de todas as categorias de chamado.
--   **GET /categorias-de-chamado/{id}**: Retorna uma categoria específica com base no seu ID.
--   **POST /categorias-de-chamado**: Cria uma nova categoria de chamado.
--   **PUT /categorias-de-chamado/{id}**: Atualiza as informações de uma categoria de chamado existente com base no seu ID.
--   **DELETE /categorias-de-chamado/{id}**: Remove uma categoria de chamado com base no seu ID.
+-   **POST `/categorias-de-chamado`**: Cria uma nova categoria de chamado.
+-   **GET `/categorias-de-chamado`**: Retorna uma lista de todas as categorias de chamado.
+-   **GET `/categorias-de-chamado/{id}`**: Retorna uma categoria específica com base no seu ID.
+-   **PUT `/categorias-de-chamado/{id}`**: Atualiza as informações de uma categoria de chamado existente com base no seu ID.
+-   **DELETE `/categorias-de-chamado/{id}`**: Remove uma categoria de chamado com base no seu ID.
 
 **Chamado**
 
--   **GET /chamados**: Retorna uma lista de todos os chamados.
--   **GET /chamados/{id}**: Retorna um chamado específico com base no seu ID.
--   **POST /chamados**: Cria um novo chamado.
--   **PUT /chamados/{id}**: Atualiza as informações de um chamado existente com base no seu ID.
--   **DELETE /chamados/{id}**: Remove um chamado com base no seu ID.
+-   **POST `/chamados`**: Cria um novo chamado.
+-   **GET `/chamados`**: Retorna uma lista de todos os chamados.
+-   **GET `/chamados/{id}`**: Retorna um chamado específico com base no seu ID.
+-   **PUT `/chamados/{id}`**: Atualiza as informações de um chamado existente com base no seu ID.
+-   **DELETE `/chamados/{id}`**: Remove um chamado com base no seu ID.
 
 **Técnico**
 
--   **GET /tecnicos**: Retorna uma lista de todos os técnicos.
--   **GET /tecnicos/{id}**: Retorna um técnico específico com base no seu ID.
--   **POST /tecnicos**: Cria um novo técnico.
--   **PUT /tecnicos/{id}**: Atualiza as informações de um técnico existente com base no seu ID.
--   **DELETE /tecnicos/{id}**: Remove um técnico com base no seu ID.
+-   **POST `/tecnicos`**: Cria um novo técnico.
+-   **GET `/tecnicos`**: Retorna uma lista de todos os técnicos.
+-   **GET `/tecnicos/{id}`**: Retorna um técnico específico com base no seu ID.
+-   **PUT `/tecnicos/{id}`**: Atualiza as informações de um técnico existente com base no seu ID.
+-   **DELETE `/tecnicos/{id}`**: Remove um técnico com base no seu ID.
 
 [Voltar](../../../README.md)
