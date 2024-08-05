@@ -11,7 +11,8 @@ Este projeto Java tem como objetivo criar um sistema de controle de chamados, in
 - [1. Descrição](#1-descri%C3%A7%C3%A3o)
 - [2. Componentes](#2-componentes)
 - [3. Estrutura do Projeto](#3-estrutura-do-projeto)
-- [4. Requisitos](#4-requisitos)
+- [4. Validações](#4-valida%C3%A7%C3%B5es)
+- [5. Endpoints e Métodos HTTP](#5-endpoints-e-m%C3%A9todos-http)
 
 <!-- /TOC -->
 
@@ -120,7 +121,7 @@ src/main/java/com/group/demo
 └── DemoApplication.java
 ```
 
-## 4. Requisitos
+## 4. Validações
 
 Utilize anotações JPA para implementar restrições de validação automática nos atributos da entidades. Seguem algumas mais comumente usadas em projetos:
 
@@ -147,5 +148,33 @@ Essas anotações ajudarão a garantir que os dados sejam validados e armazenado
 > [!WARNING]
 >
 > Não esqueça de usar a anotação `@Valid` nos parâmetros das _controllers_ para que a validação funcione corretamente.
+
+## 5. Endpoints e Métodos HTTP
+
+A seguir estão os endpoints e métodos HTTP que devem estar disponíveis para cada entidade no sistema:
+
+**Categoria de Chamado**
+
+-   **GET /categorias**: Retorna uma lista de todas as categorias de chamado.
+-   **GET /categorias/{id}**: Retorna uma categoria específica com base no seu ID.
+-   **POST /categorias**: Cria uma nova categoria de chamado.
+-   **PUT /categorias/{id}**: Atualiza as informações de uma categoria de chamado existente com base no seu ID.
+-   **DELETE /categorias/{id}**: Remove uma categoria de chamado com base no seu ID.
+
+**Chamado**
+
+-   **GET /chamados**: Retorna uma lista de todos os chamados.
+-   **GET /chamados/{id}**: Retorna um chamado específico com base no seu ID.
+-   **POST /chamados**: Cria um novo chamado.
+-   **PUT /chamados/{id}**: Atualiza as informações de um chamado existente com base no seu ID.
+-   **DELETE /chamados/{id}**: Remove um chamado com base no seu ID.
+
+**Técnico**
+
+-   **GET /tecnicos**: Retorna uma lista de todos os técnicos.
+-   **GET /tecnicos/{id}**: Retorna um técnico específico com base no seu ID.
+-   **POST /tecnicos**: Cria um novo técnico.
+-   **PUT /tecnicos/{id}**: Atualiza as informações de um técnico existente com base no seu ID.
+-   **DELETE /tecnicos/{id}**: Remove um técnico com base no seu ID.
 
 [Voltar](../../../README.md)
