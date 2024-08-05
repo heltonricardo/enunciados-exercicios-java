@@ -39,9 +39,9 @@ O pacote `jakarta.validation.constraints` contém todas as restrições fornecid
 | `@PositiveOrZero`  | O elemento anotado deve ser um número positivo ou igual a 0.                                 |
 | `@Size`            | O tamanho do elemento anotado deve estar entre os limites especificados (incluso).           |
 
-### Anotações `.List`
-
-Para todas as anotações mencionadas acima, existe uma variante com o sufixo `.List`. Essas variantes são usadas para definir múltiplas instâncias da mesma anotação em um único elemento. Isso é útil quando você precisa aplicar a mesma restrição com parâmetros diferentes no mesmo campo. Exemplos: `@AssertFalse.List`, `@NegativeOrZero.List` e `@Size.List`.
+> [!NOTE]
+>
+> Para todas as anotações mencionadas acima, existe uma variante com o sufixo `.List`. Essas variantes são usadas para definir múltiplas instâncias da mesma anotação em um único elemento. Isso é útil quando você precisa aplicar a mesma restrição com parâmetros diferentes no mesmo campo. Exemplos: `@AssertFalse.List`, `@NegativeOrZero.List` e `@Size.List`.
 
 ---
 
