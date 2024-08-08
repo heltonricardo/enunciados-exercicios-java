@@ -14,30 +14,30 @@ O pacote `jakarta.validation.constraints` contém todas as restrições fornecid
 
 ### Tipos de Anotações
 
-| Anotação           | Descrição                                                                                    |
-| ------------------ | -------------------------------------------------------------------------------------------- |
-| `@AssertFalse`     | O elemento anotado deve ser `false`.                                                         |
-| `@AssertTrue`      | O elemento anotado deve ser `true`.                                                          |
-| `@DecimalMax`      | O elemento anotado deve ser um número cujo valor seja menor ou igual ao máximo especificado. |
-| `@DecimalMin`      | O elemento anotado deve ser um número cujo valor seja maior ou igual ao mínimo especificado. |
-| `@Digits`          | O elemento anotado deve ser um número dentro de um intervalo aceito.                         |
-| `@Email`           | A string anotada deve ser um endereço de e-mail bem formado.                                 |
-| `@Future`          | O elemento anotado deve ser um instante, data ou hora no futuro.                             |
-| `@FutureOrPresent` | O elemento anotado deve ser um instante, data ou hora no presente ou no futuro.              |
-| `@Max`             | O elemento anotado deve ser um número cujo valor seja menor ou igual ao máximo especificado. |
-| `@Min`             | O elemento anotado deve ser um número cujo valor seja maior ou igual ao mínimo especificado. |
-| `@Negative`        | O elemento anotado deve ser um número estritamente negativo.                                 |
-| `@NegativeOrZero`  | O elemento anotado deve ser um número negativo ou igual a 0.                                 |
-| `@NotBlank`        | O elemento anotado não deve ser nulo e deve conter pelo menos um caractere não em branco.    |
-| `@NotEmpty`        | O elemento anotado não deve ser nulo nem vazio.                                              |
-| `@NotNull`         | O elemento anotado não deve ser nulo.                                                        |
-| `@Null`            | O elemento anotado deve ser nulo.                                                            |
-| `@Past`            | O elemento anotado deve ser um instante, data ou hora no passado.                            |
-| `@PastOrPresent`   | O elemento anotado deve ser um instante, data ou hora no passado ou no presente.             |
-| `@Pattern`         | A sequência de caracteres anotada deve corresponder à expressão regular especificada.        |
-| `@Positive`        | O elemento anotado deve ser um número estritamente positivo.                                 |
-| `@PositiveOrZero`  | O elemento anotado deve ser um número positivo ou igual a 0.                                 |
-| `@Size`            | O tamanho do elemento anotado deve estar entre os limites especificados (incluso).           |
+| Anotação           | Tipos Anotáveis                                                              | Descrição                                                                                    |
+| ------------------ | ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `@AssertFalse`     | `Boolean`                                                                    | O elemento anotado deve ser `false`.                                                         |
+| `@AssertTrue`      | `Boolean`                                                                    | O elemento anotado deve ser `true`.                                                          |
+| `@DecimalMax`      | `BigDecimal`, `String`, `BigInteger`                                         | O elemento anotado deve ser um número cujo valor seja menor ou igual ao máximo especificado. |
+| `@DecimalMin`      | `BigDecimal`, `String`, `BigInteger`                                         | O elemento anotado deve ser um número cujo valor seja maior ou igual ao mínimo especificado. |
+| `@Digits`          | `BigDecimal`, `String`, `BigInteger`                                         | O elemento anotado deve ser um número dentro de um intervalo aceito.                         |
+| `@Email`           | `String`                                                                     | A string anotada deve ser um endereço de e-mail bem formado.                                 |
+| `@Future`          | `Date`, `Calendar`, `Instant`, `LocalDate`, `LocalDateTime`, `ZonedDateTime` | O elemento anotado deve ser um instante, data ou hora no futuro.                             |
+| `@FutureOrPresent` | `Date`, `Calendar`, `Instant`, `LocalDate`, `LocalDateTime`, `ZonedDateTime` | O elemento anotado deve ser um instante, data ou hora no presente ou no futuro.              |
+| `@Max`             | `BigDecimal`, `String`, `BigInteger`                                         | O elemento anotado deve ser um número cujo valor seja menor ou igual ao máximo especificado. |
+| `@Min`             | `BigDecimal`, `String`, `BigInteger`                                         | O elemento anotado deve ser um número cujo valor seja maior ou igual ao mínimo especificado. |
+| `@Negative`        | `BigDecimal`, `String`, `BigInteger`                                         | O elemento anotado deve ser um número estritamente negativo.                                 |
+| `@NegativeOrZero`  | `BigDecimal`, `String`, `BigInteger`                                         | O elemento anotado deve ser um número negativo ou igual a 0.                                 |
+| `@NotBlank`        | `String`                                                                     | O elemento anotado não deve ser nulo e deve conter pelo menos um caractere não em branco.    |
+| `@NotEmpty`        | `String`, `Collection`, `Map`, `Array`                                       | O elemento anotado não deve ser nulo nem vazio.                                              |
+| `@NotNull`         | Qualquer tipo de objeto                                                      | O elemento anotado não deve ser nulo.                                                        |
+| `@Null`            | Qualquer tipo de objeto                                                      | O elemento anotado deve ser nulo.                                                            |
+| `@Past`            | `Date`, `Calendar`, `Instant`, `LocalDate`, `LocalDateTime`, `ZonedDateTime` | O elemento anotado deve ser um instante, data ou hora no passado.                            |
+| `@PastOrPresent`   | `Date`, `Calendar`, `Instant`, `LocalDate`, `LocalDateTime`, `ZonedDateTime` | O elemento anotado deve ser um instante, data ou hora no passado ou no presente.             |
+| `@Pattern`         | `String`                                                                     | A sequência de caracteres anotada deve corresponder à expressão regular especificada.        |
+| `@Positive`        | `BigDecimal`, `String`, `BigInteger`                                         | O elemento anotado deve ser um número estritamente positivo.                                 |
+| `@PositiveOrZero`  | `BigDecimal`, `String`, `BigInteger`                                         | O elemento anotado deve ser um número positivo ou igual a 0.                                 |
+| `@Size`            | `String`, `Collection`, `Map`, `Array`                                       | O tamanho do elemento anotado deve estar entre os limites especificados (incluso).           |
 
 > [!NOTE]
 >
