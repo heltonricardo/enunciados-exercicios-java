@@ -126,6 +126,15 @@ src/main/java/com/group/demo
 │   ├── CategoriaDeChamadoController.java
 │   ├── ChamadoController.java
 │   └── TecnicoController.java
+├── dto
+│   ├── entrada
+│   │   ├── CategoriaDeChamadoEntradaDTO.java
+│   │   ├── ChamadoEntradaDTO.java
+│   │   └── TecnicoEntradaDTO.java
+│   └── saida
+│       ├── CategoriaDeChamadoSaidaDTO.java
+│       ├── ChamadoSaidaDTO.java
+│       └── TecnicoSaidaDTO.java
 ├── enums
 │   ├── Especialidade.java
 │   ├── Prioridade.java
@@ -144,6 +153,7 @@ src/main/java/com/group/demo
 │   ├── ChamadoService.java
 │   └── TecnicoService.java
 └── DemoApplication.java
+
 ```
 
 ## 5. Validações
