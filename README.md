@@ -6,6 +6,7 @@ Este repositório contém uma coleção abrangente de exercícios práticos em J
 
 - [Pacote jakarta.validation.constraints](./util/jakarta.validation.constraints.md)
 - [Pacote java.util.function](./util/java.util.function.md)
+- [Pacote javax.persistence](./util/javax.persistence.md)
 
 ## Exercícios
 
