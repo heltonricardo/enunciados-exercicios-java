@@ -10,10 +10,11 @@ Este projeto Java tem como objetivo criar um sistema de controle de chamados, in
 
 - [1. Descrição](#1-descri%C3%A7%C3%A3o)
 - [2. Configurações](#2-configura%C3%A7%C3%B5es)
-- [3. Componentes](#3-componentes)
+- [3. Principais Componentes](#3-principais-componentes)
 - [4. Estrutura do Projeto](#4-estrutura-do-projeto)
 - [5. Validações](#5-valida%C3%A7%C3%B5es)
-- [6. Endpoints e Métodos HTTP](#6-endpoints-e-m%C3%A9todos-http)
+- [6. Entrada e Saída de Dados](#6-entrada-e-sa%C3%ADda-de-dados)
+- [7. Endpoints e Métodos HTTP](#7-endpoints-e-m%C3%A9todos-http)
 
 <!-- /TOC -->
 
@@ -43,9 +44,9 @@ spring.jpa.hibernate.ddl-auto=update
 spring.datasource.url=jdbc:mysql://localhost:3306/chamados?createDatabaseIfNotExist=true
 ```
 
-## 3. Componentes
+## 3. Principais Componentes
 
-A diagramação a seguir apresenta a estrutura dos principais componentes do sistema, incluindo as classes e suas relações.
+A diagramação a seguir apresenta a estrutura dos principais componentes do sistema, incluindo principalmente as entidades.
 
 ```mermaid
 classDiagram
@@ -132,9 +133,14 @@ src/main/java/com/group/demo
 │   │   ├── ChamadoEntradaDTO.java
 │   │   └── TecnicoEntradaDTO.java
 │   └── saida
-│       ├── CategoriaDeChamadoSaidaDTO.java
-│       ├── ChamadoSaidaDTO.java
-│       └── TecnicoSaidaDTO.java
+│       ├── detalhe
+│       │   ├── CategoriaDeChamadoDetalheSaidaDTO.java
+│       │   ├── ChamadoDetalheSaidaDTO.java
+│       │   └── TecnicoDetalheSaidaDTO.java
+│       └── resumo
+│           ├── CategoriaDeChamadoResumoSaidaDTO.java
+│           ├── ChamadoResumoSaidaDTO.java
+│           └── TecnicoResumoSaidaDTO.java
 ├── enums
 │   ├── Especialidade.java
 │   ├── Prioridade.java
@@ -153,7 +159,6 @@ src/main/java/com/group/demo
 │   ├── ChamadoService.java
 │   └── TecnicoService.java
 └── DemoApplication.java
-
 ```
 
 ## 5. Validações
@@ -168,32 +173,49 @@ Utilize anotações JPA para implementar restrições de validação automática
 >
 > Não esqueça de usar a anotação `@Valid` nos parâmetros das _controllers_ para que a validação funcione corretamente.
 
-## 6. Endpoints e Métodos HTTP
+## 6. Entrada e Saída de Dados
 
-A seguir estão os endpoints e métodos HTTP que devem estar disponíveis para cada entidade no sistema:
+Para garantir a organização e clareza na manipulação dos dados, o sistema utiliza três tipos de DTOs:
+
+1. **DTO de Entrada (exemplo: `ItemEntradaDTO`)**: Este DTO é utilizado para a criação ou atualização de itens no sistema. Ele contém todos os atributos necessários, exceto o ID, que é gerado automaticamente pelo banco de dados. Exemplo de uso: ao enviar dados para criar um novo chamado, um técnico ou uma categoria de chamado.
+
+2. **DTO de Saída - Resumo (exemplo: `ItemResumoSaidaDTO`)**: Utilizado para retornar uma lista de itens com informações resumidas. Este DTO contém apenas os atributos principais, necessários para exibir uma visão geral em listagens. Exemplo de uso: retorno de uma lista de todos os chamados, técnicos ou categorias de chamado.
+
+3. **DTO de Saída - Detalhe (exemplo: `ItemDetalheSaidaDTO`)**: Utilizado para retornar os detalhes completos de um item específico. Este DTO é utilizado quando se deseja visualizar ou manipular um item em profundidade, geralmente em endpoints que retornam um único item por ID. Exemplo de uso: retorno dos detalhes completos de um chamado específico, técnico ou categoria de chamado.
+
+> **Resumo**
+>
+> - **Entrada de Dados**: Utilize o `ItemEntradaDTO` para enviar dados ao sistema, com todos os atributos necessários, exceto o ID.
+> - **Saída de Dados**:
+>   - Para listagens (GET sem ID), utilize o `ItemResumoSaidaDTO`, que retorna uma visão geral dos itens.
+>   - Para detalhamentos (GET com ID), utilize o `ItemDetalheSaidaDTO`, que retorna todas as informações detalhadas de um item específico.
+
+## 7. Endpoints e Métodos HTTP
+
+A seguir estão os endpoints e métodos HTTP disponíveis para cada entidade no sistema, juntamente com os tipos de DTOs que eles retornam:
 
 **Categoria de Chamado**
 
-- **POST `/categorias-de-chamado`**: Cria uma nova categoria de chamado.
-- **GET `/categorias-de-chamado`**: Retorna uma lista de todas as categorias de chamado.
-- **GET `/categorias-de-chamado/{id}`**: Retorna uma categoria específica com base no seu ID.
-- **PUT `/categorias-de-chamado/{id}`**: Atualiza as informações de uma categoria de chamado existente com base no seu ID.
-- **DELETE `/categorias-de-chamado/{id}`**: Remove uma categoria de chamado com base no seu ID.
+- **POST `/categorias-de-chamado`**: Cria uma nova categoria de chamado. Retorna o objeto criado usando `CategoriaDeChamadoDetalheSaidaDTO`.
+- **GET `/categorias-de-chamado`**: Retorna uma lista de todas as categorias de chamado. Retorna um `Iterable` de `CategoriaDeChamadoResumoSaidaDTO`.
+- **GET `/categorias-de-chamado/{id}`**: Retorna uma categoria de chamado específica com base no seu ID. Retorna um `CategoriaDeChamadoDetalheSaidaDTO`.
+- **PUT `/categorias-de-chamado/{id}`**: Atualiza as informações de uma categoria de chamado existente com base no seu ID. Retorna o objeto atualizado usando `CategoriaDeChamadoDetalheSaidaDTO`.
+- **DELETE `/categorias-de-chamado/{id}`**: Remove uma categoria de chamado com base no seu ID. Retorna o objeto removido usando `CategoriaDeChamadoDetalheSaidaDTO`.
 
 **Chamado**
 
-- **POST `/chamados`**: Cria um novo chamado.
-- **GET `/chamados`**: Retorna uma lista de todos os chamados.
-- **GET `/chamados/{id}`**: Retorna um chamado específico com base no seu ID.
-- **PUT `/chamados/{id}`**: Atualiza as informações de um chamado existente com base no seu ID.
-- **DELETE `/chamados/{id}`**: Remove um chamado com base no seu ID.
+- **POST `/chamados`**: Cria um novo chamado. Retorna o objeto criado usando `ChamadoDetalheSaidaDTO`.
+- **GET `/chamados`**: Retorna uma lista de todos os chamados. Retorna um `Iterable` de `ChamadoResumoSaidaDTO`.
+- **GET `/chamados/{id}`**: Retorna um chamado específico com base no seu ID. Retorna um `ChamadoDetalheSaidaDTO`.
+- **PUT `/chamados/{id}`**: Atualiza as informações de um chamado existente com base no seu ID. Retorna o objeto atualizado usando `ChamadoDetalheSaidaDTO`.
+- **DELETE `/chamados/{id}`**: Remove um chamado com base no seu ID. Retorna o objeto removido usando `ChamadoDetalheSaidaDTO`.
 
 **Técnico**
 
-- **POST `/tecnicos`**: Cria um novo técnico.
-- **GET `/tecnicos`**: Retorna uma lista de todos os técnicos.
-- **GET `/tecnicos/{id}`**: Retorna um técnico específico com base no seu ID.
-- **PUT `/tecnicos/{id}`**: Atualiza as informações de um técnico existente com base no seu ID.
-- **DELETE `/tecnicos/{id}`**: Remove um técnico com base no seu ID.
+- **POST `/tecnicos`**: Cria um novo técnico. Retorna o objeto criado usando `TecnicoDetalheSaidaDTO`.
+- **GET `/tecnicos`**: Retorna uma lista de todos os técnicos. Retorna um `Iterable` de `TecnicoResumoSaidaDTO`.
+- **GET `/tecnicos/{id}`**: Retorna um técnico específico com base no seu ID. Retorna um `TecnicoDetalheSaidaDTO`.
+- **PUT `/tecnicos/{id}`**: Atualiza as informações de um técnico existente com base no seu ID. Retorna o objeto atualizado usando `TecnicoDetalheSaidaDTO`.
+- **DELETE `/tecnicos/{id}`**: Remove um técnico com base no seu ID. Retorna o objeto removido usando `TecnicoDetalheSaidaDTO`.
 
 [Voltar](../../../README.md)
