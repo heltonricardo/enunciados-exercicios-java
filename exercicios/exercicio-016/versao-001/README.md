@@ -54,8 +54,9 @@ classDiagram
 class Tecnico {
   -Long id
   -String nome
-  -Especialidade especialidade
   -String email
+  -LocalDate criacaoCadastro
+  -Especialidade especialidade
   +Tecnico()
   +getters()
   +setters()
@@ -177,45 +178,45 @@ Utilize anotações JPA para implementar restrições de validação automática
 
 Para garantir a organização e clareza na manipulação dos dados, o sistema utiliza três tipos de DTOs:
 
-1. **DTO de Entrada (exemplo: `ItemEntradaDTO`)**: Este DTO é utilizado para a criação ou atualização de itens no sistema. Ele contém todos os atributos necessários, exceto o ID, que é gerado automaticamente pelo banco de dados. Exemplo de uso: ao enviar dados para criar um novo chamado, um técnico ou uma categoria de chamado.
+1. **DTO de Entrada (exemplo: `ItemEntradaDTO`)**: "Para a entrada de dados na API" - Este DTO é utilizado para a criação ou atualização de itens no sistema. Ele contém todos os atributos necessários, exceto o ID. _Exemplo de uso: ao enviar dados para criar um novo chamado, um técnico ou uma categoria de chamado_.
 
-2. **DTO de Saída - Resumo (exemplo: `ItemResumoSaidaDTO`)**: Utilizado para retornar uma lista de itens com informações resumidas. Este DTO contém apenas os atributos principais, necessários para exibir uma visão geral em listagens. Exemplo de uso: retorno de uma lista de todos os chamados, técnicos ou categorias de chamado.
+2. **DTO de Saída - Resumo (exemplo: `ItemResumoSaidaDTO`)**: "Para a saída de dados na API" - Utilizado para retornar uma lista de itens com informações resumidas. Este DTO contém apenas os atributos principais, necessários para exibir uma visão geral em listagens. _Exemplo de uso: retorno de uma lista de todos os chamados, técnicos ou categorias de chamado_.
 
-3. **DTO de Saída - Detalhe (exemplo: `ItemDetalheSaidaDTO`)**: Utilizado para retornar os detalhes completos de um item específico. Este DTO é utilizado quando se deseja visualizar ou manipular um item em profundidade, geralmente em endpoints que retornam um único item por ID. Exemplo de uso: retorno dos detalhes completos de um chamado específico, técnico ou categoria de chamado.
+3. **DTO de Saída - Detalhe (exemplo: `ItemDetalheSaidaDTO`)**: "Para a saída de dados na API" - Utilizado para retornar os detalhes completos de um item específico. Este DTO é utilizado quando se deseja visualizar ou manipular um item com profundidade, geralmente em endpoints que retornam um único item por ID. _Exemplo de uso: retorno dos detalhes completos de um chamado específico, técnico ou categoria de chamado_.
 
 > **Resumo**
 >
-> - **Entrada de Dados**: Utilize o `ItemEntradaDTO` para enviar dados ao sistema, com todos os atributos necessários, exceto o ID.
+> - **Entrada de Dados**: Utilize o `ItemEntradaDTO` para enviar dados ao sistema, com todos os atributos necessários.
 > - **Saída de Dados**:
->   - Para listagens (GET sem ID), utilize o `ItemResumoSaidaDTO`, que retorna uma visão geral dos itens.
->   - Para detalhamentos (GET com ID), utilize o `ItemDetalheSaidaDTO`, que retorna todas as informações detalhadas de um item específico.
+>   - Para listagens, utilize o `ItemResumoSaidaDTO`, que retorna uma visão geral dos itens.
+>   - Para detalhamentos, utilize o `ItemDetalheSaidaDTO`, que retorna todas as informações detalhadas de um item específico.
 
 ## 7. Endpoints e Métodos HTTP
 
-A seguir estão os endpoints e métodos HTTP disponíveis para cada entidade no sistema, juntamente com os tipos de DTOs que eles retornam:
+A seguir estão os endpoints e métodos HTTP disponíveis para cada entidade no sistema, juntamente com os tipos de DTOs que eles recebem e retornam:
 
 **Categoria de Chamado**
 
-- **POST `/categorias-de-chamado`**: Cria uma nova categoria de chamado. Retorna o objeto criado usando `CategoriaDeChamadoDetalheSaidaDTO`.
-- **GET `/categorias-de-chamado`**: Retorna uma lista de todas as categorias de chamado. Retorna um `Iterable` de `CategoriaDeChamadoResumoSaidaDTO`.
-- **GET `/categorias-de-chamado/{id}`**: Retorna uma categoria de chamado específica com base no seu ID. Retorna um `CategoriaDeChamadoDetalheSaidaDTO`.
-- **PUT `/categorias-de-chamado/{id}`**: Atualiza as informações de uma categoria de chamado existente com base no seu ID. Retorna o objeto atualizado usando `CategoriaDeChamadoDetalheSaidaDTO`.
-- **DELETE `/categorias-de-chamado/{id}`**: Remove uma categoria de chamado com base no seu ID. Retorna o objeto removido usando `CategoriaDeChamadoDetalheSaidaDTO`.
+- **POST /categorias-de-chamado**: Cria uma nova categoria de chamado usando `CategoriaDeChamadoEntradaDTO` e retorna o objeto criado usando `CategoriaDeChamadoDetalheSaidaDTO`.
+- **GET /categorias-de-chamado**: Retorna uma listagem de todas as categorias de chamado como um `Iterable` de `CategoriaDeChamadoResumoSaidaDTO`.
+- **GET /categorias-de-chamado/{id}**: Retorna uma categoria de chamado específica com base no seu ID como um `CategoriaDeChamadoDetalheSaidaDTO`.
+- **PUT /categorias-de-chamado/{id}**: Atualiza as informações de uma categoria de chamado existente com base no seu ID usando `CategoriaDeChamadoEntradaDTO` e retorna o objeto atualizado usando `CategoriaDeChamadoDetalheSaidaDTO`.
+- **DELETE /categorias-de-chamado/{id}**: Remove uma categoria de chamado com base no seu ID e retorna o objeto removido usando `CategoriaDeChamadoDetalheSaidaDTO`.
 
 **Chamado**
 
-- **POST `/chamados`**: Cria um novo chamado. Retorna o objeto criado usando `ChamadoDetalheSaidaDTO`.
-- **GET `/chamados`**: Retorna uma lista de todos os chamados. Retorna um `Iterable` de `ChamadoResumoSaidaDTO`.
-- **GET `/chamados/{id}`**: Retorna um chamado específico com base no seu ID. Retorna um `ChamadoDetalheSaidaDTO`.
-- **PUT `/chamados/{id}`**: Atualiza as informações de um chamado existente com base no seu ID. Retorna o objeto atualizado usando `ChamadoDetalheSaidaDTO`.
-- **DELETE `/chamados/{id}`**: Remove um chamado com base no seu ID. Retorna o objeto removido usando `ChamadoDetalheSaidaDTO`.
+- **POST /chamados**: Cria um novo chamado usando `ChamadoEntradaDTO` e retorna o objeto criado usando `ChamadoDetalheSaidaDTO`.
+- **GET /chamados**: Retorna uma listagem de todos os chamados como um `Iterable` de `ChamadoResumoSaidaDTO`.
+- **GET /chamados/{id}**: Retorna um chamado específico com base no seu ID como um `ChamadoDetalheSaidaDTO`.
+- **PUT /chamados/{id}**: Atualiza as informações de um chamado existente com base no seu ID usando `ChamadoEntradaDTO` e retorna o objeto atualizado usando `ChamadoDetalheSaidaDTO`.
+- **DELETE /chamados/{id}**: Remove um chamado com base no seu ID e retorna o objeto removido usando `ChamadoDetalheSaidaDTO`.
 
 **Técnico**
 
-- **POST `/tecnicos`**: Cria um novo técnico. Retorna o objeto criado usando `TecnicoDetalheSaidaDTO`.
-- **GET `/tecnicos`**: Retorna uma lista de todos os técnicos. Retorna um `Iterable` de `TecnicoResumoSaidaDTO`.
-- **GET `/tecnicos/{id}`**: Retorna um técnico específico com base no seu ID. Retorna um `TecnicoDetalheSaidaDTO`.
-- **PUT `/tecnicos/{id}`**: Atualiza as informações de um técnico existente com base no seu ID. Retorna o objeto atualizado usando `TecnicoDetalheSaidaDTO`.
-- **DELETE `/tecnicos/{id}`**: Remove um técnico com base no seu ID. Retorna o objeto removido usando `TecnicoDetalheSaidaDTO`.
+- **POST /tecnicos**: Cria um novo técnico usando `TecnicoEntradaDTO` e retorna o objeto criado usando `TecnicoDetalheSaidaDTO`.
+- **GET /tecnicos**: Retorna uma listagem de todos os técnicos como um `Iterable` de TecnicoResumoSaidaDTO.
+- **GET /tecnicos/{id}**: Retorna um técnico específico com base no seu ID como um `TecnicoDetalheSaidaDTO`.
+- **PUT /tecnicos/{id}**: Atualiza as informações de um técnico existente com base no seu ID usando `TecnicoEntradaDTO` e retorna o objeto atualizado usando `TecnicoDetalheSaidaDTO`.
+- **DELETE /tecnicos/{id}**: Remove um técnico com base no seu ID e retorna o objeto removido usando `TecnicoDetalheSaidaDTO`.
 
 [Voltar](../../../README.md)
