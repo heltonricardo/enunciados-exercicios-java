@@ -192,6 +192,10 @@ Para garantir a organização e clareza na manipulação dos dados, o sistema ut
 >   - Para listagens, utilize o `ItemResumoSaidaDTO`, que retorna uma visão geral dos itens.
 >   - Para detalhamentos, utilize o `ItemDetalheSaidaDTO`, que retorna todas as informações detalhadas de um item específico.
 
+> [!WARNING]
+>
+> Os DTOs de saída devem ser cuidadosamente planejados e modelados conforme a necessidade de cada caso, assegurando que informações sensíveis, como dados de autenticação ou senhas, sejam excluídas para evitar exposição indevida.
+
 ## 7. Endpoints e Métodos HTTP
 
 A seguir estão os endpoints e métodos HTTP disponíveis para cada entidade no sistema, juntamente com os tipos de DTOs que eles recebem e retornam:
