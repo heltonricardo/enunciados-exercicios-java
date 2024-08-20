@@ -65,6 +65,7 @@ class Tecnico {
 class CategoriaDeChamado {
   -Long id
   -String nome
+  -String senha
   -String descricao
   +CategoriaDeChamado()
   +getters()
