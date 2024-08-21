@@ -219,7 +219,7 @@ A seguir estão os endpoints e métodos HTTP disponíveis para cada entidade no 
 **Técnico**
 
 - **POST /tecnicos**: Cria um novo técnico usando `TecnicoEntradaDTO` e retorna o objeto criado usando `TecnicoDetalheSaidaDTO`.
-- **GET /tecnicos**: Retorna uma listagem de todos os técnicos como um `Iterable` de TecnicoResumoSaidaDTO.
+- **GET /tecnicos**: Retorna uma listagem de todos os técnicos como um `Iterable` de `TecnicoResumoSaidaDTO`.
 - **GET /tecnicos/{id}**: Retorna um técnico específico com base no seu ID como um `TecnicoDetalheSaidaDTO`.
 - **PUT /tecnicos/{id}**: Atualiza as informações de um técnico existente com base no seu ID usando `TecnicoEntradaDTO` e retorna o objeto atualizado usando `TecnicoDetalheSaidaDTO`.
 - **DELETE /tecnicos/{id}**: Remove um técnico com base no seu ID e retorna o objeto removido usando `TecnicoDetalheSaidaDTO`.
