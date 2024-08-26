@@ -105,3 +105,9 @@ Tags: `api` `cliente-servidor` `crud` `hibernate` `jpa` `mysql` `rest` `spring i
 Tags: `api` `cliente-servidor` `crud` `hibernate` `jpa` `mysql` `relacionamento` `rest` `spring initializr` `spring boot` `validation`
 
 - [Gerenciando chamados](./exercicios/exercicio-016/versao-001/README.md)
+
+### Exercício 017
+
+Tags: `api` `cliente-servidor` `crud` `hibernate` `jpa` `mysql` `relacionamento` `rest` `spring initializr` `spring boot` `teste automatizado` `teste de integração` `validation`
+
+- [Gerenciando chamados](./exercicios/exercicio-016/versao-001/README.md)
