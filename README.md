@@ -110,4 +110,4 @@ Tags: `api` `cliente-servidor` `crud` `hibernate` `jpa` `mysql` `relacionamento`
 
 Tags: `api` `cliente-servidor` `crud` `hibernate` `jpa` `mysql` `relacionamento` `rest` `spring initializr` `spring boot` `teste automatizado` `teste de integração` `validation`
 
-- [Gerenciando chamados](./exercicios/exercicio-016/versao-001/README.md)
+- [Movepass](./exercicios/exercicio-017/versao-001/README.md)

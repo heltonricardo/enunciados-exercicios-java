@@ -1,5 +1,11 @@
 # Exercício Java: Movepass
 
+<p align="center">
+  <a href="#">
+    <img src="./logo.png" alt="Logo Movepass" />
+  </a>
+</p>
+
 Neste exercício, você desenvolverá uma API REST utilizando Java e Spring Boot, com foco na criação de um sistema simples chamado **Movepass**. Este sistema é inspirado no Gympass, e será utilizado para praticar conceitos de Programação Orientada a Objetos (POO), testes, Spring Boot, e boas práticas de desenvolvimento de software.
 
 [Voltar](../../../README.md)
@@ -19,12 +25,6 @@ Neste exercício, você desenvolverá uma API REST utilizando Java e Spring Boot
 <!-- /TOC -->
 
 ## 1. Introdução
-
-<p align="center">
-  <a href="#">
-    <img src="./logo.png" alt="Logo Movepass" />
-  </a>
-</p>
 
 O projeto **Movepass** consiste em uma API REST que simula a gestão de academias, empresas e assinaturas de funcionários. A ideia central é permitir que empresas possam cadastrar seus funcionários em academias, gerenciando assinaturas e possibilitando que esses funcionários utilizem as academias parceiras.
 
