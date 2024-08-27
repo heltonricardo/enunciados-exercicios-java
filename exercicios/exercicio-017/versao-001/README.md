@@ -116,7 +116,9 @@ class Funcionario {
 
 ## 5. Restrições
 
-Certifique-se de que a lógica de soft delete seja implementada de forma consistente, filtrando registros inativos nas consultas `GET` e reativando registros quando necessário, se isso fizer parte dos requisitos de negócio.
+1. Certifique-se de que a lógica de soft delete seja implementada de forma consistente, filtrando registros inativos nas consultas `GET` e reativando registros quando necessário, se isso fizer parte dos requisitos de negócio.
+
+2. As respostas da API podem utilizar as próprias entidades, embora seja recomendado usar DTOs de saída. Para as entradas, deve-se usar DTOs de entrada, solicitando apenas os dados necessários do cliente da aplicação.
 
 ## 6. Estrutura do projeto
 
