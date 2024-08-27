@@ -125,42 +125,42 @@ class Funcionario {
 A estrutura do projeto Movepass segue uma organização modular, separando as responsabilidades de cada camada do sistema. Isso facilita a manutenção e a escalabilidade do código. Abaixo está a estrutura sugerida:
 
 ```text
-src
-├─── main/java/com/movepass
-│    ├─── controller
-│    │    ├─── AcademiaController.java
-│    │    ├─── AssinaturaController.java
-│    │    ├─── EmpresaController.java
-│    │    └─── FuncionarioController.java
-│    ├─── dto
-│    │    ├─── AcademiaEntradaDTO.java
-│    │    ├─── AssinaturaEntradaDTO.java
-│    │    ├─── EmpresaEntradaDTO.java
-│    │    └─── FuncionarioEntradaDTO.java
-│    ├─── model
-│    │    ├─── entity
-│    │    │    ├─── Academia.java
-│    │    │    ├─── Assinatura.java
-│    │    │    ├─── Empresa.java
-│    │    │    └─── Funcionario.java
-│    │    └─── repository
-│    │         ├─── AcademiaRepository.java
-│    │         ├─── AssinaturaRepository.java
-│    │         ├─── EmpresaRepository.java
-│    │         └─── FuncionarioRepository.java
-│    ├─── service
-│    │    ├─── AcademiaService.java
-│    │    ├─── AssinaturaService.java
-│    │    ├─── EmpresaService.java
-│    │    └─── FuncionarioService.java
-│    └─── MovepassApplication.java
-│
-└─── test/java/com/movepass
-     └─── controller
-          ├─── AcademiaControllerTest.java
-          ├─── AssinaturaControllerTest.java
-          ├─── EmpresaControllerTest.java
-          └─── FuncionarioControllerTest.java
+src/main/java/com/movepass
+├─── controller
+│    ├─── AcademiaController.java
+│    ├─── AssinaturaController.java
+│    ├─── EmpresaController.java
+│    └─── FuncionarioController.java
+├─── dto
+│    ├─── AcademiaDTO.java
+│    ├─── AssinaturaDTO.java
+│    ├─── EmpresaDTO.java
+│    └─── FuncionarioDTO.java
+├─── model
+│    ├─── entity
+│    │    ├─── Academia.java
+│    │    ├─── Assinatura.java
+│    │    ├─── Empresa.java
+│    │    └─── Funcionario.java
+│    └─── repository
+│         ├─── AcademiaRepository.java
+│         ├─── AssinaturaRepository.java
+│         ├─── EmpresaRepository.java
+│         └─── FuncionarioRepository.java
+├─── service
+│    ├─── AcademiaService.java
+│    ├─── AssinaturaService.java
+│    ├─── EmpresaService.java
+│    └─── FuncionarioService.java
+└─── MovepassApplication.java
+
+
+src/test/java/com/movepass
+└─── controller
+     ├─── AcademiaControllerTest.java
+     ├─── AssinaturaControllerTest.java
+     ├─── EmpresaControllerTest.java
+     └─── FuncionarioControllerTest.java
 ```
 
 ## 7. Validações
