@@ -50,12 +50,25 @@ Adicione as seguintes dependências ao seu arquivo `pom.xml` para configurar o p
   - **H2 Database**: Banco de dados em memória utilizado para testes, útil por ser leve e de fácil configuração.
   - **Spring Boot Starter Test**: Framework de teste para escrever e executar testes unitários e de integração (já incluso por padrão ao gerar um projeto via Spring Initializr).
 
+- Para a documentação:
+
+  ```xml
+  <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-ui</artifactId>
+      <version>1.8.0</version>
+  </dependency>
+  ```
+
+  Biblioteca para gerar e expor a documentação da API REST usando OpenAPI (anteriormente conhecido como Swagger). Permite visualizar e interagir com a API de forma gráfica através de uma interface web. Por padrão, a documentação fica disponível em `/swagger-ui/index.html`.
+
 ## 3. Configurações
 
 Definem a conexão com o banco de dados MySQL, as credenciais de acesso e as propriedades do JPA para o projeto Movepass. Incluem parâmetros essenciais para garantir a persistência dos dados e o comportamento adequado da aplicação durante a execução.
 
 ```properties
 spring.jpa.open-in-view=false
+springdoc.swagger-ui.path=/docs
 spring.datasource.username=root
 spring.datasource.password=12345678
 spring.jpa.hibernate.ddl-auto=update
