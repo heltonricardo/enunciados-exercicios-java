@@ -22,6 +22,7 @@ Neste exercício, você desenvolverá uma API REST utilizando Java e Spring Boot
 - [6. Estrutura do projeto](#6-estrutura-do-projeto)
 - [7. Validações](#7-valida%C3%A7%C3%B5es)
 - [8. Endpoints](#8-endpoints)
+- [9. Conclusão](#9-conclus%C3%A3o)
 
 <!-- /TOC -->
 
@@ -244,5 +245,11 @@ Crie endpoints para realizar as operações básicas de CRUD (Create, Read, Upda
   - `GET /funcionarios/{id}`: Obter detalhes de um funcionário específico.
   - `PUT /funcionarios/{id}`: Atualizar dados de um funcionário.
   - `DELETE /funcionarios/{id}`: Inativar um funcionário (soft delete).
+
+## 9. Conclusão
+
+Ao concluir o desenvolvimento do projeto **Movepass**, você terá criado uma API REST funcional para a gestão de academias e assinaturas, utilizando Java e Spring Boot. Este exercício ofereceu uma ótima oportunidade para praticar conceitos importantes de Programação Orientada a Objetos, além de testes e boas práticas de desenvolvimento de software. A implementação de soft delete e as validações com Jakarta Constraints garantem uma boa gestão dos dados e a integridade das informações.
+
+A estrutura modular do projeto, com suas entidades, serviços e controllers bem definidos, facilita a manutenção e a escalabilidade do sistema. Este projeto não só aprimorou suas habilidades técnicas, mas também ofereceu uma experiência prática valiosa no desenvolvimento de APIs.
 
 [Voltar](../../../README.md)
