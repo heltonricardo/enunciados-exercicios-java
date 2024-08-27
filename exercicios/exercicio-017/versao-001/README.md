@@ -16,11 +16,12 @@ Neste exercício, você desenvolverá uma API REST utilizando Java e Spring Boot
 
 - [1. Introdução](#1-introdu%C3%A7%C3%A3o)
 - [2. Dependências](#2-depend%C3%AAncias)
-- [3. Entidades](#3-entidades)
-- [4. Restrições](#4-restri%C3%A7%C3%B5es)
-- [5. Estrutura do projeto](#5-estrutura-do-projeto)
-- [6. Validações](#6-valida%C3%A7%C3%B5es)
-- [7. Endpoints](#7-endpoints)
+- [3. Configurações](#3-configura%C3%A7%C3%B5es)
+- [4. Entidades](#4-entidades)
+- [5. Restrições](#5-restri%C3%A7%C3%B5es)
+- [6. Estrutura do projeto](#6-estrutura-do-projeto)
+- [7. Validações](#7-valida%C3%A7%C3%B5es)
+- [8. Endpoints](#8-endpoints)
 
 <!-- /TOC -->
 
@@ -49,7 +50,19 @@ Adicione as seguintes dependências ao seu arquivo `pom.xml` para configurar o p
   - **H2 Database**: Banco de dados em memória utilizado para testes, útil por ser leve e de fácil configuração.
   - **Spring Boot Starter Test**: Framework de teste para escrever e executar testes unitários e de integração (já incluso por padrão ao gerar um projeto via Spring Initializr).
 
-## 3. Entidades
+## 3. Configurações
+
+Definem a conexão com o banco de dados MySQL, as credenciais de acesso e as propriedades do JPA para o projeto Movepass. Incluem parâmetros essenciais para garantir a persistência dos dados e o comportamento adequado da aplicação durante a execução.
+
+```properties
+spring.jpa.open-in-view=false
+spring.datasource.username=root
+spring.datasource.password=12345678
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mysql://localhost:3306/movepass?createDatabaseIfNotExist=true
+```
+
+## 4. Entidades
 
 As entidades do projeto Movepass representam os principais elementos do sistema, como Empresa, Funcionário, Academia e Assinatura. Abaixo está uma representação das classes dessas entidades:
 
@@ -101,11 +114,11 @@ class Funcionario {
 }
 ```
 
-## 4. Restrições
+## 5. Restrições
 
 Certifique-se de que a lógica de soft delete seja implementada de forma consistente, filtrando registros inativos nas consultas `GET` e reativando registros quando necessário, se isso fizer parte dos requisitos de negócio.
 
-## 5. Estrutura do projeto
+## 6. Estrutura do projeto
 
 A estrutura do projeto Movepass segue uma organização modular, separando as responsabilidades de cada camada do sistema. Isso facilita a manutenção e a escalabilidade do código. Abaixo está a estrutura sugerida:
 
@@ -148,7 +161,7 @@ src
           └─── FuncionarioControllerTest.java
 ```
 
-## 6. Validações
+## 7. Validações
 
 Utilize **Jakarta Constraints** para validar os dados recebidos do cliente. Por exemplo:
 
@@ -181,7 +194,7 @@ Utilize **Jakarta Constraints** para validar os dados recebidos do cliente. Por 
 >
 > Não esqueça de usar a anotação `@Valid` nos parâmetros das _controllers_ para que a validação funcione corretamente.
 
-## 7. Endpoints
+## 8. Endpoints
 
 Crie endpoints para realizar as operações básicas de CRUD (Create, Read, Update, Delete) para cada entidade. Cada endpoint deve seguir o padrão RESTful, utilizando os métodos HTTP adequados:
 
