@@ -84,7 +84,7 @@ Dependências de documentação são ferramentas utilizadas para gerar, gerencia
 
 ## 3. Configurações
 
-Definem a conexão com o banco de dados MySQL, as credenciais de acesso e as propriedades do JPA para o projeto Movepass. Incluem parâmetros essenciais para garantir a persistência dos dados e o comportamento adequado da aplicação durante a execução.
+Estas configurações definem a conexão com o banco de dados MySQL, as credenciais de acesso e as propriedades do JPA para o projeto Movepass. Incluem parâmetros essenciais para garantir a persistência dos dados e o comportamento adequado da aplicação durante a execução. Insira esses valores no arquivo `application.properties`:
 
 ```properties
 spring.jpa.open-in-view=false
@@ -227,7 +227,7 @@ Utilize **Jakarta Constraints** para validar os dados recebidos do cliente. Por 
 
 > [!WARNING]
 >
-> Não esqueça de usar a anotação `@Valid` nos parâmetros das _controllers_ para que a validação funcione corretamente.
+> Não esqueça de usar a anotação `@Valid` nos parâmetros das _controllers_ para que as validações funcionem corretamente.
 
 ## 8. Endpoints
 
