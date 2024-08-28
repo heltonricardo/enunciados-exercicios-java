@@ -87,7 +87,7 @@ class Academia {
   -Long id
   -String nome
   -String endereco
-  -Bool ativo
+  -Boolean ativo
   +Academia()
   +getters()
   +setters()
@@ -97,7 +97,7 @@ class Assinatura {
   -Long id
   -LocalDate dataInicio
   -LocalDate dataTermino
-  -Bool ativo
+  -Boolean ativo
   -Academia academia
   -Funcionario funcionario
   +Assinatura()
@@ -109,7 +109,7 @@ class Empresa {
   -Long id
   -String cnpj
   -String nome
-  -Bool ativo
+  -Boolean ativo
   -List< Funcionario > funcionarios
   +Empresa()
   +getters()
@@ -121,7 +121,7 @@ class Funcionario {
   -String nome
   -String email
   -LocalDate dataContratacao
-  -Bool ativo
+  -Boolean ativo
   +Funcionario()
   +getters()
   +setters()
