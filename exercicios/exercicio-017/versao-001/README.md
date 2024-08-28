@@ -16,6 +16,10 @@ Neste exercício, você desenvolverá uma API REST utilizando Java e Spring Boot
 
 - [1. Introdução](#1-introdu%C3%A7%C3%A3o)
 - [2. Dependências](#2-depend%C3%AAncias)
+  - [2.1. De aplicação](#21-de-aplica%C3%A7%C3%A3o)
+  - [2.2. De desenvolvimento](#22-de-desenvolvimento)
+  - [2.3. De teste](#23-de-teste)
+  - [2.4. De documentação](#24-de-documenta%C3%A7%C3%A3o)
 - [3. Configurações](#3-configura%C3%A7%C3%B5es)
 - [4. Entidades](#4-entidades)
 - [5. Restrições](#5-restri%C3%A7%C3%B5es)
@@ -36,22 +40,39 @@ Além disso, este exercício visa a implementação de **soft delete**, que cons
 
 ## 2. Dependências
 
-Adicione as seguintes dependências ao seu arquivo `pom.xml` para configurar o projeto:
+Dependências de um projeto são bibliotecas externas ou módulos que o projeto precisa para funcionar corretamente, como frameworks, APIs ou ferramentas de suporte. Elas podem ser gerenciadas automaticamente por ferramentas como Maven, que baixam, atualizam e integram essas dependências ao projeto conforme especificado na configuração do build.
 
-- Para a aplicação:
+> [!IMPORTANT]
+> Adicione as dependências de **`aplicação`**, **`desenvolvimento`** e **`teste`** no _Spring Initializr_ ao criar o projeto. Para as de **`documentação`**, adicione manualmente no `pom.xml`, pois, neste caso, a dependência requisitada não está disponível no _Spring Initializr_.
 
-  - **MySQL Driver**: Driver JDBC para conectar o Spring Boot a um banco de dados MySQL.
-  - **Spring Boot DevTools**: Ferramentas de desenvolvimento para acelerar o ciclo de feedback durante o desenvolvimento, como reinicialização automática e live reload.
-  - **Spring Data JPA**: Abstração do Spring sobre o JPA para simplificar o acesso e manipulação de dados em bancos de dados relacionais.
-  - **Spring Web**: Dependência que inclui suporte para o desenvolvimento de aplicações web, incluindo RESTful APIs.
-  - **Validation**: Suporte para validação de dados utilizando Jakarta Bean Validation (antigo Java Bean Validation).
+### 2.1. De aplicação
 
-- Para os testes:
+Dependências de aplicação são bibliotecas necessárias para a execução do software em produção, como frameworks e APIs essenciais para as funcionalidades principais.
 
-  - **H2 Database**: Banco de dados em memória utilizado para testes, útil por ser leve e de fácil configuração.
-  - **Spring Boot Starter Test**: Framework de teste para escrever e executar testes unitários e de integração (já incluso por padrão ao gerar um projeto via Spring Initializr).
+- **MySQL Driver**: Driver JDBC para conectar o Spring Boot a um banco de dados MySQL.
+- **Spring Data JPA**: Abstração do Spring sobre o JPA para simplificar o acesso e manipulação de dados em bancos de dados relacionais.
+- **Spring Web**: Dependência que inclui suporte para o desenvolvimento de aplicações web, incluindo RESTful APIs.
+- **Validation**: Suporte para validação de dados utilizando Jakarta Bean Validation (antigo Java Bean Validation).
 
-- Para a documentação:
+### 2.2. De desenvolvimento
+
+Dependências de desenvolvimento são ferramentas e bibliotecas usadas apenas durante o desenvolvimento do projeto, como linters, geradores de código ou plugins de integração.
+
+- **Lombok**: Biblioteca que reduz o código boilerplate em classes. Através de simples anotações, gera métodos como getters, setters, equals, hashCode, toString, construtores e mais.
+- **Spring Boot DevTools**: Ferramentas de desenvolvimento para acelerar o ciclo de feedback durante o desenvolvimento, como reinicialização automática e live reload.
+
+### 2.3. De teste
+
+Dependências de teste são bibliotecas usadas para escrever e executar testes automatizados, como frameworks de testes unitários, mocks ou ferramentas de cobertura de código.
+
+- **H2 Database**: Banco de dados em memória utilizado para testes, útil por ser leve e de fácil configuração.
+- **Spring Boot Starter Test**: Framework de teste para escrever e executar testes unitários e de integração (já incluso por padrão ao gerar um projeto via Spring Initializr).
+
+### 2.4. De documentação
+
+Dependências de documentação são ferramentas utilizadas para gerar, gerenciar e publicar a documentação do projeto, como geradores de documentação a partir de comentários no código ou ferramentas de formatação de documentos.
+
+- **OpenAPI**: Biblioteca para gerar e expor a documentação da API REST. Permite visualizar e interagir com a API de forma gráfica através de uma interface web. Por padrão, a documentação fica disponível em `/swagger-ui/index.html`.
 
   ```xml
   <dependency>
@@ -60,8 +81,6 @@ Adicione as seguintes dependências ao seu arquivo `pom.xml` para configurar o p
       <version>1.8.0</version>
   </dependency>
   ```
-
-  Biblioteca para gerar e expor a documentação da API REST usando OpenAPI (anteriormente conhecido como Swagger). Permite visualizar e interagir com a API de forma gráfica através de uma interface web. Por padrão, a documentação fica disponível em `/swagger-ui/index.html`.
 
 ## 3. Configurações
 
