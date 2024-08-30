@@ -22,7 +22,7 @@ Neste exercício, você desenvolverá uma API REST utilizando Java e Spring Boot
   - [2.4. De documentação](#24-de-documenta%C3%A7%C3%A3o)
 - [3. Configurações](#3-configura%C3%A7%C3%B5es)
 - [4. Entidades](#4-entidades)
-- [5. Restrições](#5-restri%C3%A7%C3%B5es)
+- [5. Requisitos](#5-requisitos)
 - [6. Estrutura do projeto](#6-estrutura-do-projeto)
 - [7. Validações](#7-valida%C3%A7%C3%B5es)
 - [8. Endpoints](#8-endpoints)
@@ -35,8 +35,6 @@ Neste exercício, você desenvolverá uma API REST utilizando Java e Spring Boot
 O projeto **Movepass** consiste em uma API REST que simula a gestão de academias, empresas e assinaturas de funcionários. A ideia central é permitir que empresas possam cadastrar seus funcionários em academias, gerenciando assinaturas e possibilitando que esses funcionários utilizem as academias parceiras.
 
 Você precisará implementar quatro principais entidades: Empresa, Funcionário, Academia e Assinatura. A regra de negócio básica é que uma empresa pode ter múltiplos funcionários, cada funcionário pode ter uma assinatura em uma ou mais academias, e cada academia pode ter vários funcionários assinantes.
-
-Além disso, este exercício visa a implementação de **soft delete**, que consiste na exclusão lógica de registros no banco de dados. Em vez de remover os registros fisicamente, um campo booleano (por exemplo, `ativo`) será utilizado para indicar se o registro está ativo ou inativo.
 
 ## 2. Dependências
 
@@ -72,15 +70,19 @@ Dependências de teste são bibliotecas usadas para escrever e executar testes a
 
 Dependências de documentação são ferramentas utilizadas para gerar, gerenciar e publicar a documentação do projeto, como geradores de documentação a partir de comentários no código ou ferramentas de formatação de documentos.
 
-- **OpenAPI**: Biblioteca para gerar e expor a documentação da API REST. Permite visualizar e interagir com a API de forma gráfica através de uma interface web. Por padrão, a documentação fica disponível em `/swagger-ui/index.html`.
+- **OpenAPI**: Biblioteca para gerar e expor a documentação da API REST. Permite visualizar e interagir com a API de forma gráfica através de uma interface web implementada pelo Swagger. Por padrão, a documentação fica disponível em `GET /swagger-ui`.
 
   ```xml
-  <dependency>
+   <dependency>
       <groupId>org.springdoc</groupId>
-      <artifactId>springdoc-openapi-ui</artifactId>
-      <version>1.8.0</version>
-  </dependency>
+      <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+      <version>2.6.0</version>
+   </dependency>
   ```
+
+> [!NOTE]
+>
+> No próximo passo, usaremos uma configuração para que seja possível acessar a página do Swagger também através do endpoint `GET /docs`
 
 ## 3. Configurações
 
@@ -116,7 +118,6 @@ class Assinatura {
   -Long id
   -LocalDate dataInicio
   -LocalDate dataTermino
-  -Boolean ativo
   -Academia academia
   -Funcionario funcionario
   +Assinatura()
@@ -147,11 +148,17 @@ class Funcionario {
 }
 ```
 
-## 5. Restrições
+## 5. Requisitos
 
-1. Certifique-se de que a lógica de soft delete seja implementada de forma consistente, filtrando registros inativos nas consultas `GET` e reativando registros quando necessário, se isso fizer parte dos requisitos de negócio.
+Requisitos que devem ser seguidos ao implementar o exercício:
+
+1. Certifique-se de que a lógica de soft delete seja implementada de forma consistente, filtrando registros inativos em qualquer consulta. **Soft delete** consiste na exclusão lógica de registros no banco de dados. Em vez de remover os registros fisicamente, um campo booleano (neste caso o campo `ativo`) será utilizado para indicar se o registro está ativo ou inativo.
 
 2. As respostas da API podem utilizar as próprias entidades, embora seja recomendado usar DTOs de saída. Para as entradas, deve-se usar DTOs de entrada, solicitando apenas os dados necessários do cliente da aplicação.
+
+3. Utilize anotações para melhorar a visualização da documentação no Swagger UI, como:
+   - Anotar o classe controladora com `@Tag(name = "Nome do grupo de endpoints", description = "Descrição do grupo de endpoints")`
+   - Anotar cada método da classe controladora com `@Operation(summary = "Resumo da operação", description = "Descrição detalhada da operação")`
 
 ## 6. Estrutura do projeto
 
@@ -247,7 +254,6 @@ Crie endpoints para realizar as operações básicas de CRUD (Create, Read, Upda
   - `GET /assinaturas`: Listar todas as assinaturas.
   - `GET /assinaturas/{id}`: Obter detalhes de uma assinatura específica.
   - `PUT /assinaturas/{id}`: Atualizar dados de uma assinatura.
-  - `DELETE /assinaturas/{id}`: Inativar uma assinatura (soft delete).
 
 - **Empresa**
 
