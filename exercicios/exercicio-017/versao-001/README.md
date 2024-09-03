@@ -80,9 +80,7 @@ Dependências de documentação são ferramentas utilizadas para gerar, gerencia
    </dependency>
   ```
 
-  > [!NOTE]
-  >
-  > No próximo passo, usaremos uma configuração para que seja possível acessar a página do Swagger também através do endpoint `GET /docs`
+  > :bulb: **Tip:** No próximo passo, usaremos uma configuração para que seja possível acessar a página do Swagger também através do endpoint `GET /docs`
 
 ## 3. Configurações
 
