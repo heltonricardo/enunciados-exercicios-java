@@ -157,8 +157,13 @@ Requisitos que devem ser seguidos ao implementar o exercício:
 2. As respostas da API podem utilizar as próprias entidades, embora seja recomendado usar DTOs de saída. Para as entradas, deve-se usar DTOs de entrada, solicitando apenas os dados necessários do cliente da aplicação.
 
 3. Utilize anotações para melhorar a visualização da documentação no Swagger UI, como:
-   - Anotar o classe controladora com `@Tag(name = "Nome do grupo de endpoints", description = "Descrição do grupo de endpoints")`
-   - Anotar cada método da classe controladora com `@Operation(summary = "Resumo da operação", description = "Descrição detalhada da operação")`
+
+   - Anotar o classe controladora com `@Tag(name = "Nome do grupo de endpoints", description = "Descrição do grupo de endpoints")` (_io.swagger.v3.oas.annotations.tags.Tag_);
+   - Anotar cada método da classe controladora com `@Operation(summary = "Resumo da operação", description = "Descrição detalhada da operação")` (_io.swagger.v3.oas.annotations.Operation_).
+
+4. Lance exceções personalizadas quando necessário e capture-as na camada de controle usando um método anotado com `@ExceptionHandler(ClasseException.class)` (_org.springframework.web.bind.annotation.ExceptionHandler_).
+
+5. Padronize todas as respostas das classes controladoras usando `ResponseEntity<Classe>` (_org.springframework.http.ResponseEntity_). Lembre-se de usar os códigos de status corretamente para cada método (vide [MOZILLA, Códigos de status de respostas HTTP](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status)). Para facilitar, faça uso do enum `HttpStatus` (_org.springframework.http.HttpStatus_).
 
 ## 6. Estrutura do projeto
 
@@ -176,6 +181,8 @@ src/main/java/com/movepass
 │    ├─── AssinaturaDTO.java
 │    ├─── EmpresaDTO.java
 │    └─── FuncionarioDTO.java
+├─── exception
+│    └─── RegistroInexistenteException.java
 ├─── model
 │    ├─── entity
 │    │    ├─── Academia.java
@@ -234,7 +241,7 @@ Utilize **Jakarta Constraints** para validar os dados recebidos do cliente. Por 
 
 > [!WARNING]
 >
-> Não esqueça de usar a anotação `@Valid` nos parâmetros das _controllers_ para que as validações funcionem corretamente.
+> Não esqueça de usar a anotação `@Valid` (_jakarta.validation.Valid_) nos parâmetros das _controllers_ para que as validações funcionem corretamente.
 
 ## 8. Endpoints
 
