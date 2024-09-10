@@ -87,7 +87,7 @@ Dependências de documentação são ferramentas utilizadas para gerar, gerencia
 
 ## 3. Configurações
 
-Estas configurações definem a conexão com o banco de dados MySQL, as credenciais de acesso e as propriedades do JPA para o projeto Movepass. Incluem parâmetros essenciais para garantir a persistência dos dados e o comportamento adequado da aplicação durante a execução. Insira esses valores no arquivo `application.properties`:
+Estas configurações definem a conexão com o banco de dados MySQL, as credenciais de acesso e as propriedades do JPA para o projeto **Movepass**. Incluem parâmetros essenciais para garantir a persistência dos dados e o comportamento adequado da aplicação durante a execução. Insira esses valores no arquivo `application.properties`:
 
 ```properties
 spring.jpa.open-in-view=false
@@ -100,7 +100,7 @@ spring.datasource.url=jdbc:mysql://localhost:3306/movepass?createDatabaseIfNotEx
 
 ## 4. Entidades
 
-As entidades do projeto Movepass representam os principais elementos do sistema, como Empresa, Funcionário, Academia e Assinatura. Abaixo está uma representação das classes dessas entidades:
+As entidades do projeto **Movepass** representam os principais elementos do sistema, como Empresa, Funcionário, Academia e Assinatura. Abaixo está uma representação das classes dessas entidades:
 
 ```mermaid
 classDiagram
@@ -168,7 +168,7 @@ Requisitos que devem ser seguidos ao implementar o exercício:
 
 ## 6. Estrutura do projeto
 
-A estrutura do projeto Movepass segue uma organização modular, separando as responsabilidades de cada camada do sistema. Isso facilita a manutenção e a escalabilidade do código. Abaixo está a estrutura sugerida:
+A estrutura principal do projeto **Movepass** segue uma organização modular, separando as responsabilidades de cada camada do sistema. Isso facilita a manutenção e a escalabilidade do código. Abaixo está a estrutura sugerida:
 
 ```text
 src/main/java/com/movepass
@@ -297,6 +297,7 @@ Cada classe de teste deve ser anotada com `@SpringBootTest` (_org.springframewor
 ```java
 @SpringBootTest
 public class ClasseComTestes {
+
     @Test
     public void metodoTeste1() {
     }
