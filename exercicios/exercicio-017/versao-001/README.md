@@ -67,7 +67,7 @@ Dependências de desenvolvimento são ferramentas e bibliotecas usadas apenas du
 
 Dependências de teste são bibliotecas usadas para escrever e executar testes automatizados, como frameworks de testes unitários, mocks ou ferramentas de cobertura de código.
 
-- **Spring Boot Starter Test**: Framework de teste para escrever e executar testes unitários e de integração (já incluso por padrão ao gerar um projeto via Spring Initializr).
+- **Spring Boot Starter Test**: Framework de teste para escrever e executar testes unitários e de integração (já incluso por padrão ao gerar um projeto via _Spring Initializr_).
 
 ### 2.4. De documentação
 
@@ -273,9 +273,11 @@ Crie endpoints para realizar as operações básicas de CRUD (Create, Read, Upda
 
 ## 9. Testes
 
-Para garantir a qualidade do código e o funcionamento correto da aplicação, realizaremos **testes unitários**. Esses testes verificam o comportamento de pequenas partes da aplicação (unidades), como métodos individuais, isolando-os de outras partes do sistema.
+Para garantir a qualidade do código e o funcionamento correto da aplicação, realizaremos **testes unitários**. Utilizaremos a biblioteca **Spring Boot Starter Test**, que já vem incluída por padrão quando geramos um projeto no _Spring Initializr_, para realizar esses testes unitários e assegurar que cada componente do sistema esteja funcionando como esperado.
 
-> [!NOTE] > **Testes unitários x Testes de integração**
+> [!NOTE]
+>
+> **Testes unitários x Testes de integração**
 >
 > **Testes Unitários:** Focam em testar componentes individuais de um sistema (como métodos ou funções) de forma isolada, garantindo que cada parte funcione corretamente por si só. O objetivo é verificar a lógica interna de uma unidade de código sem depender de outros módulos ou partes do sistema. Usam mocks para substituir dependências externas.
 >
@@ -285,12 +287,12 @@ Para garantir a qualidade do código e o funcionamento correto da aplicação, r
 
 Para manter a organização, a estrutura de diretórios de testes deve espelhar a estrutura usada em `src/main`. Ou seja, cada classe em `src/main` terá uma classe de teste correspondente em `src/test`. As classes de teste devem ter o sufixo `Test` por convenção. Exemplo:
 
-- **Classe principal (`src/main`)**: `src/main/java/com/movepass/service/AcademiaService.java`
-- **Classe de teste (`src/test`)**: `src/test/java/com/movepass/service/AcademiaServiceTest.java`
+- **Classe principal (`src/main`)**: `src/main/java/com/projeto/service/MeuService.java`
+- **Classe de teste (`src/test`)**: `src/test/java/com/projeto/service/MeuServiceTest.java`
 
 ### 9.2. Configurações
 
-Cada classe de teste deve ser anotada com `@SpringBootTest` (_org.springframework.boot.test.context.SpringBootTest_). Isso indica que o contexto do Spring será carregado durante a execução dos testes. Além disso, cada método de teste deve ser anotado com `@Test` (_org.junit.jupiter.api.Test_).
+Cada classe de teste deve ser anotada com `@SpringBootTest` (_org.springframework.boot.test.context.SpringBootTest_). Isso indica que o contexto do Spring será carregado durante a execução dos testes. Além disso, cada método de teste deve ser anotado com `@Test` (_org.junit.jupiter.api.Test_):
 
 ```java
 @SpringBootTest
