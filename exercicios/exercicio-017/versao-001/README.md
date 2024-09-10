@@ -26,7 +26,11 @@ Neste exercício, você desenvolverá uma API REST utilizando Java e Spring Boot
 - [6. Estrutura do projeto](#6-estrutura-do-projeto)
 - [7. Validações](#7-valida%C3%A7%C3%B5es)
 - [8. Endpoints](#8-endpoints)
-- [9. Conclusão](#9-conclus%C3%A3o)
+- [9. Testes](#9-testes)
+  - [9.1. Estrutura de diretórios](#91-estrutura-de-diret%C3%B3rios)
+  - [9.2. Configurações](#92-configura%C3%A7%C3%B5es)
+  - [9.3. Mocks](#93-mocks)
+- [10. Conclusão](#10-conclus%C3%A3o)
 
 <!-- /TOC -->
 
@@ -63,7 +67,6 @@ Dependências de desenvolvimento são ferramentas e bibliotecas usadas apenas du
 
 Dependências de teste são bibliotecas usadas para escrever e executar testes automatizados, como frameworks de testes unitários, mocks ou ferramentas de cobertura de código.
 
-- **H2 Database**: Banco de dados em memória utilizado para testes, útil por ser leve e de fácil configuração.
 - **Spring Boot Starter Test**: Framework de teste para escrever e executar testes unitários e de integração (já incluso por padrão ao gerar um projeto via Spring Initializr).
 
 ### 2.4. De documentação
@@ -198,14 +201,6 @@ src/main/java/com/movepass
 │    ├─── EmpresaService.java
 │    └─── FuncionarioService.java
 └─── MovepassApplication.java
-
-
-src/test/java/com/movepass
-└─── controller
-     ├─── AcademiaControllerTest.java
-     ├─── AssinaturaControllerTest.java
-     ├─── EmpresaControllerTest.java
-     └─── FuncionarioControllerTest.java
 ```
 
 ## 7. Validações
@@ -276,10 +271,100 @@ Crie endpoints para realizar as operações básicas de CRUD (Create, Read, Upda
   - `PUT /funcionarios/{id}`: Atualizar dados de um funcionário.
   - `DELETE /funcionarios/{id}`: Inativar um funcionário (soft delete).
 
-## 9. Conclusão
+## 9. Testes
 
-Ao concluir o desenvolvimento do projeto **Movepass**, você terá criado uma API REST funcional para a gestão de academias e assinaturas, utilizando Java e Spring Boot. Este exercício ofereceu uma ótima oportunidade para praticar conceitos importantes de Programação Orientada a Objetos, além de testes e boas práticas de desenvolvimento de software. A implementação de soft delete e as validações com Jakarta Constraints garantem uma boa gestão dos dados e a integridade das informações.
+Para garantir a qualidade do código e o funcionamento correto da aplicação, realizaremos **testes unitários**. Esses testes verificam o comportamento de pequenas partes da aplicação (unidades), como métodos individuais, isolando-os de outras partes do sistema.
 
-A estrutura modular do projeto, com suas entidades, serviços e controllers bem definidos, facilita a manutenção e a escalabilidade do sistema. Este projeto não só aprimorou suas habilidades técnicas, mas também ofereceu uma experiência prática valiosa no desenvolvimento de APIs.
+> [!NOTE] > **Testes unitários x Testes de integração**
+>
+> **Testes Unitários:** Focam em testar componentes individuais de um sistema (como métodos ou funções) de forma isolada, garantindo que cada parte funcione corretamente por si só. O objetivo é verificar a lógica interna de uma unidade de código sem depender de outros módulos ou partes do sistema. Usam mocks para substituir dependências externas.
+>
+> **Testes de Integração:** Avaliam a interação entre múltiplos componentes ou módulos do sistema. O foco é garantir que diferentes partes (como camadas de serviço, repositórios etc.) funcionem corretamente juntas. Esses testes verificam se a comunicação e integração entre essas partes ocorrem conforme o esperado.
+
+### 9.1. Estrutura de diretórios
+
+Para manter a organização, a estrutura de diretórios de testes deve espelhar a estrutura usada em `src/main`. Ou seja, cada classe em `src/main` terá uma classe de teste correspondente em `src/test`. As classes de teste devem ter o sufixo `Test` por convenção. Exemplo:
+
+- **Classe principal (`src/main`)**: `src/main/java/com/movepass/service/AcademiaService.java`
+- **Classe de teste (`src/test`)**: `src/test/java/com/movepass/service/AcademiaServiceTest.java`
+
+### 9.2. Configurações
+
+Cada classe de teste deve ser anotada com `@SpringBootTest` (_org.springframework.boot.test.context.SpringBootTest_). Isso indica que o contexto do Spring será carregado durante a execução dos testes. Além disso, cada método de teste deve ser anotado com `@Test` (_org.junit.jupiter.api.Test_).
+
+```java
+@SpringBootTest
+public class ClasseComTestes {
+    @Test
+    public void metodoTeste1() {
+    }
+
+    @Test
+    public void metodoTeste2() {
+    }
+}
+```
+
+### 9.3. Mocks
+
+Mocks simulam o comportamento de objetos reais, permitindo focar no comportamento da unidade sob teste. Usamos a biblioteca **Mockito** para criar mocks. A anotação `@MockBean` substitui um bean no contexto do Spring por um mock durante os testes.
+
+**Exemplo: Testando um serviço de e-mail**
+
+Vamos considerar um cenário em que temos um serviço de notificação (`ServicoDeNotificacao`) que utiliza um componente externo (`EnviadorDeEmail`) para enviar e-mails. Queremos testar apenas o comportamento do `ServicoDeNotificacao` sem depender da implementação real de envio de e-mails.
+
+```java
+// Classe a ser testada
+
+@Service
+public class ServicoDeNotificacao {
+
+    @Autowired
+    private final EnviadorDeEmail enviadorDeEmail;
+
+    public boolean enviarEmailDeBoasVindas(String enderecoEmail) {
+        String mensagem = "Bem-vindo à nossa plataforma!";
+        return enviadorDeEmail.enviarEmail(enderecoEmail, mensagem);
+    }
+}
+```
+
+```java
+// Teste unitário com Mock
+
+@SpringBootTest
+public class ServicoDeNotificacaoTest {
+
+    @Autowired
+    private ServicoDeNotificacao servicoDeNotificacao;
+
+    @MockBean
+    private EnviadorDeEmail enviadorDeEmail;
+
+    @Test
+    public void deveEnviarEmailDeBoasVindas() {
+        Mockito.when(enviadorDeEmail.enviarEmail("usuario@exemplo.com", "Bem-vindo à nossa plataforma!"))
+               .thenReturn(true);
+
+        boolean resultado = servicoDeNotificacao.enviarEmailDeBoasVindas("usuario@exemplo.com");
+
+        Assertions.assertTrue(resultado);
+
+        Mockito.verify(enviadorDeEmail, Mockito.times(1))
+               .enviarEmail("usuario@exemplo.com", "Bem-vindo à nossa plataforma!");
+    }
+}
+```
+
+Neste exemplo:
+
+- `@MockBean` cria um mock de `EnviadorDeEmail` no contexto de teste.
+- O mock é configurado para simular o retorno de `true` quando o método `enviarEmail` é chamado com parâmetros específicos.
+- Testamos o método `enviarEmailDeBoasVindas` de `ServicoDeNotificacao` e verificamos se ele retorna o valor esperado (`true`).
+- Além disso, usamos `Mockito.verify` para garantir que o método `enviarEmail` foi chamado exatamente uma vez com os argumentos corretos.
+
+## 10. Conclusão
+
+Ao concluir o desenvolvimento do projeto **Movepass**, você terá criado uma API REST funcional para a gestão de academias e assinaturas utilizando Java e Spring Boot. Este exercício proporcionou uma valiosa oportunidade para aplicar conceitos essenciais de Programação Orientada a Objetos (POO), implementar testes unitários e seguir boas práticas de desenvolvimento de software, consolidando assim suas habilidades técnicas e aprimorando sua experiência no desenvolvimento de APIs.
 
 [Voltar](../../../README.md)
