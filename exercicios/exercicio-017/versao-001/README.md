@@ -110,6 +110,7 @@ class Academia {
   -String nome
   -String endereco
   -Boolean ativo
+  -List< Assinaturas > assinaturas
   +Academia()
   +getters()
   +setters()
@@ -143,10 +144,16 @@ class Funcionario {
   -String email
   -LocalDate dataContratacao
   -Boolean ativo
+  -Empresa empresa
+  -List< Assinatura > assinaturas
   +Funcionario()
   +getters()
   +setters()
 }
+
+Academia --* Assinatura
+Empresa --* Funcionario
+Funcionario --* Assinatura
 ```
 
 ## 5. Requisitos
@@ -244,32 +251,32 @@ Crie endpoints para realizar as operações básicas de CRUD (Create, Read, Upda
 
   - `POST /academias`: Criar nova academia.
   - `GET /academias`: Listar todas as academias.
-  - `GET /academias/{id}`: Obter detalhes de uma academia específica.
-  - `PUT /academias/{id}`: Atualizar dados de uma academia.
-  - `DELETE /academias/{id}`: Inativar uma academia (soft delete).
+  - `GET /academias/{academiaId}`: Obter detalhes de uma academia específica.
+  - `PUT /academias/{academiaId}`: Atualizar dados de uma academia.
+  - `DELETE /academias/{academiaId}`: Inativar uma academia (soft delete).
 
 - **Assinatura**
 
   - `POST /assinaturas`: Criar nova assinatura.
   - `GET /assinaturas`: Listar todas as assinaturas.
-  - `GET /assinaturas/{id}`: Obter detalhes de uma assinatura específica.
-  - `PUT /assinaturas/{id}`: Atualizar dados de uma assinatura.
+  - `GET /assinaturas/{assinaturaId}`: Obter detalhes de uma assinatura específica.
 
 - **Empresa**
 
   - `POST /empresas`: Criar nova empresa.
+  - `POST /empresas/{empresaId}/funcionarios`: Criar novo funcionário na empresa.
   - `GET /empresas`: Listar todas as empresas.
-  - `GET /empresas/{id}`: Obter detalhes de uma empresa específica.
-  - `PUT /empresas/{id}`: Atualizar dados de uma empresa.
-  - `DELETE /empresas/{id}`: Inativar uma empresa (soft delete).
+  - `GET /empresas/{empresaId}`: Obter detalhes de uma empresa específica.
+  - `GET /empresas/{empresaId}/funcionarios`: Listar todos os funcionários da empresa.
+  - `PUT /empresas/{empresaId}`: Atualizar dados de uma empresa.
+  - `DELETE /empresas/{empresaId}`: Inativar uma empresa (soft delete).
 
 - **Funcionário**
 
-  - `POST /funcionarios`: Criar novo funcionário.
   - `GET /funcionarios`: Listar todos os funcionários.
-  - `GET /funcionarios/{id}`: Obter detalhes de um funcionário específico.
-  - `PUT /funcionarios/{id}`: Atualizar dados de um funcionário.
-  - `DELETE /funcionarios/{id}`: Inativar um funcionário (soft delete).
+  - `GET /funcionarios/{funcionarioId}`: Obter detalhes de um funcionário específico.
+  - `PUT /funcionarios/{funcionarioId}`: Atualizar dados de um funcionário.
+  - `DELETE /funcionarios/{funcionarioId}`: Inativar um funcionário (soft delete).
 
 ## 9. Testes
 
