@@ -38,7 +38,11 @@ Neste exercício, você desenvolverá uma API REST utilizando Java e Spring Boot
 
 O projeto **Movepass** consiste em uma API REST que simula a gestão de academias, empresas e assinaturas de funcionários. A ideia central é permitir que empresas possam cadastrar seus funcionários em academias, gerenciando assinaturas e possibilitando que esses funcionários utilizem as academias parceiras.
 
-Você precisará implementar quatro principais entidades: Empresa, Funcionário, Academia e Assinatura. A regra de negócio básica é que uma empresa pode ter múltiplos funcionários, cada funcionário pode ter uma assinatura em uma ou mais academias, e cada academia pode ter vários funcionários assinantes.
+Você precisará implementar quatro principais entidades: Empresa, Funcionário, Academia e Assinatura. A regra de negócio básica é que:
+
+- Uma empresa pode ter vários funcionários, mas cada funcionário trabalha para uma única empresa.
+- Um funcionário pode ter várias assinaturas para acessar diferentes academias.
+- Uma academia pode ter várias assinaturas, cada uma vinculada a um funcionário diferente.
 
 ## 2. Dependências
 
